@@ -1,4 +1,4 @@
-body, ul, li, h1, h2, a{
+/* body, ul, li, h1, h2, a{
   margin: 0;
   padding: 0;
   font-family: arial;
@@ -47,4 +47,70 @@ nav li{
 
 nav ul li a{
   color:rgb(125,171,135) ;
+} */
+
+body {
+  background-color:blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh; /* zorgt ervoor dat de body ten minste de volledige hoogte van het scherm heeft */
+  margin: 0;
+  padding: 0;
+}
+header, footer {
+  background-color: rgb(125,171,135);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+
+.link-page{
+  background-color: #f4f4f4;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 10px;
+}
+
+header nav ul{
+  white-space: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header nav li{
+  width: 25%;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.scroll-section {
+  display: flex;
+  flex: 1;
+}
+
+.scroll-part{
+  flex: 6;
+  padding: 20px;
+  height: 539px;
+  overflow: auto; /* Enable scrolling if content overflows the height */
+  border: 1px solid red;
+}
+
+.scroll-section aside{
+  flex: 1;
+  padding: 20px; 
+  background-color: #f4f4f4;
+  
+}
+.random-shi ul,
+.friends ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer{
+  margin-top: auto;
 }

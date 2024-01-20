@@ -51,6 +51,7 @@ nav ul li a{
 
 body {
   background-color:blanchedalmond;
+  font-family: 'Satoshi', sans-serif;
   display: flex;
   flex-direction: column;
   max-height: 100vh; /* zorgt ervoor dat de body ten minste de volledige hoogte van het scherm heeft */

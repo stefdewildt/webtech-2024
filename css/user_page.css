@@ -1,0 +1,101 @@
+body, header, footer{
+    font-family: 'Satoshi', sans-serif;
+}
+
+header{
+    font-size: 25px;
+    margin: 100px;
+    position: sticky;
+    top:0px;
+}
+h1 img{
+    width: 25px;
+    height:25px;
+}
+.menu{
+    list-style: none;
+    white-space: nowrap;
+    max-width: 1200px;
+}
+header li{
+    width:43%;
+    display: inline-block;
+    text-align: center;
+}
+header li a:hover{
+    position: relative;
+    top:-2px;
+}
+
+header, footer{
+    background-color: rgb(48, 94, 48);
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
+    margin: -10px;
+    text-align: center;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+.menu a:link{
+    color: white;
+    text-decoration: none;
+}
+.menu a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+.pd-row {
+    display: flex;
+    margin-top: 80px;
+    margin-left: 180px;
+    text-align: center;
+
+}
+
+.pd-row img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+  }
+
+.pd-row div h3{
+    font-size: 25px;
+    font-weight: 600;
+    padding-top: 50px;
+    padding-left: 10px;
+    text-align: left;
+}
+h2{
+    padding-top: 20px;
+    margin-left: 130px;
+    position:relative;
+    margin-left: 10%;
+}
+.chosen-music{
+    border: 5px solid rgb(75, 95, 69);
+    border-radius: 25px;
+    padding: 20px;
+    width: 30%;
+    background-color: rgb(231, 235, 241);
+}
+.profile-posts{
+    white-space: nowrap;
+    display: block;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.banner{
+    position: relative;
+
+}
+.banner img{
+    max-width: 100%;
+    max-height: 20%;
+}

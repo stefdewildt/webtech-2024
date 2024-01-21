@@ -60,3 +60,44 @@ form a:focus{
 }
 
 
+/* body, header, footer{
+    font-family: 'Satoshi', sans-serif;
+  }
+  
+  header{
+    font-size: 25px;
+    margin: 100px;
+    position: sticky;
+    top:0px;
+  }
+  
+  h1 img{
+    width: 25px;
+    height:25px;
+  }
+  
+  .menu{
+    list-style: none;
+    white-space: nowrap;
+    max-width: 1200px;
+  }
+  
+  header li{
+    width:43%;
+    display: inline-block;
+    text-align: center;
+  }
+  header li a:hover{
+    position: relative;
+    top:-2px;
+  }
+  
+  header, footer{
+    background-color: rgb(48, 94, 48);
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
+    margin: -10px;
+    text-align: center;
+    color: white;
+  }
+   */

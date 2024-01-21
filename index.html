@@ -8,21 +8,27 @@
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    
     <header>
-        <h1>Melodies Connected</h1>
-        <nav class="link-page">
-            <ul>
-                <li><a href="/html/user.html"><i class="fa-solid fa-user"></i></a></li>
+        <div class="upper-bar">
+            <div class="header-left">
+                <h1> Melodies Connected <img src="/img/musicalnote.png" width="2" height="2"/></h1>
+            </div>
+            <div class="header-right"> 
+                <div class="Login"><a href="/html/inlogpagina_MC.html">Log in</a></div>
+            </div>
+        </div>
+        <div class="menu-bar">
+            <ul class="menu">
+                <li><a href="/html/user.html">Profile</a></li>
                 <li><a href="/html/discover.html">Discover</a></li>
-                <li><a href="/html/friends.html"><i class="fa-solid fa-users"></i></a></li>
+                <li><a href="/html/friends.html">Friends</a></li>
                 <li>
-                    <form>
-                        <input type="text" placeholder="Search">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search friends, genres, artists...">
                     </form>
                 </li>
             </ul>
-        </nav>
+        </div>
     </header>
     
     <!-- <section class="banner">
@@ -106,7 +112,7 @@
 
     </section>
 
-    <footer>This is the footer</footer>
+    <footer>Copyright Melodies Connected 2024</footer>
 
 
 

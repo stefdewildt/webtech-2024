@@ -9,30 +9,39 @@
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1> Melodies Connected <img src="/img/musicalnote.png" width="2" height="2"/></h1>
     <header>
-        <ul class="menu">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/html/discover.html">Discover</a></li>
-            <li><a href="/html/settings.html">Settings</a></li>
-        </ul>
-    </header>
-    <div class="profile-container">
-        <div class="profile-details">
-            <div class="pd-left">
-                <div class="pd-row">
-                    <img src="/img/profile.png">
-                    <div>
-                        <h3>Your Name</h3>
-                        <nav>
-                            <a href="/html/friends.html">120 friends - 10 mutual </a>
-                        </nav> 
-                    </div>
-                </div>
+        <div class="upper-bar">
+            <div class="header-left">
+                <h1> Melodies Connected <img src="/img/musicalnote.png" width="2" height="2"/></h1>
             </div>
-            <div class="pd-right"></div>
+            <div class="header-right"> 
+                <div class="Logout"><a href="/html/inlogpagina_MC.html">Log out</a></div>
+            </div>
         </div>
+        <div class="menu-bar">
+            <ul class="menu">                    
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/html/discover.html">Discover</a></li>
+                <li><a href="/html/settings.html">Settings</a></li>
+                <li>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search friends, genres, artists...">
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="pd-row">
+        <img src="/img/profile.png">
+        <div>
+            <h3>Your Name</h3>
+            <nav>
+                <a href="/html/friends.html">120 friends - 10 mutual </a>
+            </nav> 
+        </div>        
     </div>
+
     <div class="profile-posts">
         <h2>Your favourites</h2>
         <div class="chosen-music">

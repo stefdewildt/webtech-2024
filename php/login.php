@@ -8,6 +8,8 @@
             <form action="includes/login.inc.php" method="post">
                 <input type="text" name="uid" placeholder="Username/Email...">
                 <input type="password" name="pwd" placeholder="Password...">
+                / ik heb hier een line toegevoegd voor het toevoegen van een profielfoto dit lijkt me niet de uiteindelijke locatie maar voor nu doe ik t ff zo 
+                <input type="file" name="photo" placeholder="Add profile picture...">
                 <button type="Submit" name="submit">Log in</button>
             </form>
         </div>

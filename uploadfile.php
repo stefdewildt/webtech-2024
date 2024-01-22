@@ -34,5 +34,5 @@ if(isset($_POST['submit'])){
 }
 
     session_start();
-    include_once 'dbh.php';
+    include_once 'connect_to_database.php';
 ?> 

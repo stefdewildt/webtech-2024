@@ -1,0 +1,51 @@
+section h2{
+    display: inline-block;
+    border: 3px solid rgb(237, 101, 124);
+    width: 30%;
+    position: relative;
+    left: 30%;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 4px 4px grey;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+form{
+    display: inline-block;
+    border: 3px solid rgb(237, 101, 124);
+    width: 30%;
+    position: relative;
+    left: 30%;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 4px 4px grey;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+form input{
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px grey;
+    border-radius: 36px;
+}
+
+form a{
+    background-color: rgb(237, 101, 124);
+    padding: 15px;
+    margin: 10px;
+    text-decoration: None;
+    box-shadow: 2px 2px grey;
+} 
+
+form a:focus{
+    top: 3px;
+    left: 3px;  
+    box-shadow: None;
+    color: white;
+}
+
+

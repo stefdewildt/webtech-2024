@@ -1,0 +1,40 @@
+body {
+  background-color:blanchedalmond;
+  font-family: 'Satoshi', sans-serif;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh; /* zorgt ervoor dat de body ten minste de volledige hoogte van het scherm heeft */
+  margin: 0;
+  padding: 0;
+}
+h1 img{
+  width: 25px;
+  height:25px;
+}
+header{
+  background-color: rgb(125,171,135);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+.link-page{
+  background-color: #f4f4f4;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 10px;
+}
+header nav ul{
+  white-space: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+header nav li{
+  width: 15%;
+  display: inline-block;
+  font-size: 24px;
+}
+header a{
+  color: white;
+}

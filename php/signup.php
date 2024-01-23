@@ -1,6 +1,9 @@
 <?php
     include_once('header.php');
 ?>
+<header>
+    <link rel="stylesheet" href="css_files/login.css">
+</header>
 
     <section class="signup-form">
         <h2>Sign up</h2>
@@ -11,6 +14,7 @@
                 <input type="text" name="uid" placeholder="Username...">
                 <input type="password" name="pwd" placeholder="Password...">
                 <input type="password" name="pwdrepeat" placeholder="Repeat Password...">
+                <br>
                 <button type="Submit" name="submit">Sign Up</button>
             </form>
         </div>

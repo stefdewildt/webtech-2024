@@ -1,3 +1,17 @@
+section h2{
+    display: inline-block;
+    border: 3px solid rgb(237, 101, 124);
+    width: 30%;
+    position: relative;
+    left: 30%;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 4px 4px grey;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
 form{
     display: inline-block;
     border: 3px solid rgb(237, 101, 124);

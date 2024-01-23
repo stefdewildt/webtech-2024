@@ -1,0 +1,28 @@
+.scroll-section {
+  display: flex;
+  flex: 1;
+}
+
+.scroll-part{
+  flex: 6;
+  padding: 20px;
+  height: 539px;
+  overflow: auto; /* Enable scrolling if content overflows the height */
+  border: 1px solid red;
+}
+
+.scroll-section aside{
+  flex: 1;
+  padding: 20px; 
+  background-color: #f4f4f4;
+  
+}
+.random-shi ul,
+.friends ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer{
+  margin-top: auto;
+}

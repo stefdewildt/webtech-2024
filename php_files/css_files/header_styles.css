@@ -23,11 +23,9 @@ header{
   justify-content: space-between;
   align-items: center;
   margin-left:1.8em;
-  margin-top:1.8em;
 }
 
 .header-left h1{
-  padding: .8em;
   margin: 0;
   text-align: left;
   align-items: center;
@@ -67,12 +65,6 @@ footer {
 }
 
 /* nav bar */
-.menu-bar{
-  position: sticky;
-  top: 130px;
-  height: 100%;
-
-}
 .menu-bar ul{
   list-style: none;
   white-space: nowrap;
@@ -80,7 +72,7 @@ footer {
 } 
 
 .menu-bar li{
-  width:35%;
+  width:25%;
   display: inline-block;
   text-align: center;
   font-size: 1.5rem;
@@ -102,4 +94,24 @@ footer {
 }
 a:hover{
   text-decoration: underline;
+}
+
+.search-form{
+  width: 12em;
+  background: rgba(255, 255, 255, 0.1);
+  display:flex;
+  align-items: right;
+  margin-right: 20em;
+  border-radius: 1.5em;
+
+}
+
+.search-form input{
+  background: transparent;
+  flex:1;
+  border: 0;
+  outline: none;
+  padding:0.8em;
+  color: rgb(232, 241, 235);
+  
 }

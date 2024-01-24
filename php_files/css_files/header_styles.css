@@ -112,6 +112,8 @@ a:hover{
   border: 0;
   outline: none;
   padding:0.8em;
-  color: rgb(232, 241, 235);
-  
+  color: rgb(232, 241, 235); 
+}
+.search-form input::placeholder {
+  color: rgb(240,242,241); /* Je kunt deze kleur aanpassen aan je voorkeur */
 }

@@ -9,8 +9,8 @@ body, footer{
   font-family: 'Satoshi', sans-serif;
 }
 
-section{
-  margin: 100px;
+.scroll-section{
+  margin: 30px;
 }
 
 /* Header */

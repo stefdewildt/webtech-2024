@@ -2,12 +2,12 @@
     include_once('header.php');
 ?>
 <header>
-<link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/~stefw/nieuw/webtech-2024/php_files/css_files/login.css">
+    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/login.css">
 </header>
 
     <section class="signup-form">
         <h2>Sign up</h2>
-        <div class="signup-fprm-form">
+        <div class="signup-form-form">
             <form action="includes/signup.inc.php" method="post">
                 <input type="text" name="name" placeholder="Fule name...">
                 <input type="text" name="email" placeholder="Email...">

@@ -1,6 +1,6 @@
 <?php
     include_once "header.php";
-    require_once 'includes/dbh.inc.php';
+    require_once '/var/www/dbh.inc.php';
 
     $username = $_SESSION['useruid'];
     $email = $_SESSION['useremail'];

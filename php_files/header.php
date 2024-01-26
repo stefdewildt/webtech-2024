@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Php project</title>
+    <title>Melodies connected</title>
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/header_styles.css">
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
 </head>
@@ -45,7 +45,7 @@
                 }
             ?> 
                 <li><a href="/html/discover.html">Discover</a></li>
-                <li><a href="/html/friends.html">Friends</a></li>
+                <li><a href="https://webtech-bg2.webtech-uva.nl/php_files/friends.php">Friends</a></li>
                 <li>
                     <form class="search-form">
                         <input type="text" placeholder="Search friends, genres, artists...">

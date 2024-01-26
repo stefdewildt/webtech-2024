@@ -7,7 +7,7 @@
     <section class="login-form">
         <h2>Log in</h2>
         <div class="login-form-form">
-            <form action="includes/login.inc.php" method="post">
+            <form action="includes/loginInc.php" method="post">
                 <input type="text" name="uid" placeholder="Username/Email...">
                 <input type="password" name="pwd" placeholder="Password...">
                 <br>

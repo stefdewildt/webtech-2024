@@ -23,7 +23,7 @@
             <?php
                 if (isset($_SESSION["useruid"])) {
                     echo '<div class="header-right"> 
-                            <div class="Logout"><a href="https://webtech-bg2.webtech-uva.nl/php_files/includes/logout.inc.php">Log out</a></div>
+                            <div class="Logout"><a href="https://webtech-bg2.webtech-uva.nl/php_files/includes/logoutInc.php">Log out</a></div>
                         </div>';                    
                 }
                 else{

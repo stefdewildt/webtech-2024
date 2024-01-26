@@ -1,10 +1,6 @@
 <?php
-    include_once "header.php";
-?>
-
-<?php
-
-require_once '/var/www/dbh.inc.php';
+include_once "header.php";
+require_once '/var/www/dbhInc.php';
 
 //controleer of gebruiker is ingelogd
 
@@ -31,11 +27,5 @@ if ($conn->query($sql) === TRUE) {
     echo "Fout bij het linken van vrienden: " . $conn->error;
 }
 
-?>
-
-
-
-
-<?php
-    include_once "footer.php";
+include_once "footer.php";
 ?>

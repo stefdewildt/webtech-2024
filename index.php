@@ -12,7 +12,7 @@
         <aside class="random-shi">
             <ul>
                 <h3></h3>
-                <li>this</li>
+                <li>hier zie ik dat hij iets heeft aangepast</li>
                 <li>is</li>
                 <li>just</li>
                 <li>some</li>
@@ -82,7 +82,7 @@
 
         <aside class="friends">
         <?php
-        if (isset($_SESSION['useruid'])){
+        if (isset($_SESSION['usersId'])){
             $huidige_gebruiker_id = $_SESSION['usersId'];
             $query = "SELECT user_ID_2 FROM friends WHERE user_ID_1 = $huidige_gebruiker_id";
             $result = $conn->query($query);

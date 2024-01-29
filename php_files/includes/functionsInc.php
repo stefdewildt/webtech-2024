@@ -33,6 +33,11 @@ function invalidEmail($email){
     return $result;
 }
 
+function validSpotify($string) {
+    return strpos(strtolower($string), 'spotify.com') !== false;
+}
+
+
 function pwdMatch($pwd, $pwdRepeat){
     $result; 
     if ($pwd !== $pwdRepeat) {
@@ -115,6 +120,7 @@ function loginUser($conn, $username, $pwd){
 
     else if($checkPwd === true){
         session_start();
+        $_SESSION["usersId"] = $uidExists["usersId"];
         $_SESSION["username"] = $uidExists["usersName"];
         $_SESSION["useruid"] = $uidExists["usersUid"];
         $_SESSION["useremail"] = $uidExists["usersEmail"];
@@ -124,14 +130,14 @@ function loginUser($conn, $username, $pwd){
 
 }
 
-function createPost($conn, $url, $post){
-    $sql = "INSERT INTO music_posts (postsURL, postsPOST) VALUES (?, ?);";
+function createPost($conn, $url, $post, $user_id){
+    $sql = "INSERT INTO music_posts (postsURL, postsPOST, user_id) VALUES (?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../user.php?error=stmtfailed");
         exit();
     }
-    mysqli_stmt_bind_param($stmt, "ss", $url, $post);
+    mysqli_stmt_bind_param($stmt, "ssi", $url, $post, $user_id);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../user.php?error=none");

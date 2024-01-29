@@ -2,14 +2,22 @@
 
 if (isset($_POST["submit"])){
     
-    $url = $_POST["url"];
-    $post = $_POST["post"];
+    //$url = $_POST["url"];
+    $url = filter_input(INPUT_POST, "url", FILTER_SANITIZE_STRING);
+
+    //$post = $_POST["post"];
+    $post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
+
     echo "URL: " . $url . "<br>";
     echo "Post: " . $post . "<br>";
 
 
     require_once '/var/www/dbhInc.php';
     require_once 'functionsInc.php';
+    session_start();
+    $user_id = $_SESSION['usersId'];
+
+    if (validSpotify($url) !== false) {
 
     // if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
     //     header("location: ../signup.php?error=emptyinput");
@@ -31,10 +39,11 @@ if (isset($_POST["submit"])){
     //     header("location: ../signup.php?error=usernametaken");
     //     exit();
     // }
-    createPost($conn, $url, $post);
-
+    createPost($conn, $url, $post, $user_id);
+    } else {
+        header('location: ../user.php');
+    }
 }
-
 else{
     header("location: ../user.php");
     exit();

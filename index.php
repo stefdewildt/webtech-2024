@@ -1,5 +1,8 @@
 <?php
     include_once "php_files/header.php";
+    require_once '/var/www/dbhInc.php';
+    $sql = "SELECT * FROM music_posts ORDER BY postsTIMESTAMP DESC";
+    $result = mysqli_query($conn, $sql);
 ?>
 <head>
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/index_styles.css">
@@ -20,6 +23,16 @@
 
         <div class="scroll-part">
             <h2>Friends Listening</h2>
+            <section class="posts">
+                <?php
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "Url " . $row['postsURL'] . "<br>";
+                    echo "Hot take: " . $row['postsPOST'] . "<br>";
+                    // Voeg andere velden toe zoals nodig
+                    echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                }
+                ?>
+            </section>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
             cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
             id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>

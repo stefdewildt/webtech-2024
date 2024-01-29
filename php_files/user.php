@@ -33,7 +33,14 @@
                   <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3MyQn1xBQwPtFJUUP7zB8s?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
               </div>
             <li><h2>Your creations</h2></li>
-            <li><h2>Make a post</h2></li>
+            <li>
+                <h2>Make a post:</h2>
+                <form action="includes/uploadInc.php" class ="discussion-input" method="post">
+                    <input type="text" name ="url" placeholder ="Paste Spotiy URL here">
+                    <input type="text" name ="post" placeholder = "Start a conversation">
+                    <button type="Submit" name="submit">Submit Hot Take</button>
+                </form>
+            </li>
         </ul>
     </div>
 

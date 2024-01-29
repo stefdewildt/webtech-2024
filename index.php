@@ -27,8 +27,8 @@
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {
                     // echo "Url " . $row['postsURL'] . "<br>";
-                    
-                    if (strpos($row['postsURL'], 'embed') !== false) {
+
+                    if (strpos($row['postsURL'], 'embed') !== true) {
                         $modifiedURL = str_replace('.com/', '.com/embed/', $row['postsURL']);
                     } else {
                         $modifiedURL = $row['postsURL'];

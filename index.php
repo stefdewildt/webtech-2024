@@ -27,6 +27,8 @@
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "Url " . $row['postsURL'] . "<br>";
+                    echo '<iframe style="border-radius:12px" src="' . $row['postsURL'] . '" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>';
+
                     echo "Hot take: " . $row['postsPOST'] . "<br>";
                     // Voeg andere velden toe zoals nodig
                     echo "<hr>"; // Voeg een scheidingsteken toe tussen records

@@ -120,6 +120,7 @@ function loginUser($conn, $username, $pwd){
 
     else if($checkPwd === true){
         session_start();
+        $_SESSION["usersId"] = $uidExists["usersId"];
         $_SESSION["username"] = $uidExists["usersName"];
         $_SESSION["useruid"] = $uidExists["usersUid"];
         $_SESSION["useremail"] = $uidExists["usersEmail"];

@@ -14,6 +14,8 @@ if (isset($_POST["submit"])){
 
     require_once '/var/www/dbhInc.php';
     require_once 'functionsInc.php';
+    session_start();
+    $user_id = $_SESSION['id'];
 
     if (validSpotify($url) !== false) {
 
@@ -37,7 +39,7 @@ if (isset($_POST["submit"])){
     //     header("location: ../signup.php?error=usernametaken");
     //     exit();
     // }
-    createPost($conn, $url, $post);
+    createPost($conn, $url, $post, $user_id);
     } else {
         header('location: ../user.php');
     }

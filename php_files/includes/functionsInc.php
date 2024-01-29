@@ -136,7 +136,7 @@ function createPost($conn, $url, $post, $user_id){
         header("location: ../user.php?error=stmtfailed");
         exit();
     }
-    mysqli_stmt_bind_param($stmt, "ss", $url, $post, $user_id);
+    mysqli_stmt_bind_param($stmt, "ssi", $url, $post, $user_id);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../user.php?error=none");

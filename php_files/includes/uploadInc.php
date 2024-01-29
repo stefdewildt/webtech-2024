@@ -15,7 +15,7 @@ if (isset($_POST["submit"])){
     require_once '/var/www/dbhInc.php';
     require_once 'functionsInc.php';
     session_start();
-    $user_id = $_SESSION['id'];
+    $user_id = $_SESSION['user_id'];
 
     if (validSpotify($url) !== false) {
 

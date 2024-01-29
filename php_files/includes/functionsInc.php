@@ -33,6 +33,11 @@ function invalidEmail($email){
     return $result;
 }
 
+function validSpotify($string) {
+    return strpos(strtolower($string), 'spotify.com') !== false;
+}
+
+
 function pwdMatch($pwd, $pwdRepeat){
     $result; 
     if ($pwd !== $pwdRepeat) {

@@ -33,7 +33,7 @@
                     $user_row = mysqli_fetch_assoc($result_user);
                     $username = $user_row['usersUid'];
                     
-                    echo $username
+                    echo $username;
 
                     if (strpos($row['postsURL'], 'embed') !== true) {
                         $modifiedURL = str_replace('.com/', '.com/embed/', $row['postsURL']);

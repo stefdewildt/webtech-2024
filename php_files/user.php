@@ -15,14 +15,14 @@
             $row = $result->fetch_assoc();
             $username = $row['usersUid'];
             $name = $row['usersName'];
-            $email = '';
+            $email = null;
         
             // Display the user details
             
         } else {
-            $username = '';
-            $email = '';
-            $name = '';
+            $username = null;
+            $email = null;
+            $name = null;
         }
     } else {
     $username = $_SESSION['useruid'];

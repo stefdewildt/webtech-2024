@@ -3,29 +3,31 @@
     require_once '/var/www/dbhInc.php';
 // Check if the ID is provided in the URL
     if (isset($_GET['id'])) {
-        $usersid = $_GET['id'];
-
-        // Retrieve post data from the database based on the ID
-        $sql = "SELECT * FROM users WHERE $usersid = usersUid";
+        $knownUsersUid = $_GET['id'];
+        
+        // Use the mysqli real_escape_string function for basic input sanitization
+        $escapedUsersUid = $conn->real_escape_string($knownUserUid);
+        
+        // Execute the SQL query
+        $sql = "SELECT * FROM users WHERE usersUid = '$escapedUsersUid'";
         $result = $conn->query($sql);
-
+        
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            $username = $row['useruid'];
-            $email = $row['useremail'];
-            $name = $row['username'];
-
+            $userUid = $row['userUid'];
+            $userName = $row['usersName'];
+        
+            // Display the user details
+            echo "<p>User UID: $userUid</p>";
+            echo "<p>User Name: $userName</p>";
         } else {
             echo "User not found";
         }
-    } else {
-        echo "Invalid or missing post ID";
     }
-
-
-    
-$conn->close();
-
+        // Close the database connection
+        $conn->close();
+        ?>
+        
 ?>
 <head>
     <link rel="stylesheet" href="css_files/user_page.css">
@@ -68,4 +70,3 @@ $conn->close();
 <?php
     include_once("footer.php");
 ?>
-

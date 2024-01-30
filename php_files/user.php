@@ -15,12 +15,15 @@
             $row = $result->fetch_assoc();
             $username = $row['usersUid'];
             $name = $row['usersName'];
-            $email = 'hidden'
+            $email = 'hidden';
         
             // Display the user details
             
         } else {
             echo "User not found";
+            $username = 'invalid username';
+            $email = '';
+            $name = '';
         }
     } else {
     $username = $_SESSION['useruid'];

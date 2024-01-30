@@ -15,14 +15,14 @@
             $row = $result->fetch_assoc();
             $username = $row['usersUid'];
             $name = $row['usersName'];
-            $email = 'hidden';
+            $email = '';
         
             // Display the user details
             
         } else {
             $username = '';
             $email = '';
-            $name = 'User not found';
+            $name = '';
         }
     } else {
     $username = $_SESSION['useruid'];
@@ -39,9 +39,17 @@
     <div class="pd-row">
         <img src="img/profile.png">
         <div>
-            <h3>Name:<?php echo $name?></h3>
-            <h3>Username:<?php echo $username?></h3>
-            <h3>Email:<?php echo $email?></h3>
+            <?php if ( isset($email) ) { ?>
+                <h3>Name: <?php echo $name?></h3>
+                <h3>Username: <?php echo $username?></h3>
+                <h3>Email:<?php echo $email?></h3>
+            <?php } elseif (isset($username)) {?>
+                <h3>Name: <?php echo $name?></h3>
+                <h3>Username: <?php echo $username?></h3>
+            <?php } else { ?>
+                <h3>User not found</h3>
+            <?php } ?>
+
             <nav>
                 <a href="/html/friends.html">120 friends</a>
             </nav> 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamisch inladen</title>
+    <link rel="stylesheet" a href="assets/css/example.css">
+    <!-- Hiermee laad je jquery in, wat nodig kan zijn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Dynamisch inladen</h1>
+    <div class="inladenflexbox" id="inladenbox">
+        
+    </div>
+
+    <!-- Hiermee zorg je ervoor, dat je javascript bestand ingeladen word, je kan er zo veel toevoegen als je wilt -->
+    <script src="assets/js/inladen.js"></script>
+
+</body>
+
+<!-- Dit is een template, dit is dus een stuk html code, wat niet op je pagina komt te staan, je gaat dit ophalen via javascript om te gebruiken -->
+<script type="text/html" id="voorbeeldtemplate">
+    <div class="infobox">
+        <h4 id="productnaam">product</h4>
+        <p id="prijs" class="bloktekst">prijs</p>
+        <br>
+        <a id="voorbeeldknop" class="vestigingknop">Druk hier</a>
+    </div>
+</script>
+</html>

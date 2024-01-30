@@ -1,0 +1,21 @@
+.infobox {
+    height: 15vh;
+    width: 100%;
+    background-color: rgb(	243,240,233);
+    z-index: -3;
+    border-radius: 8px;
+}
+
+.inladenflexbox {
+    margin-top: 2%;
+    height: 1vh;
+    width: 50vw;
+    margin-left: 25%;
+    background-color: transparent;
+    z-index: -3;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 5vh;
+}

@@ -63,33 +63,35 @@ function deleteComments($conn){
     }
 }
 
-function getLogin($conn) {
-    if (isset($_POST['loginSubmit'])){
+// function getLogin($conn) {
+//     if (isset($_POST['loginSubmit'])){
 
-        // initializing variables
-        $uid = $_POST['uid'];
-        $pwd = $_POST['pwd'];
+//         // initializing variables
+//         $uid = $_POST['uid'];
+//         $pwd = $_POST['pwd'];
 
-        $sql = "SELECT * FROM user WHERE uid='$uid' AND pwd='$pwd'";
-        $result = $conn->query($sql);
+//         $sql = "SELECT * FROM user WHERE uid='$uid' AND pwd='$pwd'";
+//         $result = $conn->query($sql);
 
-        // counts the amount of comments
-        if (mysqli_num_rows($result) > 0){
+//         // counts the amount of comments
+//         if (mysqli_num_rows($result) > 0){
 
-            // if there's data it will be stored inside variable 'row'
-            if ($row = $result->fetch_assoc()) {
-                $_SESSION['id'] = $row['id'];
+//             // if there's data it will be stored inside variable 'row'
+//             if ($row = $result->fetch_assoc()) {
+//                 $_SESSION['id'] = $row['id'];
                 
-                // tells status of what just happened...?
-                header("Location: index.php?loginsuccess");
-                exit();
-            }
-        } else{
-            header("Location: index.php?loginfailed");
-            exit();
-        }
-    }      
-}
+//                 // tells status of what just happened...?
+//                 header("Location: index.php?loginsuccess");
+//                 exit();
+//             }
+//         } else{
+//             header("Location: index.php?loginfailed");
+//             exit();
+//         }
+//     }      
+// }
+
+
 
 // code for login page so you can't make comments while not logged in 
 // nor edit or delete other people's comments

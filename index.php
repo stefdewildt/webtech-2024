@@ -27,6 +27,8 @@
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {
                     // echo "Url " . $row['postsURL'] . "<br>";
+                    $hottakeid = $row['usersId'];
+                    $sql = "SELECT usersUid FROM users WHERE usersId = $hottakeid";
 
                     if (strpos($row['postsURL'], 'embed') !== true) {
                         $modifiedURL = str_replace('.com/', '.com/embed/', $row['postsURL']);

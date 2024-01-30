@@ -1,7 +1,7 @@
 <?php
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
-    if (isset($_GET['id'])) {
+    if (isset($_GET['id']) || $_GET['id'] !== $_SESSION['useruid']) {
         $knownUsersUid = $_GET['id'];
         
         // Use the mysqli real_escape_string function for basic input sanitization
@@ -20,10 +20,9 @@
             // Display the user details
             
         } else {
-            echo "User not found";
-            $username = 'invalid username';
+            $username = '';
             $email = '';
-            $name = '';
+            $name = 'User not found';
         }
     } else {
     $username = $_SESSION['useruid'];

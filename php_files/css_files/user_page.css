@@ -72,7 +72,7 @@ form {
     text-align: center; /* Om het formulier in het midden te plaatsen */
 }
 
-.discussion-input input{
+.discussion-input {
     width: 100%;
     padding: 10px;
     font-size: 16px;

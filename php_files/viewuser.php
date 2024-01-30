@@ -6,7 +6,7 @@
         $knownUsersUid = $_GET['id'];
         
         // Use the mysqli real_escape_string function for basic input sanitization
-        $escapedUsersUid = $conn->real_escape_string($knownUserUid);
+        $escapedUsersUid = $conn->real_escape_string($knownUsersUid);
         
         // Execute the SQL query
         $sql = "SELECT * FROM users WHERE usersUid = '$escapedUsersUid'";

@@ -36,7 +36,7 @@
                     echo '<iframe style="border-radius: 12px" src="' . $modifiedURL . '" width="100%" height="100" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>';
 
 
-                    echo "Hot take: " . $row['postsPOST'] . "<br>";
+                    echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
                     // Voeg andere velden toe zoals nodig
                     echo "<hr>"; // Voeg een scheidingsteken toe tussen records
                 }

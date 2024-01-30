@@ -27,7 +27,7 @@
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {
                     // echo "Url " . $row['postsURL'] . "<br>";
-                    $hottakeid = $row['usersId'];
+                    $hottakeid = $row['user_id'];
                     $sql = "SELECT usersUid FROM users WHERE usersId = $hottakeid";
 
                     if (strpos($row['postsURL'], 'embed') !== true) {

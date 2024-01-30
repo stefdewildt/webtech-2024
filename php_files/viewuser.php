@@ -3,10 +3,10 @@
     require_once '/var/www/dbhInc.php';
 // Check if the ID is provided in the URL
     if (isset($_GET['id'])) {
-        $usersUid = $_GET['id'];
+        $usersid = $_GET['id'];
 
         // Retrieve post data from the database based on the ID
-        $sql = "SELECT * FROM users WHERE id = $usersUid";
+        $sql = "SELECT * FROM users WHERE usersId = $usersid";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -15,10 +15,6 @@
             $email = $row['useremail'];
             $name = $row['username'];
 
-            // Display the post details
-            echo "<h2>$title</h2>";
-            echo "<p>Created at: $created_at</p>";
-            echo "<p>$content</p>";
         } else {
             echo "User not found";
         }

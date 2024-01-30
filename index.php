@@ -47,7 +47,7 @@
                     // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
                     
                     // Output de post onder de embed
-                    echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8')
+                    echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
                     // Voeg andere velden toe zoals nodig
                     echo "<hr>"; // Voeg een scheidingsteken toe tussen records
                 }

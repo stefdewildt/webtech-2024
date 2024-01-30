@@ -2,7 +2,7 @@
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
 // Check if the ID is provided in the URL
-    if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    if (isset($_GET['id'])) {
         $usersId = $_GET['id'];
 
         // Retrieve post data from the database based on the ID

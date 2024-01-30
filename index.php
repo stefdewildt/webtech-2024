@@ -26,22 +26,14 @@
             <section class="posts">
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {
-                    // echo "Url " . $row['postsURL'] . "<br>";
-                   // $hottakeid = $row['user_id'];
-                   // $sql = "SELECT usersUid FROM users WHERE usersId = $hottakeid";
-                  //  $result_user = mysqli_query($result, $sql);
-                   // $user_row = mysqli_fetch_assoc($result_user);
-                //    $username = $conn->query($sql);
-                    
-                  //  echo $username;
                     $user_id = $row['user_id'];
                     $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
-                    $result_user = mysqli_query($your_db_connection, $sql);
+                    $result_user = mysqli_query($conn, $sql);
                     $user_row = mysqli_fetch_assoc($result_user);
                     $username = $user_row['usersUid'];
 
-                    // Output the username
-                    echo "Username: " . $username . "<br>";
+                    // Output  username
+                    echo $username . "<br>";
             
 
                     if (strpos($row['postsURL'], 'embed') !== true) {
@@ -49,7 +41,7 @@
                     } else {
                         $modifiedURL = $row['postsURL'];
                     }
-                  //  echo '<iframe style="border-radius: 12px" src="' . $modifiedURL . '" width="100%" height="100" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>';
+                    echo '<iframe style="border-radius: 12px" src="' . $modifiedURL . '" width="100%" height="100" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>';
 
 
                     echo $row['username'] . ": " . $row['postsPOST'] . "<br>";

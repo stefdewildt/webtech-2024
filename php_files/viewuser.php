@@ -18,10 +18,16 @@
             $name = $row['usersName'];
         
             // Display the user details
-            echo "<p>User UID: $userUid</p>";
-            echo "<p>User Name: $userName</p>";
-       
-echo '
+            
+        } else {
+            echo "User not found";
+        }
+    }
+        // Close the database connection
+        $conn->close();
+        ?>
+        
+?>
 <head>
     <link rel="stylesheet" href="css_files/user_page.css">
 </head>
@@ -58,15 +64,8 @@ echo '
                 </form>
             </li>
         </ul>
-    </div>';
-} else {
-            echo "User not found";
-        }
-    }
-        // Close the database connection
-        $conn->close();
-        ?>
-        
+    </div>
+
 <?php
     include_once("footer.php");
 ?>

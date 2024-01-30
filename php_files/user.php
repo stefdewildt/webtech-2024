@@ -1,21 +1,45 @@
 <?php
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
-
+    if (isset($_GET['id'])) {
+        $knownUsersUid = $_GET['id'];
+        
+        // Use the mysqli real_escape_string function for basic input sanitization
+        $escapedUsersUid = $conn->real_escape_string($knownUsersUid);
+        
+        // Execute the SQL query
+        $sql = "SELECT * FROM users WHERE usersUid = '$escapedUsersUid'";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $username = $row['usersUid'];
+            $name = $row['usersName'];
+            $email = 'hidden'
+        
+            // Display the user details
+            
+        } else {
+            echo "User not found";
+        }
+    } else {
     $username = $_SESSION['useruid'];
     $email = $_SESSION['useremail'];
     $name = $_SESSION['username'];
+    }
 ?>
+
 <head>
     <link rel="stylesheet" href="css_files/user_page.css">
 </head>
 
+
     <div class="pd-row">
         <img src="img/profile.png">
         <div>
-            <h3><?php echo $name?></h3>
-            <h3><?php echo $username?></h3>
-            <h3><?php echo $email?></h3>
+            <h3>Name:<?php echo $name?></h3>
+            <h3>Username:<?php echo $username?></h3>
+            <h3>Email:<?php echo $email?></h3>
             <nav>
                 <a href="/html/friends.html">120 friends</a>
             </nav> 

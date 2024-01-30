@@ -13,11 +13,11 @@
     <div class="pd-row">
         <img src="img/profile.png">
         <div>
-            <h3>Name:<?php echo $name?></h3>
-            <h3>Username:<?php echo $username?></h3>
-            <h3>Email:<?php echo $email?></h3>
+            <h3><?php echo $name?></h3>
+            <h3><?php echo $username?></h3>
+            <h3><?php echo $email?></h3>
             <nav>
-                <a href="/html/friends.html">120 friends - 10 mutual </a>
+                <a href="/html/friends.html">120 friends</a>
             </nav> 
         </div>        
     </div>

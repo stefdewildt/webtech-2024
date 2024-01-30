@@ -12,7 +12,7 @@
         <aside class="random-shi">
             <ul>
                 <h3></h3>
-                <li>this</li>
+                <li>HALLLOOOO</li>
                 <li>is</li>
                 <li>just</li>
                 <li>some</li>

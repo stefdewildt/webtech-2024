@@ -3,7 +3,7 @@
 function setComment($conn){
     if (isset($_POST['commentSubmit'])) {
         $uid = $_POST['uid'];
-        $data = $_POST['date'];
+        $date = $_POST['date'];
         $message = $_POST['message'];
 
         // inserting into database

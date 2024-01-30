@@ -1,7 +1,8 @@
 <?php
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
-    if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) {
+// Check if the ID is provided in the URL
+    if (isset($_GET['id'])) {
         $knownUsersUid = $_GET['id'];
         
         // Use the mysqli real_escape_string function for basic input sanitization
@@ -15,33 +16,28 @@
             $row = $result->fetch_assoc();
             $username = $row['usersUid'];
             $name = $row['usersName'];
-            $email = 'hidden';
         
             // Display the user details
             
         } else {
-            $username = '';
-            $email = '';
-            $name = 'User not found';
+            echo "User not found";
         }
-    } else {
-    $username = $_SESSION['useruid'];
-    $email = $_SESSION['useremail'];
-    $name = $_SESSION['username'];
     }
+        // Close the database connection
+        $conn->close();
+        ?>
+        
 ?>
-
 <head>
     <link rel="stylesheet" href="css_files/user_page.css">
 </head>
 
-
     <div class="pd-row">
         <img src="img/profile.png">
         <div>
-            <h3>Name:<?php echo $name?></h3>
-            <h3>Username:<?php echo $username?></h3>
-            <h3>Email:<?php echo $email?></h3>
+            <h3><?php echo $name?></h3>
+            <h3><?php echo $username?></h3>
+            <h3><?php echo $email?></h3>
             <nav>
                 <a href="/html/friends.html">120 friends</a>
             </nav> 
@@ -62,8 +58,8 @@
             <li>
                 <h2>Make a post:</h2>
                 <form action="includes/uploadInc.php" class ="discussion-input" method="post">
-                    <input type="text" name ="url" placeholder ="Paste Spotiy URL here"><br>
-                    <input type="text" name ="post" placeholder = "Start a conversation"><br><br>
+                    <input type="text" name ="url" placeholder ="Paste Spotiy URL here">
+                    <input type="text" name ="post" placeholder = "Start a conversation">
                     <button type="Submit" name="submit">Submit Hot Take</button>
                 </form>
             </li>
@@ -73,4 +69,3 @@
 <?php
     include_once("footer.php");
 ?>
-

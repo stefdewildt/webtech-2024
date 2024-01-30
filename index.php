@@ -32,7 +32,7 @@
                     $user_row = mysqli_fetch_assoc($result_user);
                     $username = $user_row['usersUid'];
 
-                    // Output  username
+                    // Output  username boven de embed
                     echo $username . "<br>";
             
 
@@ -44,7 +44,10 @@
                     echo '<iframe style="border-radius: 12px" src="' . $modifiedURL . '" width="100%" height="100" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>';
 
 
-                    echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
+                    // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
+                    
+                    // Output de post onder de embed
+                    echo $row['postsPOST']
                     // Voeg andere velden toe zoals nodig
                     echo "<hr>"; // Voeg een scheidingsteken toe tussen records
                 }

@@ -3,10 +3,10 @@
     require_once '/var/www/dbhInc.php';
 // Check if the ID is provided in the URL
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-        $postId = $_GET['id'];
+        $usersId = $_GET['id'];
 
         // Retrieve post data from the database based on the ID
-        $sql = "SELECT * FROM users WHERE id = $userUid";
+        $sql = "SELECT * FROM users WHERE id = $usersUid";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -20,7 +20,7 @@
             echo "<p>Created at: $created_at</p>";
             echo "<p>$content</p>";
         } else {
-            echo "Post not found";
+            echo "User not found";
         }
     } else {
         echo "Invalid or missing post ID";

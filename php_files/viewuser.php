@@ -14,21 +14,14 @@
         
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            $userUid = $row['userUid'];
-            $userName = $row['usersName'];
+            $username = $row['usersUid'];
+            $name = $row['usersName'];
         
             // Display the user details
             echo "<p>User UID: $userUid</p>";
             echo "<p>User Name: $userName</p>";
-        } else {
-            echo "User not found";
-        }
-    }
-        // Close the database connection
-        $conn->close();
-        ?>
-        
-?>
+       
+echo '
 <head>
     <link rel="stylesheet" href="css_files/user_page.css">
 </head>
@@ -65,8 +58,15 @@
                 </form>
             </li>
         </ul>
-    </div>
-
+    </div>'
+} else {
+            echo "User not found";
+        }
+    }
+        // Close the database connection
+        $conn->close();
+        ?>
+        
 <?php
     include_once("footer.php");
 ?>

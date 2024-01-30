@@ -27,13 +27,13 @@
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {
                     // echo "Url " . $row['postsURL'] . "<br>";
-                    $hottakeid = $row['user_id'];
-                    $sql = "SELECT usersUid FROM users WHERE usersId = $hottakeid";
+                   // $hottakeid = $row['user_id'];
+                   // $sql = "SELECT usersUid FROM users WHERE usersId = $hottakeid";
                   //  $result_user = mysqli_query($result, $sql);
                    // $user_row = mysqli_fetch_assoc($result_user);
-                    $username = $conn->query($sql);
+                //    $username = $conn->query($sql);
                     
-                    echo $username;
+                  //  echo $username;
 
                     if (strpos($row['postsURL'], 'embed') !== true) {
                         $modifiedURL = str_replace('.com/', '.com/embed/', $row['postsURL']);

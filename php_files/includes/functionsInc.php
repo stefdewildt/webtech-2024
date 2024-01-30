@@ -143,3 +143,14 @@ function createPost($conn, $url, $post, $user_id, $username){
     header("location: ../user.php?error=none");
     exit();  
 }
+
+function follow($conn, $user_id, $follower_user_id){
+    $sql = "INSERT INTO friends (user_ID_1, user_ID_2) VALUES (?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_bind_param($stmt, "ii", $user_id, $follower_user_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+}
+function toggleFollow($conn, $user_id, $follower_user_id){
+
+}

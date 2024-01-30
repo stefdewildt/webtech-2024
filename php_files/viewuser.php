@@ -6,7 +6,7 @@
         $usersid = $_GET['id'];
 
         // Retrieve post data from the database based on the ID
-        $sql = "SELECT * FROM users WHERE usersId = $usersid";
+        $sql = "SELECT * FROM users WHERE $usersid = usersUid";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

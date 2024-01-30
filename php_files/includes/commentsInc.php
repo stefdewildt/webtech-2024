@@ -38,19 +38,19 @@ function getComments($conn) {
     }
 }
 
-// able to edit comments you have posted, not sure if it works.
-function editComments($conn) {
-    if (isset($_POST['commentSubmit'])) {
-        $cid = $_POST['cid'];
-        $uid = $_POST['uid'];
-        $date = $_POST['date'];
-        $message = $_POST['message'];
+// // able to edit comments you have posted, not sure if it works.
+// function editComments($conn) {
+//     if (isset($_POST['commentSubmit'])) {
+//         $cid = $_POST['cid'];
+//         $uid = $_POST['uid'];
+//         $date = $_POST['date'];
+//         $message = $_POST['message'];
     
-    $sql = "UPDATE comments SET message='$message' WHERE cid=$cid'";
-    $result = $conn->query($sql);
-    header("Location: index.php");
-    }
-}
+//     $sql = "UPDATE comments SET message='$message' WHERE cid=$cid'";
+//     $result = $conn->query($sql);
+//     header("Location: index.php");
+//     }
+// }
 
 // how to make sure you can't delete other people's comments im not sure........ this only makes sure you can delete comments
 function deleteComments($conn){

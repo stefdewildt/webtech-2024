@@ -29,9 +29,9 @@
                     // echo "Url " . $row['postsURL'] . "<br>";
                     $hottakeid = $row['user_id'];
                     $sql = "SELECT usersUid FROM users WHERE usersId = $hottakeid";
-                    $result_user = mysqli_query($your_db_connection, $sql);
-                    $user_row = mysqli_fetch_assoc($result_user);
-                    $username = $user_row['usersUid'];
+                  //  $result_user = mysqli_query($result, $sql);
+                   // $user_row = mysqli_fetch_assoc($result_user);
+                    $username = $conn->query($sql);
                     
                     echo $username;
 

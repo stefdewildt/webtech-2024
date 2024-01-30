@@ -29,8 +29,12 @@
                     // echo "Url " . $row['postsURL'] . "<br>";
                     $hottakeid = $row['user_id'];
                     $sql = "SELECT usersUid FROM users WHERE usersId = $hottakeid";
-                    echo $sql;
+                    $result_user = mysqli_query($your_db_connection, $sql);
+                    $user_row = mysqli_fetch_assoc($result_user);
+                    $username = $user_row['usersUid'];
                     
+                    echo $username
+
                     if (strpos($row['postsURL'], 'embed') !== true) {
                         $modifiedURL = str_replace('.com/', '.com/embed/', $row['postsURL']);
                     } else {

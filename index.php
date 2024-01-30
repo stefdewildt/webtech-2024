@@ -53,51 +53,6 @@
                 }
                 ?>
             </section>
-            <p>Test Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione iste 
-            cumque beatae inventore, exercitationem facilis, neque placeat minima atque 
-            id nobis incidunt maiores temporibus maxime iure reprehenderit vitae saepe quod.</p>
-            <p> Hallo</p>
         </div>
 
         <aside class="friends">

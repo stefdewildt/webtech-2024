@@ -3,7 +3,7 @@
     require_once '/var/www/dbhInc.php';
 // Check if the ID is provided in the URL
     if (isset($_GET['id'])) {
-        $usersId = $_GET['id'];
+        $usersUid = $_GET['id'];
 
         // Retrieve post data from the database based on the ID
         $sql = "SELECT * FROM users WHERE usersUid = $usersUid";

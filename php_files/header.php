@@ -43,8 +43,7 @@
             if (isset($_SESSION["useruid"])) { 
                 echo '<li><a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php">Profile</a></li>';                                
                 }
-            ?> 
-                <li><a href="/html/discover.html">Discover</a></li>
+            ?>
                 <li><a href="https://webtech-bg2.webtech-uva.nl/php_files/friends.php">Friends</a></li>
                 <li>
                     <form class="search-form">

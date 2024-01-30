@@ -117,3 +117,14 @@ a:hover{
 .search-form input::placeholder {
   color: rgb(240,242,241); /* Je kunt deze kleur aanpassen aan je voorkeur */
 }
+
+.button {
+  background-color: rgb(48, 94, 48); /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

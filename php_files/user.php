@@ -1,7 +1,7 @@
 <?php
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
-    if (isset($_GET['id']) || $_GET['id'] !== $_SESSION['useruid']) {
+    if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) {
         $knownUsersUid = $_GET['id'];
         
         // Use the mysqli real_escape_string function for basic input sanitization

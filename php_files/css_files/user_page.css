@@ -85,6 +85,15 @@ form {
     text-align: top;
 }
 
+button[type="submit"] {
+    /* Add styles for the submit button */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 .discussion-input button{
     background-color: rgb(48, 94, 48); /* Green */

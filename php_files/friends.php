@@ -2,6 +2,8 @@
 include_once "header.php";
 require_once '/var/www/dbhInc.php';
 
+
+
 //controleer of gebruiker is ingelogd
 
 if (isset($_SESSION['usersId'])){

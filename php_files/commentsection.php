@@ -2,8 +2,13 @@
     date_default_timezone_set('Europe/Amsterdam');
     include 'includes/commentsInc.php';
     // include 'dbh.inc.php'; connection to database
-?>
+    include_once "header.php";
+    require_once '/var/www/dbhInc.php';
 
+    $username = $_SESSION['useruid'];
+    $email = $_SESSION['useremail'];
+    $name = $_SESSION['username'];
+?>
 <!DOCTYPE html>
 <html>
 <head>

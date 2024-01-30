@@ -86,7 +86,7 @@ form {
 }
 
 
-.button {
+.discussion-input button{
     background-color: rgb(48, 94, 48); /* Green */
     border: none;
     color: white;

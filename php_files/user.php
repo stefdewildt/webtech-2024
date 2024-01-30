@@ -36,8 +36,8 @@
             <li>
                 <h2>Make a post:</h2>
                 <form action="includes/uploadInc.php" class ="discussion-input" method="post">
-                    <input type="text" name ="url" placeholder ="Paste Spotiy URL here">
-                    <input type="text" name ="post" placeholder = "Start a conversation">
+                    <input type="text" name ="url" placeholder ="Paste Spotiy URL here"><br>
+                    <input type="text" name ="post" placeholder = "Start a conversation"><br><br>
                     <button type="Submit" name="submit">Submit Hot Take</button>
                 </form>
             </li>

@@ -1,6 +1,6 @@
 <?php
     date_default_timezone_set('Europe/Amsterdam');
-    include 'comments.inc.php';
+    include 'includes/comments.inc.php';
     // include 'dbh.inc.php'; connection to database
 ?>
 
@@ -21,9 +21,10 @@ echo "<form method='POST' action='".setComment()."'>
     <input type='hidden' name='uid' value='anonymous'>
     <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
     <textarea name='message'></textarea><br>
-    <button type='submit' name='commentSubmit'>Comment</button>
+    <button type='submit' name='commentDelete'>Comment</button>
 </form>";
 
+getComments($conn);
 
 ?>
 </body>

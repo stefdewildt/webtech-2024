@@ -11,6 +11,7 @@ window.addEventListener('load', (event) => {
     haalinformatieop("gebruikersnaam", "wachtwoord");
 });
 
+alert()
 function haalinformatieop(username, password)
 {
     // Hierin willen jullie gewooon type POST gebruiken

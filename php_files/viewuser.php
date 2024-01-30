@@ -58,7 +58,7 @@ echo '
                 </form>
             </li>
         </ul>
-    </div>'
+    </div>';
 } else {
             echo "User not found";
         }

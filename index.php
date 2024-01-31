@@ -35,7 +35,7 @@
                     $username = $user_row['usersUid'];
 
                     // Output  username boven de embed
-                    echo $username . "<br>";
+                    echo '@'.$username . "<br>";
             
 
                     if (strpos($row['postsURL'], 'embed') !== true) {
@@ -82,7 +82,7 @@
                         $username = $user_row['usersUid'];
 
                         // Output  username boven de embed
-                        echo $username . "<br>";
+                        echo '@'.$username . "<br>";
                         echo '<h3>'.$row['postsURL'] . "</h3><br>";
                         // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
                         

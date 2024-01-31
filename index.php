@@ -60,7 +60,7 @@
         <aside class="friends">
             
                 
-                <!-- Big Posts -->
+            <!-- Big Posts -->
                 
             <?php if (isset($_SESSION["usersId"])) { ?>
                 <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">

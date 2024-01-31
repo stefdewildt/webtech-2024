@@ -1,7 +1,7 @@
 <?php
 
 // adding comments to database
-function setComment($conn){
+function setComment($conn, $postId){
     if (isset($_POST['commentSubmit'])) {
         $usersId = $_POST['usersId'];
         $date = $_POST['date'];
@@ -15,10 +15,10 @@ function setComment($conn){
 }
 
 // getting comments from database to be able to show on website 
-function getComments($conn, $postid) {
+function getComments($conn, $postId) {
 
     // go into database , get all the comments, run the query and show them (result)
-    $sql = "SELECT * FROM comments";
+    $sql = "SELECT * FROM comments WHERE postId='$postId'";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         $usersId = $row['usersId'];

@@ -19,12 +19,17 @@ function getComments($conn) {
     $sql = "SELECT * FROM comments";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        $userUid =$row['usersId'];
-        $sql2 = "SELECT * FROM users WHERE userUid='$usersUid'";
-        $result2 = $conn->query($sql2);
+        // $userUid =$row['usersId'];
+        // $sql2 = "SELECT * FROM users WHERE userUid='$usersUid'";
+        // $result2 = $conn->query($sql2);
+        $user_id = $row['user_id'];
+        $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
+        $result_user = mysqli_query($conn, $sql);
+        $user_row = mysqli_fetch_assoc($result_user);
+        $username = $user_row['usersUid'];
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='comment-section'><p>";
-            echo $row['usersId']. "<br><br>";
+            echo $username . "<br>";
             echo $row['date']. "<br><br>";
 
             // checking for new line tags and make it into line breaks

@@ -7,18 +7,6 @@
 <head>
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/index_styles.css">
 </head>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        if (!localStorage.getItem("cookie-consent")) {
-            document.getElementById("cookie-consent").style.display = "block";
-        }
-    });
-
-    document.getElementById("cookie-consent-agree").addEventListener("click", function() {
-        localStorage.setItem("cookie-consent", "true");
-        document.getElementById("cookie-consent").style.display = "none";
-    });
-</script>
     
     <section class="scroll-section">
         <aside class="random-shi">

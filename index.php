@@ -12,13 +12,15 @@
 
 
         <div class="scroll-part">
-            <h2>Post Hot Take</h2>
-            <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
-                <input type="text" name ="url" placeholder ="Paste Spotify URL here..."><br>
-                <input type="text" name ="post" placeholder = "Hot Take..."><br><br>
-                <button type="Submit" name="submit">Submit Hot Take</button>
-            </form>
-
+            <?php if (isset($_SESSION["usersId"])) { ?>
+                <h2>Post Your Hot Take!</h2>
+                <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
+                    <input type="text" name ="url" placeholder ="Paste or drag URL here..."><br>
+                    <input type="text" name ="post" maxlength="150" placeholder = "Hot Take..."><br><br>
+                    <input type="hidden" name="table" value="music_posts">
+                    <button type="Submit" name="submit">Submit Hot Take</button>
+                </form>
+            <?php }?>
             <h2>Hot Takes</h2>
             <section class="posts">
                 <?php
@@ -53,6 +55,14 @@
         </div>
 
         <aside class="friends">
+            <?php if (isset($_SESSION["usersId"])) { ?>
+                <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
+                        <input type="text" name ="url" placeholder ="Write a title here..."><br>
+                        <input type="text" name ="post" placeholder = "Big post..."><br><br>
+                        <input type="hidden" name="table" value="big_posts">
+                        <button type="Submit" name="submit">Submit Hot Take</button>
+                    </form>
+            <?php }?>
             <ul>
             <?php
         if (isset($_SESSION['usersId'])){

@@ -37,46 +37,14 @@
     }    
     // geen id ingevoerd maar wel ingelogd
     elseif (isset($_SESSION['useruid'])){
-            $username = $_SESSION['useruid'];
-            $email = $_SESSION['useremail'];
-            $name = $_SESSION['username'];
-            $image = $_SESSION['image'];
-            }
-    else {// GEEN ID NIET INGELOGD
-            header('location: login.php');
-        
-
+        $username = $_SESSION['useruid'];
+        $email = $_SESSION['useremail'];
+        $name = $_SESSION['username'];
+        $image = $_SESSION['image'];
     }
-
-    if (isset($_GET['id']) || (isset($_SESSION['useruid']) && $_GET['id'] != $_SESSION['useruid']) ){
-        $knownUsersUid = $_GET['id'];
-        
-        // Use the mysqli real_escape_string function for basic input sanitization
-        $escapedUsersUid = $conn->real_escape_string($knownUsersUid);
-        
-        // Execute the SQL query
-        $sql = "SELECT * FROM users WHERE usersUid = '$escapedUsersUid'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $username = $row['usersUid'];
-            $name = $row['usersName'];
-            $email = null;
-            $image = $row['usersImg'];
-        
-            // Display the user details
-            
-        } else {
-            $username = null;
-            $email = null;
-            $name = null;
-        }
-    } elseif (isset($_SESSION['useruid'])) {
-    $username = $_SESSION['useruid'];
-    $email = $_SESSION['useremail'];
-    $name = $_SESSION['username'];
-    $image = $_SESSION['image'];
+    // GEEN ID NIET INGELOGD
+    else {
+            header('location: login.php');
     }
 ?>
 

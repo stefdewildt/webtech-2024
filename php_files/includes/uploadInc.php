@@ -8,6 +8,8 @@ if (isset($_POST["submit"])){
     //$post = $_POST["post"];
     $post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
 
+    $table = $_POST['table'];
+
     echo "URL: " . $url . "<br>";
     echo "Post: " . $post . "<br>";
 
@@ -41,7 +43,7 @@ if (isset($_POST["submit"])){
     //     header("location: ../signup.php?error=usernametaken");
     //     exit();
     // }
-    createPost($conn, $url, $post, $user_id, $username);
+    createPost($conn, $url, $post, $user_id, $username, $table);
     } else {
         header('location: ../../index.php');
     }

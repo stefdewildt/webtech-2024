@@ -131,8 +131,8 @@ function loginUser($conn, $username, $pwd){
 
 }
 
-function createPost($conn, $url, $post, $user_id, $username){
-    $sql = "INSERT INTO music_posts (postsURL, postsPOST, user_id, username) VALUES (?, ?, ?, ?);";
+function createPost($conn, $url, $post, $user_id, $username, $table){
+    $sql = "INSERT INTO $table (postsURL, postsPOST, user_id, username) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../../index.php?error=stmtfailed");

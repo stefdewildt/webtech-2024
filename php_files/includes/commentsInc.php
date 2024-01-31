@@ -14,6 +14,7 @@ function setComment($conn){
     }
 }
 
+$user_id = $_SESSION['usersId'];
 // getting comments from database to be able to show on website 
 function getComments($conn) {
     $sql = "SELECT * FROM comments";

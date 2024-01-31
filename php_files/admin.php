@@ -34,6 +34,12 @@
                     // Output de post onder de embed
                     echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
                     // Voeg andere velden toe zoals nodig
+
+                    echo '<form method="Post" action="includes/removehtInc.php">';
+                    echo '<input type="hidden" name="post_id" value="' . $row['postsID'] . '">';
+                    echo '<button type="submit" name="remove_post">Remove Post</button>';
+                    echo '</form>';
+
                     echo "<hr>"; // Voeg een scheidingsteken toe tussen records
                 }
                 ?>

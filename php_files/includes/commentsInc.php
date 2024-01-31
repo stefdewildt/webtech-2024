@@ -19,8 +19,8 @@ function getComments($conn) {
     $sql = "SELECT * FROM comments";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        $usersId =$row['usersId'];
-        $sql2 = "SELECT * FROM users WHERE usersId='$usersId'";
+        $userUid =$row['usersId'];
+        $sql2 = "SELECT * FROM users WHERE userUid='$usersUid'";
         $result2 = $conn->query($sql2);
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='comment-section'><p>";

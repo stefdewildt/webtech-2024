@@ -94,7 +94,7 @@
                         <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
                         <input type='hidden' name='postId' value='".$row['postsID']."'>
                         <textarea name='message'></textarea><br>
-                        <button type='submit' name='commentSubmit'>Comment</button>
+                        <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
                         </form>";
                         echo "<hr>"; // Voeg een scheidingsteken toe tussen records
                     }

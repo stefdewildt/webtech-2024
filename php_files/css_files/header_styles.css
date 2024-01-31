@@ -62,7 +62,7 @@ header{
   box-sizing: border-box;
   overflow-x: hidden; 
 }
-.footer{
+footer{
   background-color: rgb(48, 94, 48);
   padding-top: 0.15em;
   margin-left: 0;

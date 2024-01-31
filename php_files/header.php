@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melodies connected</title>
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/header_styles.css">
+    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/~stefw/webtech-2024/php_files/css_files/cookies_styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
     <div id="cookie-consent">
@@ -25,9 +26,6 @@
         </div>
     </div>
     <style>
-        #cookie-consent {
-            display: none;
-        }
     </style>
     <script>
     // In je bestaande JavaScript-code

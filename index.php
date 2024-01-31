@@ -57,12 +57,40 @@
 
         <aside class="friends">
             <ul>
-                <h2>Friends</h2>
-                <li>Stef</li>
-                <li>Wietske</li>
-                <li>Jelle</li>
-                <li>Tim</li>
-                <li>Isa</li>
+            <?php
+        if (isset($_SESSION['usersId'])){
+            $huidige_gebruiker_id = $_SESSION['usersId'];
+            $query = "SELECT user_ID_2 FROM friends WHERE user_ID_1 = $huidige_gebruiker_id";
+            $result = $conn->query($query);
+            
+            // Array om vrienden-ID's op te slaan
+            $vrienden_ids = array();
+            
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $vrienden_ids[] = $row['user_ID_2'];
+                }
+            }
+            
+            // Als er vrienden zijn, haal hun gebruikersnaam, naam en profielfoto op
+            if (!empty($vrienden_ids)) {
+                $vrienden_ids_string = implode(",", $vrienden_ids);
+                $query_vrienden_info = "SELECT usersName, usersUid FROM users WHERE usersId IN ($vrienden_ids_string)";
+                $result_vrienden_info = $conn->query($query_vrienden_info);
+            
+            if (!empty($vrienden_ids) && $result_vrienden_info->num_rows > 0) {
+                    while ($row_vriend = $result_vrienden_info->fetch_assoc()) {
+                        echo "<div>";
+                        echo "<p>Gebruikersnaam: " . $row_vriend['usersUid'] . "</p>";
+                        echo "<p>Naam: " . $row_vriend['usersName'] . "</p>";
+                        echo "</div>";
+                        }
+                    } else {
+                    echo "Je hebt nog geen vrienden.";
+                }  
+            }
+        }
+        ?>
             </ul>
         </aside>
 

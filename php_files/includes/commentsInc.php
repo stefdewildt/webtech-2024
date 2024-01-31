@@ -18,7 +18,7 @@ function setComment($conn){
 function getComments($conn, $postId) {
 
     // go into database , get all the comments, run the query and show them (result)
-    $sql = "SELECT * FROM comments WHERE postId='$postId'";
+    $sql = "SELECT * FROM comments WHERE postId='$postId' ORDER BY date ASC";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         $usersId = $row['usersId'];

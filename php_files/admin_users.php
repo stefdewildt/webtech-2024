@@ -11,9 +11,9 @@
                 $sql = "SELECT * FROM users ORDER BY usersId DESC";
                 $result = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo 'User Uid:  ' . $row['usersUid'];
-                    echo 'Users Name:  ' . $row['usersName'];
-                    echo 'Users Email: ' . $row['usersEmail'];
+                    echo 'User Uid:  ' . $row['usersUid'] . '<br>';
+                    echo 'Users Name:  ' . $row['usersName'] . '<br>';
+                    echo 'Users Email: ' . $row['usersEmail'] . '<br><br>';
 
 
 

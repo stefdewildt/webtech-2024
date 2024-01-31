@@ -6,9 +6,10 @@ function setComment($conn){
         $usersId = $_POST['usersId'];
         $date = $_POST['date'];
         $message = $_POST['message'];
+        $username = $_POST['username'];
 
         // inserting into database
-        $sql = "INSERT INTO comments (usersId, date, message) VALUES ('$usersId', '$date', '$message')";
+        $sql = "INSERT INTO comments (usersId, date, message, username) VALUES ('$usersId', '$date', '$message', 'username')";
         $result = $conn->query($sql);
     }
 }

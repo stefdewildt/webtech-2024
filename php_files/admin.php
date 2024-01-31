@@ -8,6 +8,8 @@
 <section class="posts">
     <h1>Admin: Hot-takes</h1>
                 <?php
+                $sql = "SELECT * FROM music_posts ORDER BY postsTIMESTAMP DESC";
+                $result = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_assoc($result)) {
                     $user_id = $row['user_id'];
                     $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";

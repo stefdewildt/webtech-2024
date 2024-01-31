@@ -14,6 +14,7 @@
             <nav>
                 <a href="/admin_hottakes.php">Hot-Takes</a>
                 <a href="/admin_users.php">Users</a>
+                <a href="/admin_posts.php">Users</a>                
             </nav> 
         </div>        
     </div>

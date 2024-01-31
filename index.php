@@ -1,7 +1,7 @@
 <?php
     include_once "php_files/header.php";
     require_once '/var/www/dbhInc.php';
-    include 'includes/commentsInc.php';
+    include 'php_files/includes/commentsInc.php';
 
 ?>
 <head>

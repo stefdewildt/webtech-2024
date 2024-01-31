@@ -13,25 +13,37 @@ function setComment($conn){
     }
 }
 
+
+$sql = "SELECT usersUid FROM users WHERE usersId = $usersId";
+$result_user = mysqli_query($conn, $sql);
+$user_row = mysqli_fetch_assoc($result_user);
+$username = $user_row['usersUid'];
+
 // $user_id = $_SESSION['usersId'];
 // getting comments from database to be able to show on website 
 function getComments($conn) {
     $sql = "SELECT * FROM comments";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        echo "<div class='comment-section'><p>";
+        $usersId =$row['usersId'];
+        $sql2 = "SELECT * FROM user WHERE usersId='$usersId'";
+        $result2 = $conn->query($sql2);
+        if ($row2 = $result2->fetch_assoc()) {
+            echo "<div class='comment-section'><p>";
             echo $row['usersId']. "<br><br>";
             echo $row['date']. "<br><br>";
 
             // checking for new line tags and make it into line breaks
             echo nl2br($row['message']);
 
-        // able to delete a comment
-        echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>
-                <input type='hidden' name='cid' value='".$row['cid']."'>
-                <button type='submit' name='commentDelete'>Delete</button>
-            </form>
-        </div>";
+            // able to delete a comment
+            echo "</p>
+            <form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>
+                    <input type='hidden' name='cid' value='".$row['cid']."'>
+                    <button type='submit' name='commentDelete'>Delete</button>
+                </form>
+            </div>";
+        }
     }
 }
 

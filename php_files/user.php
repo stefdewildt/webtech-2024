@@ -42,6 +42,8 @@
     <link rel="stylesheet" href="css_files/user_page.css">
 </head>
 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 
     <div class="pd-row">
         <img src="img/profile.png">
@@ -65,11 +67,7 @@
 
         <div>
         <?php if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) : ?>
-            <?php if ($following) : ?>
-                <button onclick="unfollowUser(<?php echo $row['usersId']; ?>)">Unfollow</button> 
-            <?php else : ?>
-                <button onclick ="followUser(<?php echo $row['usersId']; ?>)">Follow</button>
-            <?php endif; ?>
+                <button onclick="toggleFollowUser(<?php echo $row['usersId']; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
         <?php endif; ?>
             </div>     
     </div>
@@ -97,15 +95,31 @@
     </div>
 
     <script>
+
+    function toggleFollowUser(userId, buttonElement) {
+    // Controleer de huidige status van de gebruiker
+    var isFollowing = buttonElement.innerText.toLowerCase() === 'following';
+
+    // Voer de juiste actie uit op basis van de status
+    if (isFollowing) {
+        // Gebruiker is al aan het volgen, voer de unfollow-functie uit
+        unfollowUser(userId, buttonElement);
+    } else {
+        // Gebruiker volgt nog niet, voer de follow-functie uit
+        followUser(userId, buttonElement);
+    }
+}
+
     // JavaScript functie om een gebruiker te volgen
-    function followUser(userId) {
+    function followUser(userId, buttonElement) {
         $.ajax({
             type: 'POST',
             url: 'follow_user.php', // Het pad naar je PHP-script voor volgen
             data: { userId: userId },
             success: function(response) {
-                // Verwerk de respons indien nodig
-                alert(response);
+                if (response === 'success') {
+                    buttonElement.innerText = 'Following';
+                }
             },
             error: function(error) {
                 // Handel fouten af
@@ -117,14 +131,15 @@
     }
 
     // JavaScript functie om een gebruiker te ontvolgen
-    function unfollowUser(userId) {
+    function unfollowUser(userId, buttonElement) {
         $.ajax({
             type: 'POST',
             url: 'unfollow_user.php', // Het pad naar je PHP-script voor ontvolgen
             data: { userId: userId },
             success: function(response) {
-                // Verwerk de respons indien nodig
-                alert(response);
+                if (response === 'success') {
+                    buttonElement.innerText = 'Follow';
+                }
             },
             error: function(error) {
                 // Handel fouten af

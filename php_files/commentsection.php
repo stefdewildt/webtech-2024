@@ -4,15 +4,6 @@
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Comments</title>
-<!-- <link rel=stylesheet type="text/css" href="style.css"> -->
-</head>
-
-<body>
 
 <!-- space for the post -->
 <!-- start comment section -->

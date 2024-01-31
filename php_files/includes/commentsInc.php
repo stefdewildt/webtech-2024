@@ -3,12 +3,12 @@
 // adding comments to database
 function setComment($conn){
     if (isset($_POST['commentSubmit'])) {
-        $uid = $_POST['uid'];
+        $usersId = $_POST['usersId'];
         $date = $_POST['date'];
         $message = $_POST['message'];
 
         // inserting into database
-        $sql = "INSERT INTO comments (uid, date, message) VALUES ('$uid', '$date', '$message')";
+        $sql = "INSERT INTO comments (usersId, date, message) VALUES ('$usersId', '$date', '$message')";
         $result = $conn->query($sql);
     }
 }
@@ -19,7 +19,7 @@ function getComments($conn) {
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         echo "<div class='comment-section'><p>";
-            echo $row['uid']. "<br><br>";
+            echo $row['usersId']. "<br><br>";
             echo $row['date']. "<br><br>";
 
             // checking for new line tags and make it into line breaks
@@ -49,10 +49,10 @@ function getLogin($conn) {
     if (isset($_POST['loginSubmit'])){
 
         // initializing variables
-        $uid = $_POST['uid'];
+        $usersId = $_POST['usersId'];
         $pwd = $_POST['pwd'];
 
-        $sql = "SELECT * FROM user WHERE uid='$uid' AND pwd='$pwd'";
+        $sql = "SELECT * FROM user WHERE usersId='$usersId' AND pwd='$pwd'";
         $result = $conn->query($sql);
 
         // counts the amount of comments

@@ -3,7 +3,7 @@
     require_once '/var/www/dbhInc.php';
 
 if (isset($_POST['remove_post'])) {
-    $post_id = $_POST['post_id'];
+    $post_id = $_POST['user_id'];
 
     $sql = "DELETE FROM music_posts WHERE postsID = $post_id";
 
@@ -17,6 +17,6 @@ if (isset($_POST['remove_post'])) {
     // ...
 
     // Redirect back to the page after removal
-    header("Location: ../admin.php");
+    header("Location: ../admin_users.php");
     exit();
 }

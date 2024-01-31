@@ -11,15 +11,15 @@
                 $sql = "SELECT * FROM users ORDER BY usersId DESC";
                 $result = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo $row['usersUid'];
-                    echo $row['usersName'];
-                    echo $row['usersEmail'];
+                    echo 'User Uid:  ' . $row['usersUid'];
+                    echo 'Users Name:  ' . $row['usersName'];
+                    echo 'Users Email: ' . $row['usersEmail'];
 
 
 
                     // Output  username boven de embed
                     echo '<form method="Post" action="includes/removeuserInc.php">';
-                    echo '<input type="hidden" name="user_id" value="' . $row['usersID'] . '">';
+                    echo '<input type="hidden" name="user_id" value="' . $row['usersId'] . '">';
                     echo '<button type="submit" name="remove_user">Remove User</button>';
                     echo '</form>';
 

@@ -53,6 +53,12 @@
         </div>
 
         <aside class="friends">
+        <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
+                <input type="text" name ="url" placeholder ="Paste Spotify URL here..."><br>
+                <input type="text" name ="post" placeholder = "Hot Take..."><br><br>
+                <button type="Submit" name="submit">Submit Hot Take</button>
+            </form>
+
             <ul>
             <?php
         if (isset($_SESSION['usersId'])){

@@ -1,8 +1,8 @@
 <?php
     include_once "php_files/header.php";
     require_once '/var/www/dbhInc.php';
-    $sql = "SELECT * FROM music_posts ORDER BY postsTIMESTAMP DESC";
-    $result = mysqli_query($conn, $sql);
+    include 'php_files/includes/commentsInc.php';
+
 ?>
 <head>
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/index_styles.css">
@@ -12,16 +12,21 @@
 
 
         <div class="scroll-part">
-            <h2>Make a post:</h2>
-            <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
-                <input type="text" name ="url" placeholder ="Paste Spotiy URL here"><br>
-                <input type="text" name ="post" placeholder = "Start a conversation"><br><br>
-                <button type="Submit" name="submit">Submit Hot Take</button>
-            </form>
-
+            <?php if (isset($_SESSION["usersId"])) { ?>
+                <h2>Post Your Hot Take!</h2>
+                <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
+                    <input type="text" name ="url" placeholder ="Paste or drag URL here..."><br>
+                    <input type="text" name ="post" maxlength="150" placeholder = "Hot Take..."><br><br>
+                    <input type="hidden" name="table" value="music_posts">
+                    <button type="Submit" name="submit">Submit Hot Take</button>
+                </form>
+            <?php }?>
             <h2>Hot Takes</h2>
             <section class="posts">
                 <?php
+                $sql = "SELECT * FROM music_posts ORDER BY postsTIMESTAMP DESC";
+                $result = mysqli_query($conn, $sql);
+                
                 while ($row = mysqli_fetch_assoc($result)) {
                     $user_id = $row['user_id'];
                     $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
@@ -30,7 +35,7 @@
                     $username = $user_row['usersUid'];
 
                     // Output  username boven de embed
-                    echo $username . "<br>";
+                    echo '@'.$username . "<br>";
             
 
                     if (strpos($row['postsURL'], 'embed') !== true) {
@@ -53,6 +58,55 @@
         </div>
 
         <aside class="friends">
+            
+                
+                <!-- Big Posts -->
+                
+            <?php if (isset($_SESSION["usersId"])) { ?>
+                <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
+                        <input type="text" name ="url" placeholder ="Write a title here..."><br>
+                        <input type="text" name ="post" placeholder = "Big post..."><br><br>
+                        <input type="hidden" name="table" value="big_posts">
+                        <button type="Submit" name="submit">Submit Hot Take</button>
+                </form>
+
+                <section class="posts">
+                    <?php
+                    $sql = "SELECT * FROM big_posts ORDER BY postsTIMESTAMP DESC";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $user_id = $row['user_id'];
+                        $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
+                        $result_user = mysqli_query($conn, $sql);
+                        $user_row = mysqli_fetch_assoc($result_user);
+                        $username = $user_row['usersUid'];
+
+                        // Output  username boven de embed
+                        echo '@'.$username . "<br>";
+                        echo '<h3>'.$row['postsURL'] . "</h3><br>";
+                        // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
+                        
+                        // Output de post onder de embed
+                        echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
+                        // Voeg andere velden toe zoals nodig
+                        echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
+                        <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
+                        <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+                        <input type='hidden' name='postId' value='".$row['postsID']."'>
+                        <textarea name='message'></textarea><br>
+                        <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
+                        </form>";
+                        echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                        getComments($conn, $row['postsID']);
+                    }
+                    ?>
+                </section>
+                
+            <?php } else {?>
+            <h2>Log in to see posts</h2>
+
+
+            <?php }?>
             <ul>
             <?php
         if (isset($_SESSION['usersId'])){

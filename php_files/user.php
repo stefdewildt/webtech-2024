@@ -16,20 +16,14 @@
             $row = $result->fetch_assoc();
             $username = $row['usersUid'];
             $name = $row['usersName'];
-            $email = 'hidden';
+            $email = null;
         
-            $userid = $row['usersId'];
-             //check of de gebruikers elkaar al volgen 
-            $query_follow_check = " SELECT * FROM friends WHERE user_ID_1 = '{$_SESSION['usersId']}' AND user_ID_2 = '$userid' ";
-            $result_follow_check = $conn->query($query_follow_check);
-           
-            $following = $result_follow_check->num_rows > 0;
-        
-        // Display the user details 
+            // Display the user details
+            
         } else {
-            $username = '';
-            $email = '';
-            $name = 'User not found';
+            $username = null;
+            $email = null;
+            $name = null;
         }
     } else {
     $username = $_SESSION['useruid'];
@@ -49,16 +43,16 @@
         <img src="img/profile.png">
         <div>
             <?php if ( isset($email) ) { ?>
-                    <h3>Name: <?php echo $name?></h3>
-                    <h3>Username: <?php echo $username?></h3>
-                    <h3>Email:<?php echo $email?></h3>
-                <?php } elseif (isset($username)) {?>
-                    <h3>Name: <?php echo $name?></h3>
-                    <h3>Username: <?php echo $username?></h3>
-                <?php } else { ?>
-                    <h3>User not found</h3>
-                <?php } ?>
 
+                <h3>Name: <?php echo $name?></h3>
+                <h3>Username: <?php echo $username?></h3>
+                <h3>Email:<?php echo $email?></h3>
+            <?php } elseif (isset($username)) {?>
+                <h3>Name: <?php echo $name?></h3>
+                <h3>Username: <?php echo $username?></h3>
+            <?php } else { ?>
+                <h3>User not found</h3>
+            <?php } ?>
 
             <nav>
                 <a href="/html/friends.html">120 friends</a>

@@ -131,16 +131,16 @@ function loginUser($conn, $username, $pwd){
 
 }
 
-function createPost($conn, $url, $post, $user_id, $username){
-    $sql = "INSERT INTO music_posts (postsURL, postsPOST, user_id, username) VALUES (?, ?, ?, ?);";
+function createPost($conn, $url, $post, $user_id, $table){
+    $sql = "INSERT INTO $table (postsURL, postsPOST, user_id) VALUES (?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../user.php?error=stmtfailed");
+        header("location: ../../index.php?error=stmtfailed");
         exit();
     }
-    mysqli_stmt_bind_param($stmt, "ssis", $url, $post, $user_id, $username);
+    mysqli_stmt_bind_param($stmt, "ssi", $url, $post, $user_id);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../user.php?error=none");
+    header("location: ../../index.php?error=none");
     exit();  
 }

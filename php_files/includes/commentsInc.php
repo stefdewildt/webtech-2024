@@ -6,15 +6,16 @@ function setComment($conn){
         $usersId = $_POST['usersId'];
         $date = $_POST['date'];
         $message = $_POST['message'];
+        $postId = $_POST['postId'];
 
         // inserting into database
-        $sql = "INSERT INTO comments (usersId, date, message) VALUES ('$usersId', '$date', '$message')";
+        $sql = "INSERT INTO comments (usersId, date, message, postId) VALUES ('$usersId', '$date', '$message', '$postId')";
         $result = $conn->query($sql);
     }
 }
 
 // getting comments from database to be able to show on website 
-function getComments($conn) {
+function getComments($conn, $postid) {
 
     // go into database , get all the comments, run the query and show them (result)
     $sql = "SELECT * FROM comments";
@@ -31,7 +32,7 @@ function getComments($conn) {
             // checking for new line tags and make it into line breaks
             echo nl2br($row['message']);
 
-            // able to delete a comment
+            // able to delete your own comments
             echo "</p>";
             if (isset($_SESSION['usersId'])) {
 
@@ -41,7 +42,15 @@ function getComments($conn) {
                     <button type='submit' name='commentDelete'>Delete</button>
                 </form>";
                 }
+            } else {
+                echo "<form class= 'reply-form' method='POST' action='".deleteComments($conn)."'>                        <input type='hidden' name='cid' value='".$row['cid']."'>
+                    <button type='submit' name='commentDelete'>Reply</button>
+                </form>";
+
             }
+        } else {
+            echo "<p class= 'comment-message'>You need to be logged in to reply! </p>"
+        }
             echo "</div>";
         }
     } 

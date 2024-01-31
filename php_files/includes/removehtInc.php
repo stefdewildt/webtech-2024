@@ -1,5 +1,5 @@
 <?php
-    include_once "header.php";
+    include_once "../header.php";
     require_once '/var/www/dbhInc.php';
 
 if (isset($_POST['remove_post'])) {

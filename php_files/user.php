@@ -26,11 +26,13 @@
             $email = null;
             $name = null;
         }
-    } else {
+    } elseif (isset($_SESSION['useruid'])) {
     $username = $_SESSION['useruid'];
     $email = $_SESSION['useremail'];
     $name = $_SESSION['username'];
     $image = $_SESSION['image'];
+    } else {
+        header('location: login.php');
     }
 ?>
 
@@ -47,9 +49,8 @@
             <label for="userImg">Upload Profile Picture:</label>
             <input type="file" name="userImg" id="userImg" accept="image/*">
             <input type="submit" value="Upload">';
-        } else {
+        } elseif ($image != null) {
             echo '<img src="'.$image.'">';
-
         }
 
 

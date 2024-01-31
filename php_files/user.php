@@ -17,6 +17,7 @@
             $username = $row['usersUid'];
             $name = $row['usersName'];
             $email = null;
+            $image = $row['usersImg'];
         
             // Display the user details
             
@@ -29,6 +30,7 @@
     $username = $_SESSION['useruid'];
     $email = $_SESSION['useremail'];
     $name = $_SESSION['username'];
+    $image = $_SESSION['image'];
     }
 ?>
 
@@ -38,7 +40,27 @@
 
 
     <div class="pd-row">
+        <?php
+        if ( $image == null) {
+            echo '<img src="img/profile.png">';
+            echo '<form action="/includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
+            <label for="userImg">Upload Profile Picture:</label>
+            <input type="file" name="userImg" id="userImg" accept="image/*">
+            <input type="submit" value="Upload">';
+        } else {
+            echo '<img src="'.$image.'">';
+
+        }
+
+
+        ?>
         <img src="img/profile.png">
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="profile_picture">Upload Profile Picture:</label>
+        <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
+        <input type="submit" value="Upload">
+</form>
+
         <div>
             <?php if ( isset($email) ) { ?>
                 <h3>Name: <?php echo $name?></h3>

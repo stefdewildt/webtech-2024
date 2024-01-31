@@ -5,7 +5,7 @@
 
     if($_SESSION['admin'] = false){
         //header("Location: index.php");
-        echo 'not admin'
+        echo 'not admin';
     }
 
 ?>

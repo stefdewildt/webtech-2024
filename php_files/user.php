@@ -54,11 +54,11 @@
 
 
         ?>
-        <img src="img/profile.png">
+        <!-- <img src="img/profile.png">
         <form action="upload.php" method="post" enctype="multipart/form-data">
         <label for="profile_picture">Upload Profile Picture:</label>
         <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
-        <input type="submit" value="Upload">
+        <input type="submit" value="Upload"> -->
 </form>
 
         <div>

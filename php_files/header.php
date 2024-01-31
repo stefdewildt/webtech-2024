@@ -10,22 +10,6 @@
     <title>Melodies connected</title>
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/header_styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        // JavaScript code voor cookie consent
-        $(document).ready(function() {
-            // Controleer of de 'cookieConsent' cookie bestaat
-            if (document.cookie.indexOf('cookieConsent=1') === -1) {
-                // Als de cookie niet bestaat, toon het cookie consent
-                $("#cookie-consent").show();
-            }
-
-            // Wanneer de gebruiker op 'Agree' klikt, stel de cookie in en verberg het consent
-            $("#cookie-consent-agree").on("click", function() {
-                document.cookie = "cookieConsent=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-                $("#cookie-consent").hide();
-            });
-        });
-    </script>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
     <div id="cookie-consent">
         <div id="cookie-consent-content">
@@ -40,6 +24,27 @@
             <button id="cookie-consent-agree">Agree</button>
         </div>
     </div>
+    <style>
+        #cookie-consent {
+            display: none;
+        }
+    </style>
+    <script>
+    // In je bestaande JavaScript-code
+    $(document).ready(function() {
+        // Controleer of de 'cookieConsent' cookie bestaat
+        if (document.cookie.indexOf('cookieConsent=1') === -1) {
+            // Als de cookie niet bestaat, toon het cookie consent
+            $("#cookie-consent").show();
+        }
+
+        // Wanneer de gebruiker op 'Agree' klikt, stel de cookie in en verberg het consent
+        $("#cookie-consent-agree").on("click", function() {
+            document.cookie = "cookieConsent=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+            $("#cookie-consent").hide();
+        });
+    });
+    </script>
 </head>
 
 <body>

@@ -9,20 +9,17 @@
 </head>
     
     <section class="scroll-section">
-        <aside class="random-shi">
-            <ul>
-                <h3></h3>
-                <li>HALLLOOOO</li>
-                <li>is</li>
-                <li>just</li>
-                <li>some</li>
-                <li>random</li>
-                <li>bs</li>
-            </ul>
-        </aside>
+
 
         <div class="scroll-part">
-            <h2>Friends Listening</h2>
+            <h2>Make a post:</h2>
+            <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
+                <input type="text" name ="url" placeholder ="Paste Spotiy URL here"><br>
+                <input type="text" name ="post" placeholder = "Start a conversation"><br><br>
+                <button type="Submit" name="submit">Submit Hot Take</button>
+            </form>
+
+            <h2>Hot Takes</h2>
             <section class="posts">
                 <?php
                 while ($row = mysqli_fetch_assoc($result)) {

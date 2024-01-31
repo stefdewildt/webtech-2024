@@ -82,25 +82,16 @@
                         $username = $user_row['usersUid'];
 
                         // Output  username boven de embed
+                        echo "<div class=comment></div>";
                         echo '@'.$username . "<br>";
                         echo '<h3>'.$row['postsURL'] . "</h3><br>";
                         // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
                         
                         // Output de post onder de embed
                         echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        echo "</div";
+                        
+                        getComments($conn, $row['postsID']);
                         
                         // Voeg andere velden toe zoals nodig
                         echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
@@ -110,14 +101,14 @@
                         <textarea name='message'></textarea><br>
                         <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
                         </form>";
+                        // getComments($conn, $row['postsID']);
                         echo "<hr>"; // Voeg een scheidingsteken toe tussen records
-                        getComments($conn, $row['postsID']);
                     }
                     ?>
                 </section>
                 
             <?php } else {?>
-            <h2>Log in to see posts</h2>
+            <h3><a href=/php_files/login.php>Log in here to see your friends' posts!</a></h3>
 
 
             <?php }?>

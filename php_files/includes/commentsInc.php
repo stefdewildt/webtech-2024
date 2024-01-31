@@ -6,7 +6,6 @@ function setComment($conn){
         $usersId = $_POST['usersId'];
         $date = $_POST['date'];
         $message = $_POST['message'];
-        $usersUid = $_SESSION['usersUid'];
 
         // inserting into database
         $sql = "INSERT INTO comments (usersId, date, message) VALUES ('$usersId', '$date', '$message')";

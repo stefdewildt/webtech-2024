@@ -1,6 +1,7 @@
 <?php
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
+
     if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) {
         $knownUsersUid = $_GET['id'];
         
@@ -10,15 +11,21 @@
         // Execute the SQL query
         $sql = "SELECT * FROM users WHERE usersUid = '$escapedUsersUid'";
         $result = $conn->query($sql);
-        
+
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $username = $row['usersUid'];
             $name = $row['usersName'];
             $email = 'hidden';
         
-            // Display the user details
-            
+            $userid = $row['usersId'];
+             //check of de gebruikers elkaar al volgen 
+            $query_follow_check = " SELECT * FROM friends WHERE user_ID_1 = '{$_SESSION['usersId']}' AND user_ID_2 = '$userid' ";
+            $result_follow_check = $conn->query($query_follow_check);
+           
+            $following = $result_follow_check->num_rows > 0;
+        
+        // Display the user details 
         } else {
             $username = '';
             $email = '';
@@ -42,10 +49,22 @@
             <h3>Name:<?php echo $name?></h3>
             <h3>Username:<?php echo $username?></h3>
             <h3>Email:<?php echo $email?></h3>
+
+
             <nav>
                 <a href="/html/friends.html">120 friends</a>
             </nav> 
-        </div>        
+        </div>
+
+        <div>
+        <?php if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) : ?>
+            <?php if ($following) : ?>
+                <button onclick="unfollowUser(<?php echo $row['usersId']; ?>)">Unfollow</button> 
+            <?php else : ?>
+                <button onclick ="followUser(<?php echo $row['usersId']; ?>)">Follow</button>
+            <?php endif; ?>
+        <?php endif; ?>
+            </div>     
     </div>
 
     <div class="profile-posts">
@@ -69,6 +88,47 @@
             </li>
         </ul>
     </div>
+
+    <script>
+    // JavaScript functie om een gebruiker te volgen
+    function followUser(userId) {
+        $.ajax({
+            type: 'POST',
+            url: 'follow_user.php', // Het pad naar je PHP-script voor volgen
+            data: { userId: userId },
+            success: function(response) {
+                // Verwerk de respons indien nodig
+                alert(response);
+            },
+            error: function(error) {
+                // Handel fouten af
+                console.error('Fout bij het volgen van de gebruiker:', error);
+            }
+        });
+        
+        alert("Nu volg je deze gebruiker!");
+    }
+
+    // JavaScript functie om een gebruiker te ontvolgen
+    function unfollowUser(userId) {
+        $.ajax({
+            type: 'POST',
+            url: 'unfollow_user.php', // Het pad naar je PHP-script voor ontvolgen
+            data: { userId: userId },
+            success: function(response) {
+                // Verwerk de respons indien nodig
+                alert(response);
+            },
+            error: function(error) {
+                // Handel fouten af
+                console.error('Fout bij het ontvolgen van de gebruiker:', error);
+            }
+        });
+        
+        alert("Nu volg je deze gebruiker!");
+    }
+       
+</script>
 
 <?php
     include_once("footer.php");

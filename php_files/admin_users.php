@@ -4,9 +4,8 @@
     require_once '/var/www/dbhInc.php';
 
     if($_SESSION['admin'] == false){
-        header("Location: ../index.php");
-        echo 'not admin';
-
+        //header("Location: ../index.php");
+        echo $_SESSION['admin'];
     }
 
 ?>
@@ -20,7 +19,7 @@
                     echo 'User Uid:  ' . $row['usersUid'] . '<br>';
                     echo 'Users Name:  ' . $row['usersName'] . '<br>';
                     echo 'Users Email: ' . $row['usersEmail'] . '<br><br>';
-
+                    echo 'Users adminstatus' . $row['admin'];
 
 
                     // Output  username boven de embed

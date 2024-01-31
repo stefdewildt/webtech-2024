@@ -1,7 +1,7 @@
 <?php
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
-    // test
+    // test2
     if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) {
         $knownUsersUid = $_GET['id'];
         

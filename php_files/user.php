@@ -117,10 +117,8 @@
             url: 'follow_user.php', // Het pad naar je PHP-script voor volgen
             data: { userId: userId },
             success: function(response) {
-                if (response === 'success') {
                     buttonElement.innerText = 'Following';
-                    alert('test')
-                }
+                
             },
             error: function(error) {
                 // Handel fouten af
@@ -128,7 +126,7 @@
             }
         });
         
-        alert("Nu volg je deze gebruiker!");
+      //  alert("Nu volg je deze gebruiker!");
     }
 
     // JavaScript functie om een gebruiker te ontvolgen
@@ -139,7 +137,6 @@
             data: { userId: userId },
             success: function(response) {
                     buttonElement.innerText = 'Follow';
-                    alert('test')
 
             },
             error: function(error) {
@@ -148,7 +145,7 @@
             }
         });
         
-        alert("Nu ontvolg je deze gebruiker!");
+       // alert("Nu ontvolg je deze gebruiker!");
     }
        
 </script>

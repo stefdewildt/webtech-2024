@@ -92,7 +92,7 @@
                         echo"<form method='POST' action='".setComment($conn)."'>
                         <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
                         <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-                        <input type='hidden' name='postId' value='".$row['postsId']."'>
+                        <input type='hidden' name='postId' value='".$row['postsID']."'>
                         <textarea name='message'></textarea><br>
                         <button type='submit' name='commentSubmit'>Comment</button>
                         </form>";

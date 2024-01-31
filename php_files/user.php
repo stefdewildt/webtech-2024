@@ -2,7 +2,53 @@
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
 
-    if (isset($_GET['id']) && isset($_SESSION['useruid']) && $_GET['id'] != $_SESSION['useruid']) {
+    
+
+    // ingelogd met ID = USERUID
+    if (isset($_GET['id']) && isset($_SESSION['useruid']) && $_GET['id'] == $_SESSION['useruid']){
+        header('location: user.php');
+    }
+
+    // ID ingevoerd
+    elseif (isset($_GET['id'])) {
+        
+        // input sanitization
+        $escapedUsersUid = $conn->real_escape_string($_GET['id']);
+        
+        // Execute the SQL query
+        $sql = "SELECT * FROM users WHERE usersUid = '$escapedUsersUid'";
+        $result = $conn->query($sql);
+        
+        // GELDIG ID
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $username = $row['usersUid'];
+            $name = $row['usersName'];
+            $email = null;
+            $image = $row['usersImg'];  
+        } 
+        // ONGELDIG ID
+        else {
+            $username = null;
+            $email = null;
+            $name = null;
+            $image = null;
+        }
+    }    
+    // geen id ingevoerd maar wel ingelogd
+    elseif (isset($_SESSION['useruid'])){
+            $username = $_SESSION['useruid'];
+            $email = $_SESSION['useremail'];
+            $name = $_SESSION['username'];
+            $image = $_SESSION['image'];
+            }
+    else {// GEEN ID NIET INGELOGD
+            header('location: login.php');
+        
+
+    }
+
+    if (isset($_GET['id']) || (isset($_SESSION['useruid']) && $_GET['id'] != $_SESSION['useruid']) ){
         $knownUsersUid = $_GET['id'];
         
         // Use the mysqli real_escape_string function for basic input sanitization
@@ -22,7 +68,6 @@
             // Display the user details
             
         } else {
-            echo'<script>alert()</script>';
             $username = null;
             $email = null;
             $name = null;
@@ -32,8 +77,6 @@
     $email = $_SESSION['useremail'];
     $name = $_SESSION['username'];
     $image = $_SESSION['image'];
-    } else {
-        header('location: login.php');
     }
 ?>
 

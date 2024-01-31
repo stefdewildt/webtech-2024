@@ -59,7 +59,7 @@
                 <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
                         <input type="text" name ="url" placeholder ="Write a title here..."><br>
                         <input type="text" name ="post" placeholder = "Big post..."><br><br>
-                        <input type="hidden" name="table" value="big_post">
+                        <input type="hidden" name="table" value="big_posts">
                         <button type="Submit" name="submit">Submit Hot Take</button>
                     </form>
             <?php }?>

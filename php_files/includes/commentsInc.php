@@ -22,12 +22,12 @@ function getComments($conn) {
         // $userUid =$row['usersId'];
         // $sql2 = "SELECT * FROM users WHERE userUid='$usersUid'";
         // $result2 = $conn->query($sql2);
-        $user_id = $row2['user_id'];
+        $user_id = $row['user_id'];
         $sql2 = "SELECT usersUid FROM users WHERE usersId = $user_id";
         $result_user = mysqli_query($conn, $sql2);
         $user_row = mysqli_fetch_assoc($result_user);
         $username = $user_row['usersUid'];
-        if ($row2 = $result2->fetch_assoc()) {
+        if ($row = $result2->fetch_assoc()) {
             echo "<div class='comment-section'><p>";
             echo $username . "<br>";
             echo $row['date']. "<br><br>";

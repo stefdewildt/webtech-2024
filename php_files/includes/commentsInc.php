@@ -22,8 +22,8 @@ function getComments($conn) {
         // $userUid =$row['usersId'];
         // $sql2 = "SELECT * FROM users WHERE userUid='$usersUid'";
         // $result2 = $conn->query($sql2);
-        $user_id = $row['user_id'];
-        $sql2 = "SELECT usersUid FROM users WHERE usersId = $user_id";
+        $usersId = $row['user_id'];
+        $sql2 = "SELECT usersUid FROM users WHERE usersId = $usersId";
         $result_user = mysqli_query($conn, $sql2);
         $user_row = mysqli_fetch_assoc($result_user);
         $username = $user_row['usersUid'];

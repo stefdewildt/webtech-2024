@@ -40,7 +40,9 @@
         $username = $_SESSION['useruid'];
         $email = $_SESSION['useremail'];
         $name = $_SESSION['username'];
-        //$image = $_SESSION['image'];
+
+        $sql = "SELECT image FROM users WHERE usersUid = '$username'";
+        $image = $conn->query($sql);
     }
     // GEEN ID NIET INGELOGD
     else {

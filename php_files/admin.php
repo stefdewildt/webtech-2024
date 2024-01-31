@@ -4,7 +4,7 @@
 ?>
 
 <head>
-    <link rel="stylesheet" href="css_files/user_page.css">
+    <link rel="stylesheet" href="css_files/admin.css">
 </head>
 
 

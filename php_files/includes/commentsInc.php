@@ -20,7 +20,6 @@ function getComments($conn) {
     $sql = "SELECT * FROM comments";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        // $userUid =$row['usersId'];
         $usersId = $row['usersId'];
         $sql2 = "SELECT usersUid FROM users WHERE usersId = $usersId";
         $result2 = $conn->query($sql2);
@@ -36,7 +35,7 @@ function getComments($conn) {
             echo "</p>";
             if (isset($_SESSION['usersId'])) {
                 // current user comparing to user who made the comment
-                if ($_SESSION['usersId'] == $row2['usersId']){
+                if (($_SESSION['usersId']) == ($row2['usersId'])){
                     echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>
                     <input type='hidden' name='cid' value='".$row['cid']."'>
                     <button type='submit' name='commentDelete'>Delete</button>

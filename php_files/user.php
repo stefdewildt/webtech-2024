@@ -124,7 +124,8 @@
         </div>
 
         <div>
-        <?php if (isset($_GET['id']) && isset($_SESSION['useruid'])) : ?>
+            <!-- If id is valid and user is logged in -->
+        <?php if (isset($_GET['id']) && isset($username) && isset($_SESSION['useruid'])) : ?>
             <?php if ($following) : ?>
                 <button onclick="unfollowUser(<?php echo $row['usersId']; ?>)">Unfollow</button> 
             <?php else : ?>

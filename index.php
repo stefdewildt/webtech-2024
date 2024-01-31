@@ -12,14 +12,15 @@
 
 
         <div class="scroll-part">
-            <h2>Post Hot Take</h2>
-            <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
-                <input type="text" name ="url" placeholder ="Paste Spotify URL here..."><br>
-                <input type="text" name ="post" placeholder = "Hot Take..."><br><br>
-                <input type="hidden" name="table" value="hot_take">
-                <button type="Submit" name="submit">Submit Hot Take</button>
-            </form>
-
+            <?php if (isset($_SESSION["usersId"])) { ?>
+                <h2>Post Hot Take</h2>
+                <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
+                    <input type="text" name ="url" placeholder ="Paste Spotify URL here..."><br>
+                    <input type="text" name ="post" placeholder = "Hot Take..."><br><br>
+                    <input type="hidden" name="table" value="hot_take">
+                    <button type="Submit" name="submit">Submit Hot Take</button>
+                </form>
+            <?php }?>
             <h2>Hot Takes</h2>
             <section class="posts">
                 <?php
@@ -54,13 +55,14 @@
         </div>
 
         <aside class="friends">
-        <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
-                <input type="text" name ="url" placeholder ="Paste Spotify URL here..."><br>
-                <input type="text" name ="post" placeholder = "Hot Take..."><br><br>
-                <input type="hidden" name="table" value="big_post">
-                <button type="Submit" name="submit">Submit Hot Take</button>
-            </form>
-
+            <?php if (isset($_SESSION["usersId"])) { ?>
+                <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
+                        <input type="text" name ="url" placeholder ="Paste Spotify URL here..."><br>
+                        <input type="text" name ="post" placeholder = "Hot Take..."><br><br>
+                        <input type="hidden" name="table" value="big_post">
+                        <button type="Submit" name="submit">Submit Hot Take</button>
+                    </form>
+            <?php }?>
             <ul>
             <?php
         if (isset($_SESSION['usersId'])){

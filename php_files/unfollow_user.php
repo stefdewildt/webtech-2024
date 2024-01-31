@@ -1,6 +1,5 @@
 <?php
-    include_once "header.php";
-    require_once '/var/www/dbhInc.php';
+ require_once '/var/www/dbhInc.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userId = $_POST['userId'];
@@ -12,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query_check_follow = "SELECT * FROM friends WHERE user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $userId";
     $result_check_follow = $conn->query($query_check_follow);
 
-    if ($result_check_follow->num_rows == 0) {
+    if ($result_check_follow->num_rows == 1) {
         // Voeg vrienden toe aan een vriendenlijst
         $query_follow_user = "INSERT INTO friends (user_ID_1, user_ID_2) VALUES ($huidige_gebruiker_id, $userId)";
         

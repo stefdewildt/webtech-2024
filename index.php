@@ -97,6 +97,7 @@
                         <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
                         </form>";
                         echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                        getComments($conn, $row['postsID']);
                     }
                     ?>
                 </section>

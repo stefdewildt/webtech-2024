@@ -23,11 +23,19 @@
         <br><br>";
     }
 
-    // Retrieve postId from URL parameter
-    $postId = $_GET['postId'];
+    // Check if the 'postId' key is set in the $_GET array
+    if (isset($_GET['postId'])) {
+        // Retrieve postId from URL parameter
+        $postId = $_GET['postId'];
 
-    // Call getComments with both arguments
-    getComments($conn, $postId);
+        // Fetch and display comments associated with the postId
+        getComments($conn, $postId);
+    } else {
+    // Handle the case where postId is not provided
+        echo "Post ID is not provided.";
+}
+?>
+
 
 ?>
 </body>

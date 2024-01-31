@@ -20,35 +20,38 @@ if (isset($_POST["submit"])){
     $user_id = $_SESSION['usersId'];
     $username = $_SESSION['useruid'];
 
+    if($table == 'music_posts') {
+        if (validSpotify($url) !== false) {
 
-    if (validSpotify($url) !== false) {
-
-    // if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
-    //     header("location: ../signup.php?error=emptyinput");
-    //     exit();
-    // }
-    // if (invalidUid($username) !== false) {
-    //     header("location: ../signup.php?error=invaliduid");
-    //     exit();
-    // }
-    // if (invalidEmail($email) !== false) {
-    //     header("location: ../signup.php?error=invalidemail");
-    //     exit();
-    // }
-    // if (pwdMatch($pwd, $pwdRepeat) !== false) {
-    //     header("location: ../signup.php?error=passwordsdontmatch");
-    //     exit();
-    // }
-    // if (uidExists($conn, $username, $email) !== false) {
-    //     header("location: ../signup.php?error=usernametaken");
-    //     exit();
-    // }
-    createPost($conn, $url, $post, $user_id, $username, $table);
-    } else {
-        header('location: ../../index.php');
+        // if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
+        //     header("location: ../signup.php?error=emptyinput");
+        //     exit();
+        // }
+        // if (invalidUid($username) !== false) {
+        //     header("location: ../signup.php?error=invaliduid");
+        //     exit();
+        // }
+        // if (invalidEmail($email) !== false) {
+        //     header("location: ../signup.php?error=invalidemail");
+        //     exit();
+        // }
+        // if (pwdMatch($pwd, $pwdRepeat) !== false) {
+        //     header("location: ../signup.php?error=passwordsdontmatch");
+        //     exit();
+        // }
+        // if (uidExists($conn, $username, $email) !== false) {
+        //     header("location: ../signup.php?error=usernametaken");
+        //     exit();
+        // }
+        createPost($conn, $url, $post, $user_id, $username, $table);
+        } else {
+            echo '<script>alert("invalid spotify url")</script>';
+            header('location: ../../index.php');
+        }
+    } else if($table == 'big_posts') {
+        createPost($conn, $url, $post, $user_id, $username, $table);
     }
-}
-else{
+} else {
     header("location: ../../index.php");
     exit();
 }

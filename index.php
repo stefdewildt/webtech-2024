@@ -17,7 +17,7 @@
                 <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
                     <input type="text" name ="url" placeholder ="Paste Spotify URL here..."><br>
                     <input type="text" name ="post" placeholder = "Hot Take..."><br><br>
-                    <input type="hidden" name="table" value="hot_take">
+                    <input type="hidden" name="table" value="music_posts">
                     <button type="Submit" name="submit">Submit Hot Take</button>
                 </form>
             <?php }?>

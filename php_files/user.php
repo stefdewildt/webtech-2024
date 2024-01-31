@@ -36,13 +36,19 @@
         }
     }    
     // geen id ingevoerd maar wel ingelogd
-    elseif (isset($_SESSION['useruid'])){
-        $username = $_SESSION['useruid'];
-        $email = $_SESSION['useremail'];
-        $name = $_SESSION['username'];
+    elseif (isset($_SESSION['userUid'])){
+        $escapedUsersUid = $_SESSION['userUid'];
+        $sql = "SELECT * FROM users WHERE usersUid = '$escapedUsersUid'";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $username = $row['usersUid'];
+            $name = $row['usersName'];
+            $email = $row['usersEmail'];
+            $image = $row['usersImg'];  
+        } 
 
-        $sql = "SELECT usersImg FROM users WHERE usersUid = '$username'";
-        $image = $conn->query($sql);
     }
     // GEEN ID NIET INGELOGD
     else {

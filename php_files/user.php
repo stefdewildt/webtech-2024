@@ -138,11 +138,9 @@
             url: 'unfollow_user.php', // Het pad naar je PHP-script voor ontvolgen
             data: { userId: userId },
             success: function(response) {
-                if (response === 'success') {
                     buttonElement.innerText = 'Follow';
                     alert('test')
 
-                }
             },
             error: function(error) {
                 // Handel fouten af
@@ -150,7 +148,7 @@
             }
         });
         
-        alert("Nu volg je deze gebruiker!");
+        alert("Nu ontvolg je deze gebruiker!");
     }
        
 </script>

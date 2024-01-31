@@ -125,6 +125,7 @@ function loginUser($conn, $username, $pwd){
         $_SESSION["username"] = $uidExists["usersName"];
         $_SESSION["useruid"] = $uidExists["usersUid"];
         $_SESSION["useremail"] = $uidExists["usersEmail"];
+        $_SESSION["image"] = $uidExists["usersImg"];
         header("location: https://webtech-bg2.webtech-uva.nl/index.php");
         exit();
     }

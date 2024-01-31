@@ -1,8 +1,6 @@
 <?php
     include_once "php_files/header.php";
     require_once '/var/www/dbhInc.php';
-    $sql = "SELECT * FROM music_posts ORDER BY postsTIMESTAMP DESC";
-    $result = mysqli_query($conn, $sql);
 ?>
 <head>
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/index_styles.css">
@@ -24,6 +22,9 @@
             <h2>Hot Takes</h2>
             <section class="posts">
                 <?php
+                $sql = "SELECT * FROM music_posts ORDER BY postsTIMESTAMP DESC";
+                $result = mysqli_query($conn, $sql);
+                
                 while ($row = mysqli_fetch_assoc($result)) {
                     $user_id = $row['user_id'];
                     $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
@@ -55,13 +56,46 @@
         </div>
 
         <aside class="friends">
+            
+                
+                <!-- Big Posts -->
+                
             <?php if (isset($_SESSION["usersId"])) { ?>
                 <form action="php_files/includes/uploadInc.php" class ="discussion-input" method="post">
                         <input type="text" name ="url" placeholder ="Write a title here..."><br>
                         <input type="text" name ="post" placeholder = "Big post..."><br><br>
                         <input type="hidden" name="table" value="big_posts">
                         <button type="Submit" name="submit">Submit Hot Take</button>
-                    </form>
+                </form>
+
+                <section class="posts">
+                    <?php
+                    $sql2 = "SELECT * FROM big_posts ORDER BY postsTIMESTAMP DESC";
+                    $result2 = mysqli_query($conn, $sql2);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $user_id = $row['user_id'];
+                        $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
+                        $result_user = mysqli_query($conn, $sql);
+                        $user_row = mysqli_fetch_assoc($result_user);
+                        $username = $user_row['usersUid'];
+
+                        // Output  username boven de embed
+                        echo $username . "<br>";
+                        echo '<h3>'.$row['postsURL'] . "</h3><br>";
+                        // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
+                        
+                        // Output de post onder de embed
+                        echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
+                        // Voeg andere velden toe zoals nodig
+                        echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                    }
+                    ?>
+                </section>
+                
+            <?php } else {?>
+            <h2>Log in to see posts</h2>
+
+
             <?php }?>
             <ul>
             <?php

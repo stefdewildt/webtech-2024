@@ -43,10 +43,10 @@ if (isset($_POST["submit"])){
     // }
     createPost($conn, $url, $post, $user_id, $username);
     } else {
-        header('location: ../user.php');
+        header('location: ../../index.php');
     }
 }
 else{
-    header("location: ../user.php");
+    header("location: ../../index.php");
     exit();
 }

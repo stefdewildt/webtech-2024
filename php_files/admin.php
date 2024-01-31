@@ -11,9 +11,9 @@
     <div >
         <div class=adminlinks>
             <nav>
-                <a href="php_file/admin_hottakes.php">Hot-Takes</a>
-                <a href="php_file/admin_users.php">Users</a>
-                <a href="php_file/admin_posts.php">Posts</a>                
+                <a href="admin_hottakes.php">Hot-Takes</a>
+                <a href="admin_users.php">Users</a>
+                <a href="admin_posts.php">Posts</a>                
             </nav> 
         </div>        
     </div>

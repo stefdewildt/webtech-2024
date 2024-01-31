@@ -36,7 +36,7 @@ function getComments($conn) {
             echo "</p>";
             if (isset($_SESSION['usersId'])) {
                 // current user comparing to user who made the comment
-                if ($_SESSION['usersId'] == $row2['usersId']){
+                if ($_SESSION['usersUid'] == $row2['usersUid']){
                     echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>
                     <input type='hidden' name='cid' value='".$row['cid']."'>
                     <button type='submit' name='commentDelete'>Delete</button>

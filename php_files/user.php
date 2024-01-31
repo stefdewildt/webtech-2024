@@ -68,7 +68,7 @@
         <div>
         <?php if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) : ?>
                 <button onclick="toggleFollowUser(<?php echo $row['usersId']; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
-        <?php endif; ?>
+
             </div>     
     </div>
 

@@ -3,6 +3,9 @@
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
 
+    $sql = "SELECT admin FROM users WHERE usersUid = '$escapedUsersUid'";
+    $result = mysqli_query($conn, $sql);
+
     if($_SESSION['admin'] == 0){
         header("Location: ../index.php");
 

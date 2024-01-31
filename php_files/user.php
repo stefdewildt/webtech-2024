@@ -41,7 +41,7 @@
         $email = $_SESSION['useremail'];
         $name = $_SESSION['username'];
 
-        $sql = "SELECT image FROM users WHERE usersUid = '$username'";
+        $sql = "SELECT usersImg FROM users WHERE usersUid = '$username'";
         $image = $conn->query($sql);
     }
     // GEEN ID NIET INGELOGD

@@ -33,14 +33,14 @@
     // In je bestaande JavaScript-code
     $(document).ready(function() {
         // Controleer of de 'cookieConsent' cookie bestaat
-        if (document.cookie.indexOf('cookieConsent=1') === -1) {
+        if (document.cookie.indexOf("cookieConsent=accepted") === -1) {
             // Als de cookie niet bestaat, toon het cookie consent
             $("#cookie-consent").show();
         }
 
         // Wanneer de gebruiker op 'Agree' klikt, stel de cookie in en verberg het consent
         $("#cookie-consent-agree").on("click", function() {
-            document.cookie = "cookieConsent=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+            document.cookie = "cookieConsent=accepted; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
             $("#cookie-consent").hide();
         });
     });

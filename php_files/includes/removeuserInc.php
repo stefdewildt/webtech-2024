@@ -17,6 +17,6 @@ if (isset($_POST['remove_post'])) {
     // ...
 
     // Redirect back to the page after removal
-    header("Location: ../admin_hottakes.php");
+    header("Location: ../admin.php");
     exit();
 }

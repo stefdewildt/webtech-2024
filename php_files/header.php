@@ -11,6 +11,31 @@
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/header_styles.css">
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
 </head>
+<div id="cookie-consent">
+    <div id="cookie-consent-content">
+        <p>"When you visit our website, we store small text files called cookies on your device. 
+            These cookies help us remember your preferences and activities on our website.
+            This way, we can provide you with a more personalized experience when you visit our website again.
+            Please note that some of these cookies may be temporary and will be deleted when you close your browser,
+            while others may be permanent and will stay on your device until they expire or you delete them manually. 
+            Some of these cookies may also be set by other websites that you visit while on our website.
+            We value your privacy and we want to be transparent about our use of cookies.
+            By using our website, you consent to our use of cookies as described above."</p>
+        <button id="cookie-consent-agree">Agree</button>
+</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    if (!localStorage.getItem("cookie-consent")) {
+      document.getElementById("cookie-consent").style.display = "block";
+    }
+  });
+  
+  document.getElementById("cookie-consent-agree").addEventListener("click", function() {
+    localStorage.setItem("cookie-consent", "true");
+    document.getElementById("cookie-consent").style.display = "none";
+  });
+</script>
 <body>
     <header>
         <div class="upper-bar">

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melodies connected</title>
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/header_styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
 </head>
 <div id="cookie-consent">
@@ -26,15 +27,15 @@
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-    if (!localStorage.getItem("cookie-consent")) {
-      document.getElementById("cookie-consent").style.display = "block";
-    }
-  });
-  
-  document.getElementById("cookie-consent-agree").addEventListener("click", function() {
-    localStorage.setItem("cookie-consent", "true");
-    document.getElementById("cookie-consent").style.display = "none";
-  });
+        if (!localStorage.getItem("cookie-consent")) {
+            document.getElementById("cookie-consent").style.display = "block";
+        }
+    });
+
+    document.getElementById("cookie-consent-agree").addEventListener("click", function() {
+        localStorage.setItem("cookie-consent", "true");
+        document.getElementById("cookie-consent").style.display = "none";
+    });
 </script>
 <body>
     <header>

@@ -20,33 +20,31 @@ function getComments($conn) {
     $sql = "SELECT * FROM comments";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
-        if (isset($row['usersId'])) {
-            $usersId = $row['usersId'];
-            $sql2 = "SELECT usersUid FROM users WHERE usersId = $usersId";
-            $result2 = $conn->query($sql2);
-            if ($row2 = $result2->fetch_assoc()) {
-                echo "<div class='comment-section'><p>";
-                echo $row2['usersUid'] . "<br>";
-                echo $row['date']. "<br><br>";
+        $usersId = $row['usersId'];
+        $sql2 = "SELECT usersUid FROM users WHERE usersId = $usersId";
+        $result2 = $conn->query($sql2);
+        if ($row2 = $result2->fetch_assoc()) {
+            echo "<div class='comment-section'><p>";
+            echo $row2['usersUid'] . "<br>";
+            echo $row['date']. "<br><br>";
 
-                // checking for new line tags and make it into line breaks
-                echo nl2br($row['message']);
+            // checking for new line tags and make it into line breaks
+            echo nl2br($row['message']);
 
-                // able to delete a comment
-                echo "</p>";
-                if (isset($_SESSION['usersId'])) {
-                    // current user comparing to user who made the comment
-                    if (($_SESSION['usersId']) == ($row2['usersId'])){
-                        echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>
-                        <input type='hidden' name='cid' value='".$row['cid']."'>
-                        <button type='submit' name='commentDelete'>Delete</button>
-                    </form>";
-                    }
+            // able to delete a comment
+            echo "</p>";
+            if (isset($_SESSION['usersid'])) {
+                // current user comparing to user who made the comment
+                if (($_SESSION['usersid']) == ($row2['usersId'])){
+                    echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>                        <input type='hidden' name='cid' value='".$row['cid']."'>
+                    <button type='submit' name='commentDelete'>Delete</button>
+                </form>";
                 }
-                echo "</div>";
             }
+            echo "</div>";
         }
     }
+    
 }
 
 // how to make sure you can't delete other people's comments im not sure........ this only makes sure you can delete comments

@@ -36,8 +36,8 @@
         }
     }    
     // geen id ingevoerd maar wel ingelogd
-    elseif (isset($_SESSION['userUid'])){
-        $escapedUsersUid = $_SESSION['userUid'];
+    elseif (isset($_SESSION['useruid'])){
+        $escapedUsersUid = $_SESSION['useruid'];
         $sql = "SELECT * FROM users WHERE usersUid = '$escapedUsersUid'";
         $result = $conn->query($sql);
         

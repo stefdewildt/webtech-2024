@@ -12,7 +12,7 @@
         <aside class="random-shi">
             <ul>
                 <h3></h3>
-                <li>hier zie ik dat hij iets heeft aangepast</li>
+                <li>hallo zie je dit!!!!!</li>
                 <li>is</li>
                 <li>just</li>
                 <li>some</li>

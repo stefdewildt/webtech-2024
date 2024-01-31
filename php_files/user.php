@@ -40,7 +40,7 @@
         $username = $_SESSION['useruid'];
         $email = $_SESSION['useremail'];
         $name = $_SESSION['username'];
-        $image = $_SESSION['image'];
+        //$image = $_SESSION['image'];
     }
     // GEEN ID NIET INGELOGD
     else {

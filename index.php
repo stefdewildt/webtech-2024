@@ -1,6 +1,8 @@
 <?php
     include_once "php_files/header.php";
     require_once '/var/www/dbhInc.php';
+    include 'includes/commentsInc.php';
+
 ?>
 <head>
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/index_styles.css">

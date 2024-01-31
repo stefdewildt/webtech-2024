@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Voeg hier de logica toe om de gebruiker te volgen in de database
     // (bijv. voeg een nieuwe rij toe aan de friends-tabel)
 
-    $query_unfollow_user = "DELETE FROM friends WHERE user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $userId";
+    $query_unfollow_user = "DELETE FROM friends WHERE (user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $userId)";
     $result_unfollow_user = $conn->query($query_unfollow_user);
         
         if ($result_unfollow_user === TRUE) {

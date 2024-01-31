@@ -13,12 +13,6 @@ function setComment($conn){
     }
 }
 
-
-$sql = "SELECT usersUid FROM users WHERE usersId = $usersId";
-$result_user = mysqli_query($conn, $sql);
-$user_row = mysqli_fetch_assoc($result_user);
-$username = $user_row['usersUid'];
-
 // $user_id = $_SESSION['usersId'];
 // getting comments from database to be able to show on website 
 function getComments($conn) {

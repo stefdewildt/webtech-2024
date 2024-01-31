@@ -72,6 +72,10 @@ footer {
   height: 100%;
   
 }
+
+.scroll-part .posts{
+  margin: 0;
+}
 .random-shi ul,
 .friends ul{
   list-style: none;

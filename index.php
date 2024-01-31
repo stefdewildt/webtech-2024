@@ -78,12 +78,14 @@
             if (!empty($vrienden_ids) && $result_vrienden_info->num_rows > 0) {
                     while ($row_vriend = $result_vrienden_info->fetch_assoc()) {
                         echo "<div>";
-                        echo "<p>Gebruikersnaam: " . $row_vriend['usersUid'] . "</p>";
+                        echo "<p>Gebruikersnaam: <a href='profile_friend.php?id=" . $row_vriend['usersUid'] . "'>".$row_vriend['usersUid'] . "</a></p>";
                         echo "<p>Naam: " . $row_vriend['usersName'] . "</p>";
                         echo "</div>";
                         }
                     } else {
+                    echo "<div>";
                     echo "Je hebt nog geen vrienden.";
+                    echo "<div>";
                 }  
             }
         }

@@ -4,16 +4,16 @@
 ?>
 
 <head>
-    <link rel="stylesheet" href="css_files/user_page.css">
+    <link rel="stylesheet" href="css_files/admin.css">
 </head>
 
 
-    <div class="pd-row">
-        <div>
-
+    <div >
+        <div class=adminlinks>
             <nav>
-                <a href="/admin_hottakes.php">Hot-Takes</a>
-                <a href="/admin_users.php">Users</a>
+                <a href="admin_hottakes.php">Hot-Takes</a>
+                <a href="admin_users.php">Users</a>
+                <a href="admin_posts.php">Posts</a>                
             </nav> 
         </div>        
     </div>

@@ -9,7 +9,7 @@ function setComment($conn){
 
         // inserting into database
         $sql = "INSERT INTO comments (uid, date, message) VALUES ('$uid', '$date', '$message')";
-        $result = $conn->query();
+        $result = $conn->query($sql);
     }
 }
 

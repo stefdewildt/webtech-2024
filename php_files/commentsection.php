@@ -4,36 +4,38 @@
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Comments</title>
-<!-- <link rel=stylesheet type="text/css" href="style.css"> -->
-</head>
-
-<body>
 
 <!-- space for the post -->
 <!-- start comment section -->
 <!-- makes sure you have to be logged in to be able to comment -->
 <br><br>
+<a href="commentsection.php?postId=<?php echo $postId; ?>">View Comments</a>
 <?php
-    if (isset($_SESSION['id'])) {
+    if (isset($_SESSION['usersId'])) {
         echo "<form method='POST' action='".setComment($conn)."'>
-        <input type='hidden' name='uid' value='anonymous'>
+        <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
         <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
         <textarea name='message'></textarea><br>
-        <button type='submit' name='commentDelete'>Comment</button>
+        <button type='submit' name='commentSubmit'>Comment</button>
     </form>";
     } else {
         echo "You need to be logged in to comment!
         <br><br>";
     }
 
-   
+    // Check if the 'postId' key is set in the $_GET array
+    if (isset($_GET['postId'])) {
+        // Retrieve postId from URL parameter
+        $postId = $_GET['postId'];
 
-getComments($conn);
+        // Fetch and display comments associated with the postId
+        getComments($conn, $postId);
+    } else {
+    // Handle the case where postId is not provided
+        echo "Post ID is not provided.";
+}
+?>
+
 
 ?>
 </body>

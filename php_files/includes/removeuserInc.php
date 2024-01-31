@@ -2,7 +2,7 @@
     include_once "../header.php";
     require_once '/var/www/dbhInc.php';
 
-if (isset($_POST['remove_post'])) {
+if (isset($_POST['remove_user'])) {
     $post_id = $_POST['user_id'];
 
     $sql = "DELETE FROM music_posts WHERE postsID = $post_id";

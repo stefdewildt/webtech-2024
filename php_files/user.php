@@ -66,9 +66,9 @@
         </div>
 
         <div>
-        <?php if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) : ?>
+        <?php if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) { ?>
                 <button onclick="toggleFollowUser(<?php echo $row['usersId']; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
-
+        <?php }?>
             </div>     
     </div>
 
@@ -119,6 +119,7 @@
             success: function(response) {
                 if (response === 'success') {
                     buttonElement.innerText = 'Following';
+                    alert('test')
                 }
             },
             error: function(error) {
@@ -139,6 +140,8 @@
             success: function(response) {
                 if (response === 'success') {
                     buttonElement.innerText = 'Follow';
+                    alert('test')
+
                 }
             },
             error: function(error) {

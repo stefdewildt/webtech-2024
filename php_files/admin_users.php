@@ -2,10 +2,10 @@
 
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
-    
-    if($_SESSION['admin'] == 0){
-        header("Location: index.php");
 
+    if($_SESSION['admin'] = false){
+        //header("Location: index.php");
+        echo 'not admin'
     }
 
 ?>

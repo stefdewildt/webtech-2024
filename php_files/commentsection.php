@@ -23,9 +23,11 @@
         <br><br>";
     }
 
-   
+    $postId = $_GET['postId']; // Assuming postId is passed through GET method
 
-getComments($conn);
+    // Call getComments with both arguments
+
+getComments($conn, $postId);
 
 ?>
 </body>

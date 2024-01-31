@@ -5,7 +5,7 @@
 if (isset($_POST['remove_post'])) {
     $post_id = $_POST['post_id'];
 
-    $sql = "DELETE FROM your_table WHERE id = $post_id";
+    $sql = "DELETE FROM music_posts WHERE id = $post_id";
 
     if (mysqli_query($conn, $sql)) {
         echo "Record deleted successfully";

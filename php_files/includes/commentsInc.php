@@ -49,12 +49,12 @@ function getComments($conn, $postid) {
 
             }
         } else {
-            echo "<p class= 'comment-message'>You need to be logged in to reply! </p>"
+            echo "<p class= 'comment-message'>You need to be logged in to reply! </p>";
         }
             echo "</div>";
-        }
     } 
-}
+} 
+
 
 // how to make sure you can't delete other people's comments im not sure........ this only makes sure you can delete comments
 function deleteComments($conn){

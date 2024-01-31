@@ -1,8 +1,10 @@
 <?php
- require_once '/var/www/dbhInc.php';
+    include_once "header.php";
+    require_once '/var/www/dbhInc.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userId = $_POST['userId'];
+    $huidige_gebruiker_id = $_SESSION['usersId'];
 
     // Voeg hier de logica toe om de gebruiker te volgen in de database
     // (bijv. voeg een nieuwe rij toe aan de friends-tabel)
@@ -28,3 +30,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo 'Onjuiste verzoeksmethode';
 }
 
+?>

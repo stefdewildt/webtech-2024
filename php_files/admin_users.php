@@ -4,8 +4,9 @@
     require_once '/var/www/dbhInc.php';
 
     if($_SESSION['admin'] = false){
-        //header("Location: index.php");
+        //header("Location: ../index.php");
         echo 'not admin';
+
     }
 
 ?>

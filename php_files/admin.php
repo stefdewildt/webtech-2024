@@ -1,0 +1,24 @@
+<?php
+    include_once "header.php";
+    require_once '/var/www/dbhInc.php';
+?>
+
+<head>
+    <link rel="stylesheet" href="css_files/user_page.css">
+</head>
+
+
+    <div class="pd-row">
+        <div>
+
+            <nav>
+                <a href="/admin_hottakes.php">Hot-Takes</a>
+                <a href="/admin_users.php">Users</a>
+            </nav> 
+        </div>        
+    </div>
+
+<?php
+    include_once("footer.php");
+?>
+

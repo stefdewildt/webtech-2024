@@ -1,8 +1,8 @@
 <?php
 
 // adding comments to database
-function setComment($conn){
-    if (isset($_POST['commentSubmit'])) {
+function setComment($conn, $postId){
+    if (isset($_POST['commentSubmit'.$postId]) && $postId = $_POST['postId'] ){
         $usersId = $_POST['usersId'];
         $date = $_POST['date'];
         $message = $_POST['message'];

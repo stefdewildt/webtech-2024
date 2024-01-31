@@ -13,9 +13,9 @@ function setComment($conn){
     }
 }
 
-// $user_id = $_SESSION['usersId'];
 // getting comments from database to be able to show on website 
 function getComments($conn) {
+
     // go into database , get all the comments, run the query and show them (result)
     $sql = "SELECT * FROM comments";
     $result = $conn->query($sql);
@@ -33,9 +33,10 @@ function getComments($conn) {
 
             // able to delete a comment
             echo "</p>";
-            if (isset($_SESSION['usersid'])) {
+            if (isset($_SESSION['usersId'])) {
+
                 // current user comparing to user who made the comment
-                if (($_SESSION['usersid']) == ($row2['usersId'])){
+                if (($_SESSION['usersId']) == ($usersId)){
                     echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>                        <input type='hidden' name='cid' value='".$row['cid']."'>
                     <button type='submit' name='commentDelete'>Delete</button>
                 </form>";
@@ -43,8 +44,7 @@ function getComments($conn) {
             }
             echo "</div>";
         }
-    }
-    
+    } 
 }
 
 // how to make sure you can't delete other people's comments im not sure........ this only makes sure you can delete comments

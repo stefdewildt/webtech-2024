@@ -20,7 +20,7 @@ function getComments($conn) {
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
         $usersId =$row['usersId'];
-        $sql2 = "SELECT * FROM user WHERE usersId='$usersId'";
+        $sql2 = "SELECT * FROM users WHERE usersId='$usersId'";
         $result2 = $conn->query($sql2);
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='comment-section'><p>";

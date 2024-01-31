@@ -6,6 +6,7 @@ function setComment($conn){
         $usersId = $_POST['usersId'];
         $date = $_POST['date'];
         $message = $_POST['message'];
+        $usersUid = $_SESSION['usersUid'];
 
         // inserting into database
         $sql = "INSERT INTO comments (usersId, date, message) VALUES ('$usersId', '$date', '$message')";
@@ -23,7 +24,7 @@ function getComments($conn) {
         // $sql2 = "SELECT * FROM users WHERE userUid='$usersUid'";
         // $result2 = $conn->query($sql2);
         $usersId = $row['usersUid'];
-        $sql2 = "SELECT * FROM users WHERE usersId = $usersId";
+        $sql2 = "SELECT * FROM usersUid WHERE usersId = $usersId";
         $result2 = $conn->query($sql2);
         // $result_user = mysqli_query($conn, $sql2);
         // $user_row = mysqli_fetch_assoc($result_user);

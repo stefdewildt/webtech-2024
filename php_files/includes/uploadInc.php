@@ -45,8 +45,7 @@ if (isset($_POST["submit"])){
         // }
         createPost($conn, $url, $post, $user_id, $username, $table);
         } else {
-            echo '<script>alert("invalid spotify url")</script>';
-            header('location: ../../index.php');
+            header('location: ../../index.php?error=invalidurl');
         }
     } else if($table == 'big_posts') {
         createPost($conn, $url, $post, $user_id, $username, $table);

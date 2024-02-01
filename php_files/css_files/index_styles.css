@@ -175,7 +175,6 @@ textarea{
   box-sizing: border-box;
   padding: 1.0em;
   width: 70%;
-  text-align: right;
 
 }
 
@@ -192,6 +191,7 @@ textarea{
 
 .delete-form button{
   background-color: rgb(172, 32, 32);
+  font-size: 1.0em;
 }
 
 .message, .delete-form{

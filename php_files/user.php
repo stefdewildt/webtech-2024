@@ -104,7 +104,7 @@
             <?php } ?>
 
             <nav>
-                <a id='counter' href="/html/friends.html">Friends <script>"get_counter.php?id=<?php echo $_GET['id']; ?>"</script></a>
+                <a id='counter' href="/html/friends.html">Friends <script> src="count_followers.php?id=<?php echo $_GET['id']; ?>"</script></a>
             </nav> 
         </div>
 

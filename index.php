@@ -27,7 +27,7 @@
                 $sql = "SELECT * FROM music_posts ORDER BY postsTIMESTAMP DESC";
                 $result = mysqli_query($conn, $sql);
                 $counter = 0;
-                while ($counter < 11 && $row = mysqli_fetch_assoc($result)) {
+                while ($counter < 10 && $row = mysqli_fetch_assoc($result)) {
                     $user_id = $row['user_id'];
                     $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
                     $result_user = mysqli_query($conn, $sql);

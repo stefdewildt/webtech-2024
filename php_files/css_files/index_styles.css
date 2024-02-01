@@ -164,12 +164,15 @@ textarea{
   text-align: left;
   text-align: top;
 }
-.comment {
+.getComments {
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 20px;
 }
+.username{
+  font-family: arial;
 
+}
 .comment h3 {
   margin-top: 0;
   font-size: 18px;

@@ -206,7 +206,7 @@
                             <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
                             </form>";
                             echo "<hr>"; // Voeg een scheidingsteken toe tussen records
-                            echo '</div>'
+                            echo '</div>';
                         }
                     }
                     ?>

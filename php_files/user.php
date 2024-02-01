@@ -68,17 +68,17 @@
 
     <div class="pd-row">
         <?php
-        if ( $image == null) {
-            echo '<div class="form-container">';
-            echo '<img src="img/profile.png">';
-            echo '<form action="/includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
-            <label for="userImg">Upload Profile Picture:</label>
-            <input type="file" name="userImg" id="userImg" accept="image/*">
-            <input type="submit" value="Upload">';
-        } elseif ($image != null) {
-            echo '<img src="'.$image.'">';
-            echo '</div>';
-        }
+        // if ( $image == null) {
+        //     echo '<div class="form-container">';
+        //     echo '<img src="img/profile.png">';
+        //     echo '<form action="/includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
+        //     <label for="userImg">Upload Profile Picture:</label>
+        //     <input type="file" name="userImg" id="userImg" accept="image/*">
+        //     <input type="submit" value="Upload">';
+        // } elseif ($image != null) {
+        //     echo '<img src="'.$image.'">';
+        //     echo '</div>';
+        // }
 
 
         ?>
@@ -89,17 +89,21 @@
         <input type="submit" value="Upload"> -->
 <!-- </form> -->
 
+        <!-- User gegevens -->
         <div class='personal-info'>
-            <?php if ( isset($email) ) { ?>
 
+            <!-- Users eigen pagina -->
+            <?php if ( isset($email) ) { ?>
                 <h3><?php echo $name?></h3>
                 <p><?php echo '@'.$username. "<br>"?></p>
                 <p><?php echo $email?></p>
 
+        <!--  Andermans pagina -->
             <?php } elseif (isset($username)) {?>
                 <h3><?php echo $name?></h3>
                 <p><?php echo '@'.$username. "<br>"?></p>
 
+        <!-- Foutieve ID -->
             <?php } else { ?>
                 <h3>User not found</h3>
             <?php } ?>
@@ -146,33 +150,8 @@
     </div>
 
     <div class="profile-posts">
-        <!-- <ul class="profile-post">
-            <li><h2>Your favourites</h2></li>
-              <div class="chosen-music">
-                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1HAW56e0zz05phUnzuHF9E?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
-                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2ut4BOQSqxLpcX5MtPjzYa?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
-                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/37Tmv4NnfQeb0ZgUC4fOJj?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
-                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3Um9toULmYFGCpvaIPFw7l?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
-                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3MyQn1xBQwPtFJUUP7zB8s?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
-              </div>
-            <li><h2>Your creations</h2></li>
-            <li>
-                <h2>Make a post:</h2>
-                <form action="includes/uploadInc.php" class ="discussion-input" method="post">
-                    <input type="text" name ="url" placeholder ="Paste Spotiy URL here"><br>
-                    <input type="text" name ="post" placeholder = "Start a conversation"><br><br>
-                    <button type="Submit" name="submit">Submit Hot Take</button>
-                </form>
-            </li> -->
             <section class="posts">
                     <?php if (isset($username)){
-                        // if (isset($_GET['id']) ){
-                        //     $userpostid = $userid;
-                        // } else {
-                        //     $userpostid($_SESSION['usersId']);
-                        // }
-
-
                         $sql = "SELECT * FROM big_posts WHERE user_id = $userid ORDER BY postsTIMESTAMP DESC";
                         $result = mysqli_query($conn, $sql);
                         
@@ -183,20 +162,20 @@
                             $user_row = mysqli_fetch_assoc($result_user);
                             $username = $user_row['usersUid'];
 
-                            // Output  username boven de embed
+                            // Output  username boven de big_post
                             echo "<div class=comment></div>";
                             echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
                             echo '<h3>'.$row['postsURL'] . "</h3><br>";
-                            // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
                             
                             // Output de post onder de embed
                             echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
                             echo "</div";
                             echo "<hr>"; 
                             
+                            // comments
                             getComments($conn, $row['postsID']);
 
-                            // Voeg andere velden toe zoals nodig
+                            // comment veld
                             echo "<div class='create-post'>";
                             echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
                             <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
@@ -214,7 +193,6 @@
 
 
         
-        </ul>
     </div>
 
     <script>

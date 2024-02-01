@@ -9,6 +9,8 @@
 
 
         <div class=adminlinks>
+            <br>
+            <br>
             <nav>
                 <a href="admin_hottakes.php">Hot-Takes</a>
                 <a href="admin_users.php">Users</a>

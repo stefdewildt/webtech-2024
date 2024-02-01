@@ -71,7 +71,7 @@
         <?php
         if ( $image == null) {
             echo '<img src="img/profile.png">';
-            echo '<form action="php_files/includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
+            echo '<form action="/includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
             <label for="userImg">Upload Profile Picture:</label>
             <input type="file" name="userImg" id="userImg" accept="image/*">
             <input type="submit" value="Upload">';

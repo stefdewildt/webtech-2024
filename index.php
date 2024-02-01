@@ -70,7 +70,7 @@
                         <input type="text" name ="url" placeholder ="Write a title here..."><br>
                         <input type="text" name ="post" placeholder = "Big post..."><br><br>
                         <input type="hidden" name="table" value="big_posts">
-                        <button type="Submit" name="submit">Submit Hot Take</button>
+                        <button type="Submit" name="submit">Submit your text post!</button>
                 </form>
 
                 <section class="posts">
@@ -79,6 +79,21 @@
                     $result = mysqli_query($conn, $sql);
                     while ($row = mysqli_fetch_assoc($result)) {
                         $user_id = $row['user_id'];
+
+                        // check following
+                        $huidige_gebruiker_id = $_SESSION['usersId'];
+
+                        // Check of de gebruikers elkaar al volgen
+                        $query_follow_check = "SELECT * FROM friends WHERE user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $user_id";
+                        $result_follow_check = $conn->query($query_follow_check);
+
+                        $following = $result_follow_check->num_rows > 0;
+                        
+
+
+
+                        if ($following) {
+
                         $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
                         $result_user = mysqli_query($conn, $sql);
                         $user_row = mysqli_fetch_assoc($result_user);
@@ -109,6 +124,7 @@
                        
                         echo "</div>";
                          echo "<br><br>";
+                        }
                     }
                     ?>
                 </section>

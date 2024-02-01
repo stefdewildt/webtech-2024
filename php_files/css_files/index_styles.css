@@ -150,8 +150,7 @@ button[type="submit"] {
 }
 
 textarea{
-  /* width:35.0em; */
-  width: 100%;
+  width:35.0em;
   height:2.5em;
   resize:none;
   padding: 10px;

@@ -96,7 +96,7 @@
                         echo "<hr>"; 
 
                         // Voeg andere velden toe zoals nodig
-                        echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
+                        echo"<form class='commentform' method='POST' action='".setComment($conn,$row['postsID'])."'>
                         <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
                         <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
                         <input type='hidden' name='postId' value='".$row['postsID']."'>

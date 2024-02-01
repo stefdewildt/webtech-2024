@@ -150,9 +150,14 @@ button[type="submit"] {
 }
 
 .posts {
-  margin-top: 20px;
+  margin-top: 200px;
 }
 
+textarea{
+  width:4.0em;
+  height:1.0em;
+  resize:none;
+}
 .comment {
   border: 1px solid #ccc;
   padding: 10px;

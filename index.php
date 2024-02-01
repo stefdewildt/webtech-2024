@@ -112,7 +112,7 @@
                         echo "</div";
                         echo "<hr>"; 
                         
-                        getComments($conn, $row['postsID']);
+                        getComments($conn, $row['postsID'],'index.php');
 
                         // Voeg andere velden toe zoals nodig
                         echo"<form method='POST' action='".setComment($conn,$row['postsID'],'index.php')."'>

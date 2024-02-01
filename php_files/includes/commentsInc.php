@@ -19,7 +19,7 @@ function setComment($conn, $postId, $url){
 }
 
 // comments worden uit de database gehaald en weergegeven in de website, hierbij worden ook de username en datum gepubliceerd
-function getComments($conn, $postId) {
+function getComments($conn, $postId, $url) {
 
     // in de database gaan, al de comments die bij de postid horen verzamelen, en weergeven
     $sql = "SELECT * FROM comments WHERE postId='$postId' ORDER BY date ASC";
@@ -42,7 +42,7 @@ function getComments($conn, $postId) {
 
                 // huidige gebruiker wordt vergeleken met de eigenaar van de comment
                 if (($_SESSION['usersId']) == ($usersId)){
-                    echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>
+                    echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn,$url)."'>
                     <input type='hidden' name='cid' value='".$row['cid']."'>
                     <button type='submit' name='commentDelete'>Delete</button>
                 </form>";
@@ -61,13 +61,13 @@ function getComments($conn, $postId) {
 
 
 // functionaliteit om comments te verwijderen
-function deleteComments($conn){
+function deleteComments($conn, $url){
     if (isset($_POST['commentDelete'])) {
         $cid = $_POST['cid'];
 
     $sql = "DELETE FROM comments WHERE cid='$cid'";
     $result = $conn->query($sql);
-    redirect('index.php');
+    redirect($url);
     }
 }
 

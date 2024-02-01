@@ -3,7 +3,7 @@
   require_once '/var/www/dbhInc.php';
 
   if (isset($_POST['submit-search'])){
-    header('location: '.$_POST["search"].'')
+    header("location: $_POST['search']")
 
   }
 // profielen zoeken die overeenkomen met gegeven zoekterm 

@@ -35,8 +35,8 @@
                     $username = $user_row['usersUid'];
 
                     // Output  username boven de embed
-                    echo '@'.$username . "<br>";
-            
+                    //echo '@'.$username . "<br>";
+                    echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
 
                     if (strpos($row['postsURL'], 'embed') !== true) {
                         $modifiedURL = str_replace('.com/', '.com/embed/', $row['postsURL']);
@@ -46,7 +46,7 @@
 
              // Voorkomen dat er teveel requests naar spotify gaan
 
-      //              echo '<iframe style="border-radius: 12px" src="' . $modifiedURL . '" width="100%" height="100" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>';
+                    echo '<iframe style="border-radius: 12px" src="' . $modifiedURL . '" width="100%" height="100" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>';
 
 
                     // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
@@ -94,6 +94,8 @@
                         echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
                         echo "</div";
                         echo "<hr>"; 
+                        
+                        getComments($conn, $row['postsID']);
 
                         // Voeg andere velden toe zoals nodig
                         echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
@@ -102,8 +104,12 @@
                         <input type='hidden' name='postId' value='".$row['postsID']."'>
                         <textarea name='message'></textarea><br>
                         <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
+
                         </form><br><br>";
                         getComments($conn, $row['postsID']);
+
+                        </form>";
+
                         echo "<hr>"; // Voeg een scheidingsteken toe tussen records
                     }
                     ?>

@@ -1,6 +1,8 @@
 <?php
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
+    include 'includes/commentsInc.php';
+
 
     
 
@@ -26,6 +28,7 @@
             $name = $row['usersName'];
             $email = null;
             $image = $row['usersImg'];  
+            $userid = $row['usersId'];
         } 
         // ONGELDIG ID
         else {
@@ -47,6 +50,7 @@
             $name = $row['usersName'];
             $email = $row['usersEmail'];
             $image = $row['usersImg'];  
+            $userid = $row['usersId'];
         } 
 
     }
@@ -102,16 +106,44 @@
             </nav> 
         </div>
 
+
+    <?php
+    
+    if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) {
+        $knownUsersUid = $_GET['id'];
+        $other_user_id_query = "SELECT usersId FROM users WHERE usersUid = '$knownUsersUid'";
+        $result_other_user_id = $conn->query($other_user_id_query);
+
+    if ($result_other_user_id && $result_other_user_id->num_rows > 0) {
+        $row_other_user_id = $result_other_user_id->fetch_assoc();
+        $other_user_id = $row_other_user_id['usersId'];
+
+        $huidige_gebruiker_id = $_SESSION['usersId'];
+
+        // Check of de gebruikers elkaar al volgen
+        $query_follow_check = "SELECT * FROM friends WHERE user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $other_user_id";
+        $result_follow_check = $conn->query($query_follow_check);
+
+        $following = $result_follow_check->num_rows > 0;
+    } else {
+        // Gebruiker niet gevonden met de opgegeven gebruikersnaam
+        //echo "Gebruiker niet gevonden.";
+    }
+    }
+
+    ?>
+
+
         <div>
 
         <?php if (isset($_GET['id']) && isset($username) && $_GET['id'] != $_SESSION['useruid']) { ?>
-                <button onclick="toggleFollowUser(<?php echo $row['usersId']; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
+                <button onclick="toggleFollowUser(<?php echo $other_user_id; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
         <?php }?>
             </div>     
     </div>
 
     <div class="profile-posts">
-        <ul class="profile-post">
+        <!-- <ul class="profile-post">
             <li><h2>Your favourites</h2></li>
               <div class="chosen-music">
                   <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1HAW56e0zz05phUnzuHF9E?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
@@ -128,7 +160,53 @@
                     <input type="text" name ="post" placeholder = "Start a conversation"><br><br>
                     <button type="Submit" name="submit">Submit Hot Take</button>
                 </form>
-            </li>
+            </li> -->
+            <section class="posts">
+                    <?php
+                    // if (isset($_GET['id']) ){
+                    //     $userpostid = $userid;
+                    // } else {
+                    //     $userpostid($_SESSION['usersId']);
+                    // }
+
+
+                    $sql = "SELECT * FROM big_posts WHERE user_id = $userid ORDER BY postsTIMESTAMP DESC";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $user_id = $row['user_id'];
+                        $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
+                        $result_user = mysqli_query($conn, $sql);
+                        $user_row = mysqli_fetch_assoc($result_user);
+                        $username = $user_row['usersUid'];
+
+                        // Output  username boven de embed
+                        echo "<div class=comment></div>";
+                        echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
+                        echo '<h3>'.$row['postsURL'] . "</h3><br>";
+                        // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
+                        
+                        // Output de post onder de embed
+                        echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
+                        echo "</div";
+                        echo "<hr>"; 
+                        
+                        getComments($conn, $row['postsID']);
+
+                        // Voeg andere velden toe zoals nodig
+                        echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
+                        <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
+                        <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+                        <input type='hidden' name='postId' value='".$row['postsID']."'>
+                        <textarea name='message'></textarea><br>
+                        <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
+                        </form>";
+                        echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                    }
+                    ?>
+            </section>
+
+
+        
         </ul>
     </div>
 
@@ -140,12 +218,10 @@
 
     // Voer de juiste actie uit op basis van de status
     if (isFollowing) {
-        alert('1')
 
         // Gebruiker is al aan het volgen, voer de unfollow-functie uit
         unfollowUser(userId, buttonElement);
     } else {
-        alert('2')
         // Gebruiker volgt nog niet, voer de follow-functie uit
         followUser(userId, buttonElement);
     }

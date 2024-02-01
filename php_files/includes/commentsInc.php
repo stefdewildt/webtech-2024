@@ -42,10 +42,17 @@ function getComments($conn, $postId) {
 
                 // current user comparing to user who made the comment
                 if (($_SESSION['usersId']) == ($usersId)){
-                    echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>                        <input type='hidden' name='cid' value='".$row['cid']."'>
+                    echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>
+                    <input type='hidden' name='cid' value='".$row['cid']."'>
                     <button type='submit' name='commentDelete'>Delete</button>
                 </form>";
                 }
+
+            } else {
+                echo "<form class= 'reply-form' method='POST' action='".deleteComments($conn)."'>
+                <input type='hidden' name='cid' value='".$row['cid']."'>
+                    <button type='submit' name='commentDelete'>Reply</button>
+                </form>";
             }
 
         } else {
@@ -63,7 +70,7 @@ function deleteComments($conn){
 
     $sql = "DELETE FROM comments WHERE cid='$cid'";
     $result = $conn->query($sql);
-    // header("Location: index.php");
+    //header("Location: index.php");
     }
 }
 

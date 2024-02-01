@@ -10,13 +10,13 @@ a{
     text-decoration: none;
 }
 
-.pd-row {
+/* .pd-row {
     display: flex;
     margin-top: 80px;
     margin-left: 180px;
     text-align: center;
 
-}
+} */
 
 .pd-row img{
     border-radius: 50%;

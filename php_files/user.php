@@ -141,7 +141,7 @@
 
     <?php
     
-    if ((isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) ||(isset($_GET['id']) && isset($_SESSION['useruid']) == false) ) {
+    if ((isset($_GET['id']) && isset($_SESSION['useruid']) == false) || (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid'])) {
         $knownUsersUid = $_GET['id'];
         $other_user_id_query = "SELECT usersId FROM users WHERE usersUid = '$knownUsersUid'";
         $result_other_user_id = $conn->query($other_user_id_query);

@@ -65,7 +65,7 @@ function deleteComments($conn){
 
     $sql = "DELETE FROM comments WHERE cid='$cid'";
     $result = $conn->query($sql);
-    header("Location: index.php");
+    //header("Location: index.php");
     }
 }
 

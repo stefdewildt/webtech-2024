@@ -108,7 +108,7 @@
                         </form><br><br>";
                        
                         echo "</div>";
-                        echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                         
                     }
                     ?>
                 </section>

@@ -61,7 +61,7 @@
 ?>
 
 <head>
-    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/~wietskeb/webtech-2024/php_files/user_page.css">
+    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/~wietskeb/webtech-2024/php_files/css_files/user_page.css">
 </head>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

@@ -124,7 +124,8 @@
                             $counter = $result_find_friends->num_rows;
 
         
-                            echo $counter;} 
+                            echo $counter;
+                        } 
                             else {
         
                                 echo 'Could not find following';
@@ -145,7 +146,7 @@
 
                             $counter = $result_find_friends->num_rows;
 
-                            echo $counter} 
+                            echo $counter};
                             else {
         
                                 echo 'Could not find following';

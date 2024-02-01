@@ -185,7 +185,7 @@ textarea{
 }
 
 .message, .delete-form{
-  display: inline-block
+  display: inline-block;
 }
 
 .comment h3 {

@@ -1,0 +1,15 @@
+.adminlinks {
+    text-align: center;
+}
+
+.adminlinks nav a {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.2em;
+    margin: 0 0.2em;
+    color: #9bffaa; 
+}
+
+.adminlinks nav a:hover {
+    color: #004b0e; /
+}

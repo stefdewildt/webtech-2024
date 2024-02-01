@@ -72,24 +72,7 @@
 
 
     <div class="pd-row">
-        <?php
-        if ( $image == null) {
-            echo '<img src="img/profile.png">';
-            echo '<form action="/includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
-            <label for="userImg">Upload Profile Picture:</label>
-            <input type="file" name="userImg" id="userImg" accept="image/*">
-            <input type="submit" value="Upload">';
-        } elseif ($image != null) {
-            echo '<img src="'.$image.'">';
-        }
-
-
-        ?>
-        <!-- <img src="img/profile.png">
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-        <label for="profile_picture">Upload Profile Picture:</label>
-        <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
-        <input type="submit" value="Upload"> -->
+        
 </form>
 
         <div class='personal_info'>

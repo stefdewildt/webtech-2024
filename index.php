@@ -5,7 +5,7 @@
 
 ?>
 <head>
-    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/index_styles.css">
+    <link rel="stylesheet" href="/php_files/css_files/index_styles.css">
 </head>
     
     <section class="scroll-section">
@@ -96,7 +96,7 @@
                         echo "<hr>"; 
 
                         // Voeg andere velden toe zoals nodig
-                        echo"<form class='commentform' method='POST' action='".setComment($conn,$row['postsID'])."'>
+                        echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
                         <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
                         <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
                         <input type='hidden' name='postId' value='".$row['postsID']."'>

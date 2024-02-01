@@ -102,10 +102,29 @@
             </nav> 
         </div>
 
+        <?php
+
+        if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) {
+        
+            $knownUsersUid = $_GET['id'];
+            $other_user_id = "SELECT usersId FROM users WHERE userUid = '$knownUsersUid'"
+            $huidige_gebruiker_id = $_SESSION['usersId'];
+
+        // Check of de gebruikers elkaar al volgen
+        $query_follow_check = "SELECT * FROM friends WHERE user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $other_user_id";
+        $result_follow_check = $conn->query($query_follow_check);
+
+        $following = $result_follow_check->num_rows > 0;
+        
+        }
+
+        ?>
+
+
         <div>
 
         <?php if (isset($_GET['id']) && isset($username) && $_GET['id'] != $_SESSION['useruid']) { ?>
-                <button onclick="toggleFollowUser(<?php echo $row['usersId']; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
+                <button onclick="toggleFollowUser(<?php echo $other_user_id; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
         <?php }?>
             </div>     
     </div>

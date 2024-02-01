@@ -2,9 +2,11 @@
   include_once "header.php";
   require_once '/var/www/dbhInc.php';
 
+  if (isset($_POST['submit-search'])){
+    header('location: '.$_POST["search"].'')
 
-  header('location: '.$_POST["search"].'')
-//profielen zoeken die overeenkomen met gegeven zoekterm 
+  }
+// profielen zoeken die overeenkomen met gegeven zoekterm 
 // if (isset($_POST['submit-search'])){
 //     $se
 //     $search = mysql_real_escape_string($conn, $_POST['search']);
@@ -22,4 +24,4 @@
 //     } else {
 //         echo "There are no results matching your search";
 //     }
-?>   
+// ?>   

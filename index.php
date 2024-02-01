@@ -26,8 +26,8 @@
                 <?php
                 $sql = "SELECT * FROM music_posts ORDER BY postsTIMESTAMP DESC";
                 $result = mysqli_query($conn, $sql);
-                
-                while ($row = mysqli_fetch_assoc($result)) {
+                $counter = 0;
+                while ($counter < 10 && $row = mysqli_fetch_assoc($result)) {
                     $user_id = $row['user_id'];
                     $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
                     $result_user = mysqli_query($conn, $sql);
@@ -55,6 +55,8 @@
                     echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
                     // Voeg andere velden toe zoals nodig
                     echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                    $counter++;
+
                 }
                 ?>
             </section>
@@ -70,15 +72,31 @@
                         <input type="text" name ="url" placeholder ="Write a title here..."><br>
                         <input type="text" name ="post" placeholder = "Big post..."><br><br>
                         <input type="hidden" name="table" value="big_posts">
-                        <button type="Submit" name="submit">Submit Hot Take</button>
+                        <button type="Submit" name="submit">Submit your text post!</button>
                 </form>
 
                 <section class="posts">
                     <?php
                     $sql = "SELECT * FROM big_posts ORDER BY postsTIMESTAMP DESC";
                     $result = mysqli_query($conn, $sql);
+                    $counter = 0;
                     while ($row = mysqli_fetch_assoc($result)) {
                         $user_id = $row['user_id'];
+
+                        // check following
+                        $huidige_gebruiker_id = $_SESSION['usersId'];
+
+                        // Check of de gebruikers elkaar al volgen
+                        $query_follow_check = "SELECT * FROM friends WHERE user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $user_id";
+                        $result_follow_check = $conn->query($query_follow_check);
+
+                        $following = $result_follow_check->num_rows > 0;
+                        
+
+
+                        // laat alleen je eigen posts zien
+                        if ($following || $user_id = $huidige_gebruiker_id) {
+
                         $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
                         $result_user = mysqli_query($conn, $sql);
                         $user_row = mysqli_fetch_assoc($result_user);
@@ -86,7 +104,7 @@
                         echo "<div class='bigpost'>";
                         // Output  username boven de embed
                         echo "<div class=comment></div>";
-                        echo '@'.$username ."<br>";
+                        echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
                         echo '<h3>'.$row['postsURL'] . "</h3><br>";
                         // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
                         
@@ -109,6 +127,7 @@
                        
                         echo "</div>";
                          echo "<br><br>";
+                        }
                     }
                     ?>
                 </section>

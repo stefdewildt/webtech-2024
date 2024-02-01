@@ -28,7 +28,8 @@ function getComments($conn, $postId) {
         $result2 = $conn->query($sql2);
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='comment-section'><p>";
-            echo "<div class='username'>@" . $row2['usersUid'] . "</div>";
+            // echo "<div class='username'>@" . $row2['usersUid'] . "</div>";
+            echo '<div class="username "><a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$row2['usersUid'].'">@'.$row2['usersUid'].'</a></div><br>';
             echo "<div class='date'>" . $row['date'] . "</div><br><br>";
 
             // checking for new line tags and make it into line breaks

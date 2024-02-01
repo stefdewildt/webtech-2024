@@ -110,7 +110,7 @@
             <nav>
                  <span id ="counter"> Following: 
                     <?php   
-                            $usersUid= $_GET['id'];
+                            $usersUid= $username;
                             $usersId = "SELECT usersId FROM users WHERE usersUid = '$usersUid'";
                             $result_usersId = $conn->query($usersId);
 
@@ -133,7 +133,7 @@
     
                                         Followers:   
                     <?php 
-                            $usersUid= $_GET['id'];
+                            $usersUid= $username;
                             $usersId = "SELECT usersId FROM users WHERE usersUid = '$usersUid'";
                             $result_usersId = $conn->query($usersId);
 

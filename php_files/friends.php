@@ -15,7 +15,7 @@ if (isset($_SESSION['usersId'])){
 
 
 echo '<h3> Following </h3>';
-$sql = "SELECT * FROM friends WHERE user_ID_1 = $user_ID_1";
+$sql = "SELECT user_ID_2 FROM friends WHERE user_ID_1 = $user_ID_1";
 $result = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_assoc($result)) {
 	$user_id = $row['user_id'];
@@ -48,7 +48,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 echo '<h3> Followers </h3>';
-$sql = "SELECT * FROM friends WHERE user_ID_2 = $user_ID_1";
+$sql = "SELECT user_ID_1 FROM friends WHERE user_ID_2 = $user_ID_1";
 $result = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_assoc($result)) {
 	$user_id = $row['user_id'];

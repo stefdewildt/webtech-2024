@@ -1,6 +1,7 @@
 <?php
     include_once "../header.php";
     require_once '/var/www/dbhInc.php';
+    include_once 'functionsInc.php';
 
 if (isset($_POST['remove_post'])) {
     $post_id = $_POST['post_id'];
@@ -17,6 +18,6 @@ if (isset($_POST['remove_post'])) {
     // ...
 
     // Redirect back to the page after removal
-    header("Location: ../admin_hottakes.php");
+    redirect("../admin_hottakes.php");
     exit();
 }

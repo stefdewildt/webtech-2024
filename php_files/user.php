@@ -1,6 +1,8 @@
 <?php
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
+    include 'php_files/includes/commentsInc.php';
+
 
     
 

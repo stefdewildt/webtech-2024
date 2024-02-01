@@ -15,7 +15,6 @@ a{
     margin-top: 80px;
     margin-left: 180px;
     text-align: left;
-
 }
 
 .pd-row img{
@@ -108,9 +107,9 @@ button[type="submit"] {
     font-size: 16px;
   }
 
-/* .personal-info{
+.personal-info{
     margin-left: 10em;
     text-align: left;
-
-} */
+    font-weight: bold;
+}
 

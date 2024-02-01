@@ -110,7 +110,7 @@
     $result_usersId = $conn->query($usersId);
 
     if ($result_usersId->num_rows>0){
-        $rowUserId = $result_userId->fetch_assoc();
+        $rowUserId = $result_usersId->fetch_assoc();
         $usersId = $rowUserId['usersId'];
 
         $query_find_friends = "SELECT * FROM friends where user_ID_1 = $usersId";

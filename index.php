@@ -5,7 +5,7 @@
 
 ?>
 <head>
-    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/index_styles.css">
+    <link rel="stylesheet" href="/~wietskeb/webtech-2024/php_files/css_files/index_styles.css">
 </head>
     
     <section class="scroll-section">
@@ -104,14 +104,19 @@
                         <input type='hidden' name='postId' value='".$row['postsID']."'>
                         <textarea name='message'></textarea><br>
                         <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
+
+                        </form><br><br>";
+                        getComments($conn, $row['postsID']);
+
                         </form>";
+
                         echo "<hr>"; // Voeg een scheidingsteken toe tussen records
                     }
                     ?>
                 </section>
                 
             <?php } else {?>
-            <h3><a href=/php_files/login.php>Log in here to see your friends' posts!</a></h3>
+            <h3>Log in <a href=/php_files/login.php>here</a> to see your friends' posts!</h3>
 
 
             <?php }?>

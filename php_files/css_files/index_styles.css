@@ -149,17 +149,64 @@ button[type="submit"] {
   margin-bottom: 10px;
 }
 
-.posts {
-  margin-top: 20px;
-}
-
-.comment {
-  border: 1px solid #ccc;
+textarea{
+  /* width:35.0em; */
+  width: 100%;
+  height:2.5em;
+  resize:none;
   padding: 10px;
-  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  text-align: left;
+  text-align: top;
 }
 
-.comment h3 {
-  margin-top: 0;
-  font-size: 18px;
+.username{
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.comment-section{
+  border: 0.1em solid #ccc;
+  border-radius: 18px;
+  box-sizing: border-box;
+  padding: 0.5em;
+  width: 70%;
+  margin-bottom: 1.0em;
+
+}
+
+.username, .date{
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.message{
+  display: inline-block;
+}
+
+.date{
+  font-style: italic;
+  text-align: right; 
+  font-size: 0.8em;
+  margin-left: auto;
+}
+
+.delete-form button{
+  background-color: rgb(172, 32, 32);
+  font-size: 0.8em;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  padding-top:0.3em;
+  padding-bottom:0.3em;
+  font-family: 'Satoshi', sans-serif;
+}
+
+.message, .delete-form{
+  display: inline-block;
+  margin-right: 10px;
 }

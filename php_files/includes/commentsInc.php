@@ -1,3 +1,7 @@
+
+<head>
+    <link rel="stylesheet" href="/~wietskeb/webtech-2024/php_files/css_files/index_styles.css">
+</head>
 <?php
 
 // adding comments to database
@@ -26,11 +30,11 @@ function getComments($conn, $postId) {
         $result2 = $conn->query($sql2);
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='comment-section'><p>";
-            echo "@".$row2['usersUid'] . "<br>";
-            echo $row['date']. "<br><br>";
+            echo "<div class='username'>@" . $row2['usersUid'] . "</div>";
+            echo "<div class='date'>" . $row['date'] . "</div><br><br>";
 
             // checking for new line tags and make it into line breaks
-            echo nl2br($row['message']);
+            echo "<div class='message'>" . nl2br($row['message']) . "</div>";
 
             // able to delete your own comments
             echo "</p>";
@@ -43,13 +47,14 @@ function getComments($conn, $postId) {
                     <button type='submit' name='commentDelete'>Delete</button>
                 </form>";
                 }
+
             } else {
                 echo "<form class= 'reply-form' method='POST' action='".deleteComments($conn)."'>
                 <input type='hidden' name='cid' value='".$row['cid']."'>
                     <button type='submit' name='commentDelete'>Reply</button>
                 </form>";
-
             }
+
         } else {
             echo "<p class= 'comment-message'>You need to be logged in to reply! </p>";
         }

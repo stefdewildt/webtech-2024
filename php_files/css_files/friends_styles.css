@@ -1,0 +1,17 @@
+.content{
+    text-align: center;
+    font-size: larger;
+    display: flex;
+    flex-direction: row;
+}
+
+.followings{
+    flex: 1;
+    flex-direction: column;
+    padding: 1.8em; 
+    margin-top: 4em;
+    border: 0.3em solid gray;
+    border-radius: 2.3em;
+    background-color: #f0f2f1;
+    margin: 4em;
+}

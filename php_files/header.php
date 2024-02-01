@@ -8,11 +8,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melodies connected</title>
-    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/header_styles.css">
+    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/~stefw/webtech-2024/php_files/css_files/header_styles.css">
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/cookies_styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="img/musicalnote.png">
+    <script src="https://kit.fontawesome.com/876e2e2682.js" crossorigin="anonymous"></script>
     <div id="cookie-consent">
         <div id="cookie-consent-content">
             <p>"When you visit our website, we store small text files called cookies on your device. 
@@ -89,4 +90,19 @@
             </ul>
         </nav>
     </header>
+
+    
+    <a href="#" id="to-top">
+        <i" class="fas fa-chevron-up"></i>
+    </a>
+    <script>
+        const toTop = document.getElementById("to-top");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                toTop.classList.add("active");
+            } else {
+                toTop.classList.remove("active");
+            }
+        });        
+    </script>
     <div class=content>

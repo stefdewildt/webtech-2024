@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   padding: 0;
   margin: 0;
@@ -135,4 +139,29 @@ a:hover{
 }
 .search-form input::placeholder {
   color: rgb(240,242,241); /* Je kunt deze kleur aanpassen aan je voorkeur */
+}
+
+#to-top{
+  background-color: rgb(76,175,80);
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+#to-top.active{
+  bottom: 40px;
+  pointer-events: auto;
+  opacity: 1;
 }

@@ -197,7 +197,7 @@
                             getComments($conn, $row['postsID']);
 
                             // Voeg andere velden toe zoals nodig
-                            echo "<div class='create-post'>"
+                            echo "<div class='create-post'>";
                             echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
                             <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
                             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>

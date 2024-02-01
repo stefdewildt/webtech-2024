@@ -154,8 +154,8 @@ button[type="submit"] {
 }
 
 textarea{
-  width:15.0em;
-  height:1.0em;
+  width:25.0em;
+  height:10.0em;
   resize:none;
 }
 .comment {

@@ -71,7 +71,7 @@
         <?php
         if ( $image == null) {
             echo '<img src="img/profile.png">';
-            echo '<form action="/includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
+            echo '<form action="includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
             <label for="userImg">Upload Profile Picture:</label>
             <input type="file" name="userImg" id="userImg" accept="image/*">
             <input type="submit" value="Upload">';
@@ -172,7 +172,7 @@
 
                         $sql = "SELECT * FROM big_posts WHERE user_id = $userid ORDER BY postsTIMESTAMP DESC";
                         $result = mysqli_query($conn, $sql);
-                        
+
                         while ($row = mysqli_fetch_assoc($result)) {
                             $user_id = $row['user_id'];
                             $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";

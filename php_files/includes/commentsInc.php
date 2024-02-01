@@ -1,7 +1,3 @@
-
-<head>
-    <link rel="stylesheet" href="/~wietskeb/webtech-2024/php_files/css_files/index_styles.css">
-</head>
 <?php
 
 // adding comments to database
@@ -104,3 +100,4 @@ function getLogin($conn) {
 }
 
 
+ob_flush();

@@ -97,7 +97,7 @@
 
             <?php } elseif (isset($username)) {?>
                 <h3><?php echo $name?></h3>
-                <p><?php '@'.$username. "<br>"?></p>
+                <p><?php echo '@'.$username. "<br>"?></p>
 
             <?php } else { ?>
                 <h3>User not found</h3>

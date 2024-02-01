@@ -46,12 +46,8 @@ function getComments($conn, $postId) {
                     <button type='submit' name='commentDelete'>Delete</button>
                 </form>";
                 }
-            } else {
-                echo "<form class= 'reply-form' method='POST' action='".deleteComments($conn)."'>                        <input type='hidden' name='cid' value='".$row['cid']."'>
-                    <button type='submit' name='commentDelete'>Reply</button>
-                </form>";
-
             }
+            
         } else {
             echo "<p class= 'comment-message'>You need to be logged in to reply! </p>";
         }

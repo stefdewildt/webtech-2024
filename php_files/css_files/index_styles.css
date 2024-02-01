@@ -164,14 +164,18 @@ textarea{
   text-align: left;
   text-align: top;
 }
-.getComments {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 20px;
-}
+
 .username{
   font-weight: bold;
+}
 
+.comment-section{
+  display: inline-block;
+}
+
+.username, .date{
+  display: inline-block;
+  margin-right: 10px;
 }
 .date{
   font-style: italic 

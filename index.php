@@ -110,7 +110,7 @@
                 </section>
                 
             <?php } else {?>
-            <h3><a href=/php_files/login.php>Log in here to see your friends' posts!</a></h3>
+            <h3>Log in <a href=/php_files/login.php>here</a> to see your friends' posts!</h3>
 
 
             <?php }?>

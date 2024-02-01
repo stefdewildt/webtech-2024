@@ -92,13 +92,13 @@
             <?php if ( isset($email) ) { ?>
 
                 <h3><?php echo $name?></h3>
-                <p><?php echo '@'.$username .?></p>
+                <p><?php echo '@'.$username. "<br>"?></p>
                 <p><?php echo $email?></p>
 
             <?php } elseif (isset($username)) {?>
                 <h3><?php echo $name?></h3>
                 <p><?php echo '@'.$username .?></p>
-                
+
             <?php } else { ?>
                 <h3>User not found</h3>
             <?php } ?>

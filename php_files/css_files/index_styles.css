@@ -181,12 +181,12 @@ textarea{
 }
 
 .username, .date{
-  display: block;
+  display: inline-block;
   margin-right: 0.5em;
 }
 
 .message{
-  display: block;
+  display: inline-block;
 }
 
 .date{

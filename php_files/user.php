@@ -66,7 +66,6 @@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-
     <div class="pd-row">
         <?php
         if ( $image == null) {
@@ -88,7 +87,7 @@
         <input type="submit" value="Upload"> -->
 <!-- </form> -->
 
-        <div class='personal_info'>
+        <div class='personal-info'>
             <?php if ( isset($email) ) { ?>
 
                 <h3><?php echo $name?></h3>

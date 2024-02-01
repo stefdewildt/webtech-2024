@@ -105,3 +105,7 @@ button[type="submit"] {
     display: inline-block;
     font-size: 16px;
   }
+
+.personal-info{
+    text-align: left;
+}

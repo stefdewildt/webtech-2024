@@ -8,7 +8,7 @@ if (isset($_POST['submit-search'])){
     $sql = "SELECT * FROM users WHERE usersUid = $search";
     $result = mysqli_query($conn, $sql);
     $queryResult = mysqli_num_rows($result);
-
+}
 //profielen weergeven in vorm van link die overeenkomen met zoekterm 
     if($queryResult > 0 ){
 

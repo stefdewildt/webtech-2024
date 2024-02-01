@@ -51,7 +51,7 @@ echo '<h3> Followers </h3>';
 $sql = "SELECT user_ID_1 FROM friends WHERE user_ID_2 = $user_ID_1";
 $result = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_assoc($result)) {
-	$user_id = $row['user_id'];
+	$user_id = $row['user_ID_1'];
 	$sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
 	$result_user = mysqli_query($conn, $sql);
 	$user_row = mysqli_fetch_assoc($result_user);

@@ -1,7 +1,7 @@
 <?php
 include_once "header.php";
 require_once '/var/www/dbhInc.php';
-
+include_once 'includes/functionsInc.php';
 //controleer of gebruiker is ingelogd
 
 if (isset($_SESSION['usersId'])){
@@ -9,7 +9,7 @@ if (isset($_SESSION['usersId'])){
 	$user_ID_1 = $_SESSION['usersId'];
 } else{
 //keer terug naar inlogpagina
-	header("Location: login.php");
+	redirect("login.php");
 	exit();
 }
 

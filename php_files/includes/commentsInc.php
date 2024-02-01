@@ -30,7 +30,7 @@ function getComments($conn, $postId) {
         $result2 = $conn->query($sql2);
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='comment-section'><p>";
-            echo "<div class ='username'>'@'.'$row2'['usersUid']. <br> </div>";
+            echo "<div class='username'>@" . $row2['usersUid'] . "<br></div>";
             echo $row['date']. "<br><br>";
 
             // checking for new line tags and make it into line breaks

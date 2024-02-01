@@ -1,4 +1,5 @@
 <?php
+    include 'functionsInc.php';
 
 // adding comments to database
 function setComment($conn, $postId){

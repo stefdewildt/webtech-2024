@@ -194,6 +194,7 @@
                     <button type="Submit" name="submit">Submit Hot Take</button>
                 </form>
             </li> -->
+
             <section class="posts">
                     <?php if (isset($username)){
                         // if (isset($_GET['id']) ){
@@ -213,6 +214,7 @@
                             $user_row = mysqli_fetch_assoc($result_user);
                             $username = $user_row['usersUid'];
 
+                            echo "<div class='bigpost'>";
                             // Output  username boven de embed
                             echo "<div class=comment></div>";
                             echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
@@ -233,8 +235,9 @@
                             <input type='hidden' name='postId' value='".$row['postsID']."'>
                             <textarea name='message'></textarea><br>
                             <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
-                            </form>";
-                            echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                            </form><br><br>";
+                            echo "</div>";
+                            echo "<br><br>";
                         }
                     }
                     ?>

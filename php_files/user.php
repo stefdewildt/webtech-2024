@@ -86,7 +86,7 @@
         <label for="profile_picture">Upload Profile Picture:</label>
         <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
         <input type="submit" value="Upload"> -->
-</form>
+<!-- </form> -->
 
         <div class='personal_info'>
             <?php if ( isset($email) ) { ?>

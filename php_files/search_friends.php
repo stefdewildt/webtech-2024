@@ -1,6 +1,6 @@
 <?php
   include_once "header.php";
-  require_once '/var/www/dbh.inc.php';
+  require_once '/var/www/dbhInc.php';
 
 //profielen zoeken die overeenkomen met gegeven zoekterm 
 if (isset($_POST['submit-search'])){

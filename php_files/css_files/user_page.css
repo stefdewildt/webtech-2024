@@ -11,7 +11,7 @@ a{
 }
 
 .pd-row {
-    display: flex;
+    /* display: flex; */
     margin-top: 80px;
     margin-left: 180px;
     text-align: center;
@@ -105,3 +105,59 @@ button[type="submit"] {
     display: inline-block;
     font-size: 16px;
   }
+
+  .username{
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  
+  .comment-section{
+    border: 0.1em solid #ccc;
+    border-radius: 18px;
+    box-sizing: border-box;
+    padding: 0.5em;
+    width: 70%;
+    margin-bottom: 1.0em;
+  
+  }
+  
+  .username, .date{
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+  
+  .message{
+    display: inline-block;
+  }
+  
+  .date{
+    font-style: italic;
+    text-align: right; 
+    font-size: 0.8em;
+    margin-left: auto;
+  }
+  
+  .delete-form button{
+    background-color: rgb(172, 32, 32);
+    font-size: 0.8em;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+    font-family: 'Satoshi', sans-serif;
+  }
+  
+  .message, .delete-form{
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  
+  .friends .bigpost{
+    padding: 2.0em;
+    background-color: rgb(87, 129, 87);
+    color: white;
+    border-radius: 1.5em;
+  
+  }
+  

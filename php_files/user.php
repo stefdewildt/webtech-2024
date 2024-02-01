@@ -222,7 +222,7 @@
                             // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
                             
                             // Output de post onder de embed
-                            echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
+                            echo $row['postsPOST'];
                             echo "</div";
                             echo "<hr>"; 
                             

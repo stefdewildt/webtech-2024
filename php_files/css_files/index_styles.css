@@ -175,6 +175,7 @@ textarea{
   box-sizing: border-box;
   padding: 1.0em;
   width: 70%;
+  text-align: right;
 
 }
 

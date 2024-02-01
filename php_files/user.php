@@ -168,7 +168,7 @@
 
         <div>
 
-        <?php if (isset($_GET['id']) && isset($username) && $_GET['id'] != $_SESSION['useruid']) { ?>
+        <?php if (isset($_GET['id']) && isset($username) && isset($_SESSION['useruid'])) { ?>
                 <button onclick="toggleFollowUser(<?php echo $other_user_id; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
         <?php }?>
             </div>     

@@ -187,6 +187,7 @@ textarea{
   font-style: italic;
   text-align: right; 
   margin-right: 10em;
+  font-size: 0.8em;
 }
 
 .delete-form button{

@@ -80,18 +80,18 @@ while ($row = mysqli_fetch_assoc($result)) {
 	echo "<hr>"; // Voeg een scheidingsteken toe tussen records
 }
 
-//haal de vriend-ID op uit het formulier 
-//het zou kunnen dat regel 19 nog niet werkt 
-if (!empty($_POST['volg_id'])) {
-	$user_ID_2 = 'volg_id';
-	//voeg vrienden toe aan een vriendenlijst
-	$sql = "INSERT INTO friends (user_ID_1, user_ID_2) VALUES ('$user_ID_1', '$user_ID_2')";
-}
-if ($conn->query($sql) === TRUE) {
-    echo "Vrienden succesvol gelinkt!";
-} else {
-    echo "Fout bij het linken van vrienden: " . $conn->error;
-}
+// //haal de vriend-ID op uit het formulier 
+// //het zou kunnen dat regel 19 nog niet werkt 
+// if (!empty($_POST['volg_id'])) {
+// 	$user_ID_2 = 'volg_id';
+// 	//voeg vrienden toe aan een vriendenlijst
+// 	$sql = "INSERT INTO friends (user_ID_1, user_ID_2) VALUES ('$user_ID_1', '$user_ID_2')";
+// }
+// if ($conn->query($sql) === TRUE) {
+//     echo "Vrienden succesvol gelinkt!";
+// } else {
+//     echo "Fout bij het linken van vrienden: " . $conn->error;
+// }
 
-include_once "footer.php";
-?>
+// include_once "footer.php";
+// ?>

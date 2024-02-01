@@ -5,7 +5,7 @@
 
 ?>
 <head>
-    <link rel="stylesheet" href="/~wietskeb/webtech-2024/php_files/css_files/index_styles.css">
+    <link rel="stylesheet" href="/~isah/webtech-2024/php_files/css_files/index_styles.css">
 </head>
     
     <section class="scroll-section">

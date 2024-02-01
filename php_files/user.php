@@ -50,6 +50,7 @@
             $name = $row['usersName'];
             $email = $row['usersEmail'];
             $image = $row['usersImg'];  
+            $userid = $row['usersId'];
         } 
 
     }
@@ -162,11 +163,11 @@
             </li> -->
             <section class="posts">
                     <?php
-                    if (isset($_GET['id']) ){
-                        $userpostid = $userid;
-                    } elseif (isset($_SESSION['usersId'])){
-                        $userpostid($_SESSION['usersId']);
-                    }
+                    // if (isset($_GET['id']) ){
+                    //     $userpostid = $userid;
+                    // } else {
+                    //     $userpostid($_SESSION['usersId']);
+                    // }
 
 
                     $sql = "SELECT * FROM big_posts WHERE user_id = $userpostid ORDER BY postsTIMESTAMP DESC";

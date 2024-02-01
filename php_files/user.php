@@ -88,15 +88,17 @@
         <input type="submit" value="Upload"> -->
 </form>
 
-        <div>
+        <div class='personal_info'>
             <?php if ( isset($email) ) { ?>
 
-                <h3>Name: <?php echo $name?></h3>
-                <h3>Username: <?php echo $username?></h3>
-                <h3>Email:<?php echo $email?></h3>
+                <h3><?php echo $name?></h3>
+                <p><?php echo '@'.$username. "<br>"?></p>
+                <p><?php echo $email?></p>
+
             <?php } elseif (isset($username)) {?>
-                <h3>Name: <?php echo $name?></h3>
-                <h3>Username: <?php echo $username?></h3>
+                <h3><?php echo $name?></h3>
+                <p><?php '@'.$username. "<br>"?></p>
+
             <?php } else { ?>
                 <h3>User not found</h3>
             <?php } ?>

@@ -188,7 +188,7 @@ textarea{
   margin-right: 10em;
 }
 
-.delete-form{
+.delete-form button{
   background-color: rgb(172, 32, 32);
 }
 

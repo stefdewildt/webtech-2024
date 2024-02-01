@@ -213,7 +213,8 @@ textarea{
 
 
 .friends .bigpost{
-  background-color: grey;
+  padding: 2.0em;
+  background-color: #ccc;
   color: white;
   border-radius: 1.5em;
 

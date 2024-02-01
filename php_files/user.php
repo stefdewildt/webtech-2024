@@ -108,30 +108,51 @@
             <?php } ?>
 
             <nav>
-                <a href="/html/friends.html">Friends</a> <span id ="counter"><?php   
-    $usersUid= $_GET['id'];
-    $usersId = "SELECT usersId FROM users WHERE usersUid = '$usersUid'";
-    $result_usersId = $conn->query($usersId);
+                 <span id ="counter"> Following: 
+                    <?php   
+                            $usersUid= $_GET['id'];
+                            $usersId = "SELECT usersId FROM users WHERE usersUid = '$usersUid'";
+                            $result_usersId = $conn->query($usersId);
 
-    if ($result_usersId->num_rows>0){
-        $rowUserId = $result_usersId->fetch_assoc();
-        $usersId = $rowUserId['usersId'];
+                            if ($result_usersId->num_rows>0){
+                            $rowUserId = $result_usersId->fetch_assoc();
+                            $usersId = $rowUserId['usersId'];
 
-        $query_find_friends = "SELECT * FROM friends where user_ID_1 = $usersId";
-        $result_find_friends = $conn->query($query_find_friends);
+                            $query_find_friends = "SELECT * FROM friends where user_ID_1 = $usersId";
+                            $result_find_friends = $conn->query($query_find_friends);
 
-        $counter = $result_find_friends->num_rows;
+                            $counter = $result_find_friends->num_rows;
 
         
-        echo $counter;
-
-
-    } else {
+                            echo $counter;} 
+                            else {
         
-        echo 'Could not find friends';
-    } ?></span>
+                                echo 'Could not find following';
+                                    } ?> 
+    
+                                        Followers:   
+                    <?php 
+                            $usersUid= $_GET['id'];
+                            $usersId = "SELECT usersId FROM users WHERE usersUid = '$usersUid'";
+                            $result_usersId = $conn->query($usersId);
+
+                            if ($result_usersId->num_rows>0){
+                            $rowUserId = $result_usersId->fetch_assoc();
+                            $usersId = $rowUserId['usersId'];
+
+                            $query_find_friends = "SELECT * FROM friends where user_ID_2 = $usersId";
+                            $result_find_friends = $conn->query($query_find_friends);
+
+                            $counter = $result_find_friends->num_rows;
+
+                            echo $counter} 
+                            else {
+        
+                                echo 'Could not find following';
+                                    } ?> 
+                </span>
             </nav> 
-        </div>
+    </div>
 
 
     <?php

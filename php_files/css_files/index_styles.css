@@ -169,9 +169,9 @@ textarea{
   font-weight: bold;
 }
 
-.comment-section{
+/* .comment-section{
   display: inline-block;
-}
+} */
 
 .username, .date{
   display: inline-block;

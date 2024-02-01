@@ -12,6 +12,7 @@ function setComment($conn, $postId){
         // inserting into database
         $sql = "INSERT INTO comments (usersId, date, message, postId) VALUES ('$usersId', '$date', '$message', '$postId')";
         $result = $conn->query($sql);
+        redirect('index.php');
     }
 }
 

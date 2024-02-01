@@ -83,7 +83,7 @@
                         $result_user = mysqli_query($conn, $sql);
                         $user_row = mysqli_fetch_assoc($result_user);
                         $username = $user_row['usersUid'];
-                        echo "<div class='bigpost'>"
+                        echo "<div class='bigpost'>";
                         // Output  username boven de embed
                         echo "<div class=comment></div>";
                         echo '@'.$username ."<br>";
@@ -107,7 +107,7 @@
 
                         </form><br><br>";
                        
-                        echo "</div>"
+                        echo "</div>";
                         echo "<hr>"; // Voeg een scheidingsteken toe tussen records
                     }
                     ?>

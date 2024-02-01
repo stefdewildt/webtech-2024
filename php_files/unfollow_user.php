@@ -1,16 +1,18 @@
 
 <?php
+    
     include_once "header.php";
+    require_once '/var/www/dbhInc.php';
 
- require_once '/var/www/dbhInc.php';
-
+    //Haal opgestuurde gegevens op 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    //maak variabele $userid voor de user die bekeken wordt
+    //maak variabele $huidige_gebruiker_id voor user die ingelogd is
     $userId = $_POST['userId'];
     $huidige_gebruiker_id = $_SESSION['usersId'];
 
-    // Voeg hier de logica toe om de gebruiker te volgen in de database
-    // (bijv. voeg een nieuwe rij toe aan de friends-tabel)
-
+    //verwijder de rij uit tabel friends waar $huidige_gebruiker_id $userId volgt  
     $query_unfollow_user = "DELETE FROM friends WHERE (user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $userId)";
     $result_unfollow_user = $conn->query($query_unfollow_user);
         

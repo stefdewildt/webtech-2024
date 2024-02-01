@@ -7,7 +7,7 @@
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["userImg"])) {
-    $target_dir = "../img/";  // create a folder named "uploads" to store profile pictures
+    $target_dir = "https://webtech-bg2.webtech-uva.nl/php_files/img/";  // create a folder named "uploads" to store profile pictures
     $target_file = $target_dir . basename($_FILES["userImg"]["name"]);
     $uploadvalid = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));

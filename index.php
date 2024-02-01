@@ -108,7 +108,7 @@
                         </form><br><br>";
                        
                         echo "</div>";
-                         echo "<br><br>"
+                         echo "<br><br>";
                     }
                     ?>
                 </section>

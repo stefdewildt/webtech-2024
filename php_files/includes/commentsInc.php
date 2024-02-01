@@ -1,7 +1,7 @@
 <?php
     include 'functionsInc.php';
 
-// adding comments to database
+// comment wordt toegevoegd aan de database
 function setComment($conn, $postId){
     if (isset($_POST['commentSubmit'.$postId]) && $postId = $_POST['postId'] ){
         $usersId = $_POST['usersId'];
@@ -16,10 +16,10 @@ function setComment($conn, $postId){
     }
 }
 
-// getting comments from database to be able to show on website 
+// comments worden uit de database gehaald en weergegeven in de website, hierbij worden ook de username en datum gepubliceerd
 function getComments($conn, $postId) {
 
-    // go into database , get all the comments, run the query and show them (result)
+    // in de database gaan, al de comments die bij de postid horen verzamelen, en weergeven
     $sql = "SELECT * FROM comments WHERE postId='$postId' ORDER BY date ASC";
     $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
@@ -28,18 +28,17 @@ function getComments($conn, $postId) {
         $result2 = $conn->query($sql2);
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='comment-section'><p>";
-            // echo "<div class='username'>@" . $row2['usersUid'] . "</div>";
             echo '<div class="username "><a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$row2['usersUid'].'">@'.$row2['usersUid'].'</a></div><br>';
             echo "<div class='date'>" . $row['date'] . "</div><br><br>";
 
-            // checking for new line tags and make it into line breaks
+            // zorgen dat eventuele new lines er niet voor zorgen dat de structuur wordt aangetast
             echo "<div class='message'>" . nl2br($row['message']) . "</div>";
 
-            // able to delete your own comments
+            // het is alleen mogelijk om je eigen comments te verwijderen
             echo "</p>";
             if (isset($_SESSION['usersId'])) {
 
-                // current user comparing to user who made the comment
+                // huidige gebruiker wordt vergeleken met de eigenaar van de comment
                 if (($_SESSION['usersId']) == ($usersId)){
                     echo "<form class= 'delete-form' method='POST' action='".deleteComments($conn)."'>
                     <input type='hidden' name='cid' value='".$row['cid']."'>
@@ -47,13 +46,10 @@ function getComments($conn, $postId) {
                 </form>";
                 }
 
-            } else {
-                echo "<form class= 'reply-form' method='POST' action='".deleteComments($conn)."'>
-                <input type='hidden' name='cid' value='".$row['cid']."'>
-                    <button type='submit' name='commentDelete'>Reply</button>
-                </form>";
+        
             }
 
+        // het is alleen mogelijk om een comment te plaatsen als je bent ingelogd
         } else {
             echo "<p class= 'comment-message'>You need to be logged in to reply! </p>";
         }
@@ -62,44 +58,15 @@ function getComments($conn, $postId) {
 } 
 
 
-// how to make sure you can't delete other people's comments im not sure........ this only makes sure you can delete comments
+// functionaliteit om comments te verwijderen
 function deleteComments($conn){
     if (isset($_POST['commentDelete'])) {
         $cid = $_POST['cid'];
 
     $sql = "DELETE FROM comments WHERE cid='$cid'";
     $result = $conn->query($sql);
-    //header("Location: index.php");
     redirect('index.php');
     }
-}
-
-function getLogin($conn) {
-    if (isset($_POST['loginSubmit'])){
-
-        // initializing variables
-        $usersId = $_POST['usersId'];
-        $pwd = $_POST['pwd'];
-
-        $sql = "SELECT * FROM user WHERE usersId='$usersId' AND pwd='$pwd'";
-        $result = $conn->query($sql);
-
-        // counts the amount of comments
-        if (mysqli_num_rows($result) > 0){
-
-            // if there's data it will be stored inside variable 'row'
-            if ($row = $result->fetch_assoc()) {
-                $_SESSION['id'] = $row['id'];
-                
-                // tells status of what just happened...?
-                header("Location: index.php?loginsuccess");
-                exit();
-            }
-        } else{
-            header("Location: index.php?loginfailed");
-            exit();
-        }
-    }      
 }
 
 

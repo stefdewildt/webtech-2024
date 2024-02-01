@@ -6,9 +6,11 @@ function setComment($conn, $postId){
     if (isset($_POST['commentSubmit'.$postId]) && $postId = $_POST['postId'] ){
         $usersId = $_POST['usersId'];
         $date = $_POST['date'];
-        $message = $_POST['message'];
-        $postId = $_POST['postId'];
+        // $message = $_POST['message'];
+        $message = filter_input(INPUT_POST, "message", FILTER_SANITIZE_STRING);
 
+        $postId = $_POST['postId'];
+        
         // inserting into database
         $sql = "INSERT INTO comments (usersId, date, message, postId) VALUES ('$usersId', '$date', '$message', '$postId')";
         $result = $conn->query($sql);

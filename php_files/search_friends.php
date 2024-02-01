@@ -2,10 +2,17 @@
   include_once "header.php";
   require_once '/var/www/dbhInc.php';
 
-  if (isset($_POST['submit-search'])){
-    header("location: $_POST['search']");
 
-  }
+if (isset($_POST['submit-search'])) {
+    $search = mysqli_real_escape_string($conn, $_POST['search']);
+    header("Location: user.php?id=$search");
+    exit(); // Zorg ervoor dat het script stopt na het doorsturen
+}
+
+//   if (isset($_POST['submit-search'])){
+//     header("location: $_POST['search']");
+
+//   }
 // profielen zoeken die overeenkomen met gegeven zoekterm 
 // if (isset($_POST['submit-search'])){
 //     $se

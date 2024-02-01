@@ -77,7 +77,7 @@
             <input type="submit" value="Upload">';
         } elseif ($image != null) {
             echo '<img src="'.$image.'">';
-            echo '</div>'
+            echo '</div>';
         }
 
 

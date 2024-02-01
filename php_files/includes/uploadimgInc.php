@@ -1,7 +1,7 @@
 <?php
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
-    
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["userImg"])) {
     $target_dir = "../img/";  // create a folder named "uploads" to store profile pictures
     $target_file = $target_dir . basename($_FILES["userImg"]["name"]);
@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["userImg"])) {
         echo "File is not an image.";
         $uploadvalid = 0;
     }
+    
 
     // Check file size (adjust as needed)
     if ($_FILES["userImg"]["size"] > 500000) {

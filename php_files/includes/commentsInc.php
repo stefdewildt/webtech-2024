@@ -2,7 +2,7 @@
     include 'functionsInc.php';
 
 // comment wordt toegevoegd aan de database
-function setComment($conn, $postId){
+function setComment($conn, $postId, $url){
     if (isset($_POST['commentSubmit'.$postId]) && $postId = $_POST['postId'] ){
         $usersId = $_POST['usersId'];
         $date = $_POST['date'];
@@ -14,7 +14,7 @@ function setComment($conn, $postId){
         // inserting into database
         $sql = "INSERT INTO comments (usersId, date, message, postId) VALUES ('$usersId', '$date', '$message', '$postId')";
         $result = $conn->query($sql);
-        redirect('index.php');
+        redirect($url);
     }
 }
 

@@ -80,7 +80,7 @@
             ?>
                 <li><a href="https://webtech-bg2.webtech-uva.nl/php_files/friends.php">Friends</a></li>
                 <li>
-                    <form class="search-form" method="POST" action="https://webtech-bg2.webtech-uva.nl/~isah/webtech-2024/php_files/search_friends.php">
+                    <form class="search-form" method="POST" action="https://webtech-bg2.webtech-uva.nl/php_files/search_friends.php">
                         <input type="text" name="search" placeholder="Search friends, genres, artists...">
                         <button type="submit" name="submit-search">Search</button>
                     </form>

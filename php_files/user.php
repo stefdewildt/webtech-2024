@@ -168,12 +168,10 @@
 
     // Voer de juiste actie uit op basis van de status
     if (isFollowing) {
-        alert('1')
 
         // Gebruiker is al aan het volgen, voer de unfollow-functie uit
         unfollowUser(userId, buttonElement);
     } else {
-        alert('2')
         // Gebruiker volgt nog niet, voer de follow-functie uit
         followUser(userId, buttonElement);
     }

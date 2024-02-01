@@ -210,3 +210,11 @@ textarea{
   display: inline-block;
   margin-right: 10px;
 }
+
+
+.friends .posts{
+  background-color: grey;
+  color: white;
+  border-radius: 1.5em;
+
+}

@@ -69,6 +69,7 @@
     <div class="pd-row">
         <?php
         if ( $image == null) {
+            echo '<div class="form-container">';
             echo '<img src="img/profile.png">';
             echo '<form action="/includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
             <label for="userImg">Upload Profile Picture:</label>
@@ -76,6 +77,7 @@
             <input type="submit" value="Upload">';
         } elseif ($image != null) {
             echo '<img src="'.$image.'">';
+            echo '</div>'
         }
 
 
@@ -195,6 +197,7 @@
                             getComments($conn, $row['postsID']);
 
                             // Voeg andere velden toe zoals nodig
+                            echo "<div class='create-post'>"
                             echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
                             <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
                             <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
@@ -203,6 +206,7 @@
                             <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
                             </form>";
                             echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                            echo '</div>'
                         }
                     }
                     ?>

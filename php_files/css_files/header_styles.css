@@ -68,6 +68,8 @@ header{
   overflow-x: hidden; 
 }
 footer{
+  position: fixed;
+  bottom: 0;
   background-color: rgb(48, 94, 48);
   padding-top: 0.15em;
   margin-left: 0;

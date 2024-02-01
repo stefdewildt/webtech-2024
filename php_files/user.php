@@ -166,7 +166,7 @@
                     }
 
 
-                    $sql = "SELECT * FROM big_posts WHERE user_id = ORDER BY postsTIMESTAMP DESC";
+                    $sql = "SELECT * FROM big_posts WHERE user_id = $userpostid ORDER BY postsTIMESTAMP DESC";
                     $result = mysqli_query($conn, $sql);
                     while ($row = mysqli_fetch_assoc($result)) {
                         $user_id = $row['user_id'];

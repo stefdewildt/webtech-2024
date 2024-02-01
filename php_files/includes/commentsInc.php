@@ -31,7 +31,7 @@ function getComments($conn, $postId) {
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='comment-section'><p>";
             echo "<div class='username'>@" . $row2['usersUid'] . "<br></div>";
-            echo $row['date']. "<br><br>";
+            echo "<div class='date'>" . $row['date'] . "<br><br></div>";
 
             // checking for new line tags and make it into line breaks
             echo nl2br($row['message']);

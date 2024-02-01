@@ -173,6 +173,9 @@ textarea{
   font-weight: bold;
 
 }
+.date{
+  font-style: italic 
+}
 .comment h3 {
   margin-top: 0;
   font-size: 18px;

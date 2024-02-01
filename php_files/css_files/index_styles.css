@@ -167,6 +167,7 @@ textarea{
 
 .username{
   font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
 .comment-section{
@@ -175,19 +176,24 @@ textarea{
   box-sizing: border-box;
   padding: 1.0em;
   width: 70%;
+  margin-bottom: 1.0em;
 
 }
 
 .username, .date{
-  display: inline-block;
+  display: block;
   margin-right: 0.5em;
+}
+
+.message{
+  display: block;
 }
 
 .date{
   font-style: italic;
   text-align: right; 
-  margin-right: 10em;
   font-size: 0.8em;
+  margin-left: auto;
 }
 
 .delete-form button{

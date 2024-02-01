@@ -106,10 +106,9 @@
                         echo "<div class=comment></div>";
                         echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
                         echo '<h3>'.$row['postsURL'] . "</h3><br>";
-                        // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
                         
-                        // Output de post onder de embed
-                        echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
+                        // Output de post onder de titel
+                        echo $row['postsPOST'];
                         echo "</div";
                         echo "<hr>"; 
                         

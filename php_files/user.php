@@ -189,6 +189,8 @@
                         echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
                         echo "</div";
                         echo "<hr>"; 
+                        
+                        getComments($conn, $row['postsID']);
 
                         // Voeg andere velden toe zoals nodig
                         echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
@@ -198,7 +200,6 @@
                         <textarea name='message'></textarea><br>
                         <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
                         </form>";
-                        getComments($conn, $row['postsID']);
                         echo "<hr>"; // Voeg een scheidingsteken toe tussen records
                     }
                     ?>

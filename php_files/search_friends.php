@@ -31,4 +31,4 @@ if (isset($_POST['submit-search'])) {
 //     } else {
 //         echo "There are no results matching your search";
 //     }
-// ?>   
+// ?>

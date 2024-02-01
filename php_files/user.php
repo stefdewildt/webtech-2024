@@ -1,7 +1,9 @@
 <?php
-    include_once "header.php";
     require_once '/var/www/dbhInc.php';
     include 'includes/commentsInc.php';
+    ob_start();
+    include_once "header.php";
+
 
 
     
@@ -58,6 +60,8 @@
     else {
             header('location: login.php');
     }
+    ob_flush();
+
 ?>
 
 <head>

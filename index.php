@@ -36,7 +36,7 @@
 
                     // Output  username boven de embed
                     //echo '@'.$username . "<br>";
-                    echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/users.php?id='.$username.'">'.$username.'</a><br>';
+                    echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
 
                     if (strpos($row['postsURL'], 'embed') !== true) {
                         $modifiedURL = str_replace('.com/', '.com/embed/', $row['postsURL']);

@@ -91,8 +91,8 @@
                         
 
 
-
-                        if ($following) {
+                        // laat alleen je eigen posts zien
+                        if ($following || $user_id = $huidige_gebruiker_id) {
 
                         $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
                         $result_user = mysqli_query($conn, $sql);

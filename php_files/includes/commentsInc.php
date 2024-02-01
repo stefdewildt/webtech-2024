@@ -1,8 +1,5 @@
-
-<head>
-    <link rel="stylesheet" href="/~wietskeb/webtech-2024/php_files/css_files/index_styles.css">
-</head>
 <?php
+    include 'functionsInc.php';
 
 // adding comments to database
 function setComment($conn, $postId){
@@ -15,6 +12,7 @@ function setComment($conn, $postId){
         // inserting into database
         $sql = "INSERT INTO comments (usersId, date, message, postId) VALUES ('$usersId', '$date', '$message', '$postId')";
         $result = $conn->query($sql);
+        redirect('index.php');
     }
 }
 
@@ -70,7 +68,8 @@ function deleteComments($conn){
 
     $sql = "DELETE FROM comments WHERE cid='$cid'";
     $result = $conn->query($sql);
-    header("Location: index.php");
+    //header("Location: index.php");
+    redirect('index.php');
     }
 }
 
@@ -103,3 +102,4 @@ function getLogin($conn) {
 }
 
 
+ob_flush();

@@ -2,6 +2,7 @@
   include_once "header.php";
   require_once '/var/www/dbhInc.php';
 
+    echo '<script>alert("map wordt geopend");</script>';
     $usersUid= $_GET['id'];
     $usersId = "SELECT usersId FROM users WHERE usersUid = '$usersUid'";
     $result_usersId = $conn->query($usersId);
@@ -15,10 +16,12 @@
 
         $counter = $result_find_friends->num_rows;
 
+        echo '<script>alert("Deze PHP-code wordt uitgevoerd!");</script>';
         echo $counter;
 
 
     } else {
+        echo '<script>alert("Deze PHP-code wordt uitgevoerd, could not find friends!");</script>';
         echo 'Could not find friends';
     }
    

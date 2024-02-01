@@ -26,6 +26,7 @@
             $name = $row['usersName'];
             $email = null;
             $image = $row['usersImg'];  
+            $userid = $row['usersId'];
         } 
         // ONGELDIG ID
         else {
@@ -160,8 +161,8 @@
             <section class="posts">
                     <?php
                     if (isset($_GET['id']) ){
-                        $userpostid = $_GET['id'];
-                    }elseif (isset($_SESSION['usersId'])){
+                        $userpostid = $userid;
+                    } elseif (isset($_SESSION['usersId'])){
                         $userpostid($_SESSION['usersId']);
                     }
 

@@ -217,10 +217,11 @@
                                 <input type='hidden' name='postId' value='".$row['postsID']."'>
                                 <textarea name='message'></textarea><br>
                                 <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
-                                </form><br><br>";
-                                echo "</div>";
-                                echo "<br><br>";
+                                </form>";
                             }
+                            echo "<br><br>";
+                            echo "</div>";
+                            echo "<br><br>";
                         }
                     }
                     ?>

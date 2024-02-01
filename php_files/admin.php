@@ -8,7 +8,6 @@
 </head>
 
 
-    <div >
         <div class=adminlinks>
             <nav>
                 <a href="admin_hottakes.php">Hot-Takes</a>
@@ -16,7 +15,6 @@
                 <a href="admin_posts.php">Posts</a>                
             </nav> 
         </div>        
-    </div>
 
 <?php
     include_once("footer.php");

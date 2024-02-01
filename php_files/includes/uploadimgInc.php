@@ -1,6 +1,22 @@
+
+<div class="pd-row">
+        <?php
+        if ( $image == null) {
+            echo '<img src="img/profile.png">';
+            echo '<form action="includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
+            <label for="userImg">Upload Profile Picture:</label>
+            <input type="file" name="userImg" id="userImg" accept="image/*">
+            <input type="submit" value="Upload">';
+        } elseif ($image != null) {
+            echo '<img src="'.$image.'">';
+        }
+
 <?php
     include_once "header.php";
     require_once '/var/www/dbhInc.php';
+
+
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["userImg"])) {
     $target_dir = "../img/";  // create a folder named "uploads" to store profile pictures

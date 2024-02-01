@@ -139,7 +139,7 @@
     </div>
 
     <div class="profile-posts">
-        <ul class="profile-post">
+        <!-- <ul class="profile-post">
             <li><h2>Your favourites</h2></li>
               <div class="chosen-music">
                   <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1HAW56e0zz05phUnzuHF9E?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
@@ -156,7 +156,52 @@
                     <input type="text" name ="post" placeholder = "Start a conversation"><br><br>
                     <button type="Submit" name="submit">Submit Hot Take</button>
                 </form>
-            </li>
+            </li> -->
+            <section class="posts">
+                    <?php
+                    if (isset($_GET['id']) ){
+                        $userpostid = $_GET['id'];
+                    }elseif (isset($_SESSION['usersId'])){
+                        $userpostid($_SESSION['usersId']);
+                    }
+
+
+                    $sql = "SELECT * FROM big_posts WHERE user_id = ORDER BY postsTIMESTAMP DESC";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $user_id = $row['user_id'];
+                        $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
+                        $result_user = mysqli_query($conn, $sql);
+                        $user_row = mysqli_fetch_assoc($result_user);
+                        $username = $user_row['usersUid'];
+
+                        // Output  username boven de embed
+                        echo "<div class=comment></div>";
+                        echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
+                        echo '<h3>'.$row['postsURL'] . "</h3><br>";
+                        // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
+                        
+                        // Output de post onder de embed
+                        echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
+                        echo "</div";
+                        echo "<hr>"; 
+
+                        // Voeg andere velden toe zoals nodig
+                        echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
+                        <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
+                        <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+                        <input type='hidden' name='postId' value='".$row['postsID']."'>
+                        <textarea name='message'></textarea><br>
+                        <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
+                        </form>";
+                        getComments($conn, $row['postsID']);
+                        echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                    }
+                    ?>
+            </section>
+
+
+        
         </ul>
     </div>
 

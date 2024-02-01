@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/login.css">
 </header>
 
+    <!-- Signup form, hierin worden de gegevens ingevoerd en ze worden doorgepaast naar de database. -->
     <section class="signup-form">
         <h2>Sign up</h2>
         <div class="signup-form-form">
@@ -18,6 +19,8 @@
                 <button type="Submit" name="submit">Sign Up</button>
             </form>
         </div>
+        
+        <!-- Error-handling, haalt error uit de url en echoet op de pagina of het goed is gegaan. -->
         <?php 
             if (isset($_GET["error"])) {
                 if ($_GET["error"] == "emptyinput") {

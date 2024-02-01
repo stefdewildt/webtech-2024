@@ -4,6 +4,7 @@
 <header>
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/login.css">
 </header>
+    <!-- hier worden de gegevens voor login ingevoerd -->
     <section class="login-form">
         <h2>Log in</h2>
         <div class="login-form-form">
@@ -15,6 +16,7 @@
             </form>
         </div>
         <?php 
+            // error handling voor incorrecte inputs
             if (isset($_GET["error"])) {
                 if ($_GET["error"] == "emptyinput") {
                     echo "<p>Fill in all fields!</p>";

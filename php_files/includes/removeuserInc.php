@@ -13,10 +13,6 @@ if (isset($_POST['remove_user'])) {
         echo "Error deleting record: " . mysqli_error($conn);
     }
 
-    // Add the necessary code to remove the post from the database
-    // ...
-
-    // Redirect back to the page after removal
     header("Location: ../admin_users.php");
     exit();
 }

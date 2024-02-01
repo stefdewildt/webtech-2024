@@ -173,7 +173,8 @@ textarea{
   border: 0.1em solid #ccc;
   border-radius: 18px;
   box-sizing: border-box;
-  
+  padding: 1.0em;
+
 }
 
 .username, .date{
@@ -187,11 +188,10 @@ textarea{
   margin-right: 10em;
 }
 
-.message, .delete-form{
-  display: inline-block;
+.delete-form{
+  background-color: rgb(172, 32, 32);
 }
 
-.comment h3 {
-  margin-top: 0;
-  font-size: 18px;
+.message, .delete-form{
+  display: inline-block;
 }

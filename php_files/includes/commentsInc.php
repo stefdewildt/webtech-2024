@@ -30,8 +30,8 @@ function getComments($conn, $postId) {
         $result2 = $conn->query($sql2);
         if ($row2 = $result2->fetch_assoc()) {
             echo "<div class='comment-section'><p>";
-            echo "<div class='username'>@" . $row2['usersUid'] . "<br></div>";
-            echo "<div class='date'>" . $row['date'] . "<br><br></div>";
+            echo "<div class='username'>@" . $row2['usersUid'] . "</div>";
+            echo "<div class='date'>" . $row['date'] . "</div>";
 
             // checking for new line tags and make it into line breaks
             echo nl2br($row['message']);
@@ -47,7 +47,7 @@ function getComments($conn, $postId) {
                 </form>";
                 }
             }
-            
+
         } else {
             echo "<p class= 'comment-message'>You need to be logged in to reply! </p>";
         }

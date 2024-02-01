@@ -192,6 +192,7 @@ textarea{
 .delete-form button{
   background-color: rgb(172, 32, 32);
   font-size: 0.5em;
+  padding: 0.5em;
 }
 
 .message, .delete-form{

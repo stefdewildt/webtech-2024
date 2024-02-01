@@ -46,7 +46,7 @@
         });
         $("#cookie-consent-disagree").on("click", function() {
             // Omleiden naar andere link
-            window.location.href = "https://youtu.be/dQw4w9WgXcQ?si=f55KtMJvlKZe68M-";
+            window.location.href = "https://nl.wikipedia.org/wiki/Cookie_(internet)";
         });
     });
     </script>

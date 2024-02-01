@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["userImg"])) {
         echo "File is not an image.";
         $uploadvalid = 0;
     }
-    
+
 
     // Check file size (adjust as needed)
     if ($_FILES["userImg"]["size"] > 500000) {
@@ -49,4 +49,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["userImg"])) {
     }
 } else {
     echo "Invalid request.";
-}
+} 

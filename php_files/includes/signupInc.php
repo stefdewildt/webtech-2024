@@ -2,15 +2,19 @@
 
 if (isset($_POST["submit"])){
     
+    // ophalen van namen uit de form
     $name = $_POST["name"];
     $email = $_POST["email"];
     $username = $_POST["uid"];
     $pwd = $_POST["pwd"];
     $pwdRepeat = $_POST["pwdrepeat"];
 
+    // connectie met database en connectie met functies
     require_once '/var/www/dbhInc.php';
     require_once 'functionsInc.php';
 
+    // functies worden aangeroepen, elke functie spreekt voor zich en staat voor een 
+    // bepaalde soort error.
     if (emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false) {
         header("location: ../signup.php?error=emptyinput");
         exit();

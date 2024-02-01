@@ -8,6 +8,7 @@ if (isset($_POST["submit"])){
     require_once '/var/www/dbhInc.php';
     require_once 'functionsInc.php';
 
+    // Als login fout gaat, wordt hier error gecreeerd.
     if (emptyInputLogin($username, $pwd) !== false) {
         header("location: ../login.php?error=emptyinput");
         exit();

@@ -48,6 +48,19 @@
 </head>
 
 <body>
+    <a href="#" id="to-top">
+        <i" class="fas fa-chevron-up"></i>
+    </a>
+    <script>
+        const toTop = document.getElementById("to-top");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                toTop.classList.add("active");
+            } else {
+                toTop.classList.remove("active");
+            }
+        });        
+    </script>
     <header>
         <div class="upper-bar">
             <div class="header-left">
@@ -92,17 +105,5 @@
     </header>
 
     
-    <a href="#" id="to-top">
-        <i" class="fas fa-chevron-up"></i>
-    </a>
-    <script>
-        const toTop = document.getElementById("to-top");
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 100) {
-                toTop.classList.add("active");
-            } else {
-                toTop.classList.remove("active");
-            }
-        });        
-    </script>
+
     <div class=content>

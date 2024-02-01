@@ -34,7 +34,7 @@ function getComments($conn, $postId) {
             echo "<div class='date'>" . $row['date'] . "</div><br><br>";
 
             // checking for new line tags and make it into line breaks
-            echo nl2br($row['message']);
+            echo "<div class='message'>" . nl2br($row['message']) . "</div>";
 
             // able to delete your own comments
             echo "</p>";

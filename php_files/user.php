@@ -162,45 +162,47 @@
                 </form>
             </li> -->
             <section class="posts">
-                    <?php
-                    // if (isset($_GET['id']) ){
-                    //     $userpostid = $userid;
-                    // } else {
-                    //     $userpostid($_SESSION['usersId']);
-                    // }
+                    <?php if (isset($username)){
+                        // if (isset($_GET['id']) ){
+                        //     $userpostid = $userid;
+                        // } else {
+                        //     $userpostid($_SESSION['usersId']);
+                        // }
 
 
-                    $sql = "SELECT * FROM big_posts WHERE user_id = $userid ORDER BY postsTIMESTAMP DESC";
-                    $result = mysqli_query($conn, $sql);
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $user_id = $row['user_id'];
-                        $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
-                        $result_user = mysqli_query($conn, $sql);
-                        $user_row = mysqli_fetch_assoc($result_user);
-                        $username = $user_row['usersUid'];
-
-                        // Output  username boven de embed
-                        echo "<div class=comment></div>";
-                        echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
-                        echo '<h3>'.$row['postsURL'] . "</h3><br>";
-                        // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
+                        $sql = "SELECT * FROM big_posts WHERE user_id = $userid ORDER BY postsTIMESTAMP DESC";
+                        $result = mysqli_query($conn, $sql);
                         
-                        // Output de post onder de embed
-                        echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
-                        echo "</div";
-                        echo "<hr>"; 
-                        
-                        getComments($conn, $row['postsID']);
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $user_id = $row['user_id'];
+                            $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
+                            $result_user = mysqli_query($conn, $sql);
+                            $user_row = mysqli_fetch_assoc($result_user);
+                            $username = $user_row['usersUid'];
 
-                        // Voeg andere velden toe zoals nodig
-                        echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
-                        <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
-                        <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-                        <input type='hidden' name='postId' value='".$row['postsID']."'>
-                        <textarea name='message'></textarea><br>
-                        <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
-                        </form>";
-                        echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                            // Output  username boven de embed
+                            echo "<div class=comment></div>";
+                            echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
+                            echo '<h3>'.$row['postsURL'] . "</h3><br>";
+                            // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
+                            
+                            // Output de post onder de embed
+                            echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
+                            echo "</div";
+                            echo "<hr>"; 
+                            
+                            getComments($conn, $row['postsID']);
+
+                            // Voeg andere velden toe zoals nodig
+                            echo"<form method='POST' action='".setComment($conn,$row['postsID'])."'>
+                            <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
+                            <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+                            <input type='hidden' name='postId' value='".$row['postsID']."'>
+                            <textarea name='message'></textarea><br>
+                            <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
+                            </form>";
+                            echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                        }
                     }
                     ?>
             </section>

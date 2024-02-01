@@ -5,7 +5,7 @@
 
 ?>
 <head>
-    <link rel="stylesheet" href="/~wietskeb/webtech-2024/php_files/css_files/index_styles.css">
+    <link rel="stylesheet" href="/~isah/webtech-2024/php_files/css_files/index_styles.css">
 </head>
     
     <section class="scroll-section">
@@ -83,7 +83,7 @@
                         $result_user = mysqli_query($conn, $sql);
                         $user_row = mysqli_fetch_assoc($result_user);
                         $username = $user_row['usersUid'];
-
+                        echo "<div class='bigpost'>";
                         // Output  username boven de embed
                         echo "<div class=comment></div>";
                         echo '@'.$username ."<br>";
@@ -107,8 +107,8 @@
 
                         </form><br><br>";
                        
-
-                        echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                        echo "</div>";
+                         echo "<br><br>";
                     }
                     ?>
                 </section>

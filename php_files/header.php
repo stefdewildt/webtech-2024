@@ -93,7 +93,7 @@
                 echo '<li><a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php">Profile</a></li>';                                
                 }
             ?>
-                <li><a href="https://webtech-bg2.webtech-uva.nl/php_files/friends.php">Friends</a></li>
+                <!-- <li><a href="https://webtech-bg2.webtech-uva.nl/php_files/friends.php">Friends</a></li> -->
                 <li>
                     <form class="search-form" method="POST" action="https://webtech-bg2.webtech-uva.nl/php_files/search_friends.php">
                         <input type="text" name="search" placeholder="Search friends, genres, artists...">

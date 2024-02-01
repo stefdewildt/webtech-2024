@@ -102,7 +102,7 @@
                         <input type='hidden' name='postId' value='".$row['postsID']."'>
                         <textarea name='message'></textarea><br>
                         <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
-                        </form>";
+                        </form><br><br>";
                         getComments($conn, $row['postsID']);
                         echo "<hr>"; // Voeg een scheidingsteken toe tussen records
                     }

@@ -65,29 +65,28 @@
 ?>
 
 <head>
-    <link rel="stylesheet" href="css_files/user_page.css">
+    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/~stefw/webtech-2024/php_files/css_files/user_page.css">
 </head>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 
     <div class="pd-row">
-        
-</form>
+ 
 
-        <div class='personal_info'>
+        <!-- <div class='personal_info'> -->
             <?php if ( isset($email) ) { ?>
 
-                <h3><?php echo $name?></h3>
+                <h3><?php echo $name."<br>"?></h3>
                 <p><?php echo '@'.$username. "<br>"?></p>
-                <p><?php echo $email?></p>
+                <p><?php echo $email."<br>"?></p>
 
             <?php } elseif (isset($username)) {?>
-                <h3><?php echo $name?></h3>
+                <h3><?php echo $name."<br>"?></h3>
                 <p><?php '@'.$username. "<br>"?></p>
 
             <?php } else { ?>
-                <h3>User not found</h3>
+                <h3>User not found<br></h3>
             <?php } ?>
 
             <nav>
@@ -175,27 +174,9 @@
             </div>     
     </div>
 
-    <div class="profile-posts">
-        <!-- <ul class="profile-post">
-            <li><h2>Your favourites</h2></li>
-              <div class="chosen-music">
-                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1HAW56e0zz05phUnzuHF9E?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
-                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2ut4BOQSqxLpcX5MtPjzYa?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
-                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/37Tmv4NnfQeb0ZgUC4fOJj?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
-                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3Um9toULmYFGCpvaIPFw7l?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
-                  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3MyQn1xBQwPtFJUUP7zB8s?utm_source=generator" width="100%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe><br>
-              </div>
-            <li><h2>Your creations</h2></li>
-            <li>
-                <h2>Make a post:</h2>
-                <form action="includes/uploadInc.php" class ="discussion-input" method="post">
-                    <input type="text" name ="url" placeholder ="Paste Spotiy URL here"><br>
-                    <input type="text" name ="post" placeholder = "Start a conversation"><br><br>
-                    <button type="Submit" name="submit">Submit Hot Take</button>
-                </form>
-            </li> -->
+    <div class="posts">
 
-            <section class="posts">
+            <section class="friends">
                     <?php if (isset($username)){
                         // if (isset($_GET['id']) ){
                         //     $userpostid = $userid;
@@ -246,7 +227,7 @@
 
         
         </ul>
-    </div>
+    <!-- </div> -->
 
     <script>
 

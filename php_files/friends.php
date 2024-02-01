@@ -1,6 +1,8 @@
 <?php
 include_once "header.php";
 require_once '/var/www/dbhInc.php';
+include_once 'includes/functionsInc.php';
+
 //controleer of gebruiker is ingelogd
 
 if (isset($_SESSION['usersId'])){
@@ -8,12 +10,12 @@ if (isset($_SESSION['usersId'])){
 	$user_ID_1 = $_SESSION['usersId'];
 } else{
 //keer terug naar inlogpagina
-	header("Location: login.php");
+	redirect("login.php");
 	exit();
 }
 ?>
 <head>
-    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/~stefw/webtech-2024/php_files/css_files/friends_styles.css">
+    <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/php_files/css_files/friends_styles.css">
 </head>
 
 

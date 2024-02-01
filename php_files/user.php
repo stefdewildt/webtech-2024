@@ -83,7 +83,7 @@
 
             <?php } elseif (isset($username)) {?>
                 <h3><?php echo $name."<br>"?></h3>
-                <p><?php '@'.$username. "<br>"?></p>
+                <p><?php echo '@'.$username. "<br>"?></p>
 
             <?php } else { ?>
                 <h3>User not found<br></h3>
@@ -132,7 +132,7 @@
                             }
                             else {
         
-                                echo 'Could not find following';
+                                echo 'Could not find followers';
                                     } ?> 
                 </span>
             </nav> 
@@ -140,35 +140,35 @@
 
 
     <?php
-    
-    if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) {
-        $knownUsersUid = $_GET['id'];
-        $other_user_id_query = "SELECT usersId FROM users WHERE usersUid = '$knownUsersUid'";
-        $result_other_user_id = $conn->query($other_user_id_query);
+    if (isset($_SESSION['useruid'])){
+        if ((isset($_GET['id']))) {
+            $knownUsersUid = $_GET['id'];
+            $other_user_id_query = "SELECT usersId FROM users WHERE usersUid = '$knownUsersUid'";
+            $result_other_user_id = $conn->query($other_user_id_query);
 
-    if ($result_other_user_id && $result_other_user_id->num_rows > 0) {
-        $row_other_user_id = $result_other_user_id->fetch_assoc();
-        $other_user_id = $row_other_user_id['usersId'];
+            if ($result_other_user_id && $result_other_user_id->num_rows > 0) {
+                $row_other_user_id = $result_other_user_id->fetch_assoc();
+                $other_user_id = $row_other_user_id['usersId'];
 
-        $huidige_gebruiker_id = $_SESSION['usersId'];
+                $huidige_gebruiker_id = $_SESSION['usersId'];
 
-        // Check of de gebruikers elkaar al volgen
-        $query_follow_check = "SELECT * FROM friends WHERE user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $other_user_id";
-        $result_follow_check = $conn->query($query_follow_check);
+                // Check of de gebruikers elkaar al volgen
+                $query_follow_check = "SELECT * FROM friends WHERE user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $other_user_id";
+                $result_follow_check = $conn->query($query_follow_check);
 
-        $following = $result_follow_check->num_rows > 0;
-    } else {
-        // Gebruiker niet gevonden met de opgegeven gebruikersnaam
-        //echo "Gebruiker niet gevonden.";
+                $following = $result_follow_check->num_rows > 0;
+            } else {
+                // Gebruiker niet gevonden met de opgegeven gebruikersnaam
+                //echo "Gebruiker niet gevonden.";
+            }
+        }
     }
-    }
-
     ?>
 
 
         <div>
 
-        <?php if (isset($_GET['id']) && isset($username) && $_GET['id'] != $_SESSION['useruid']) { ?>
+        <?php if (isset($_GET['id']) && isset($username) && isset($_SESSION['useruid'])) { ?>
                 <button onclick="toggleFollowUser(<?php echo $other_user_id; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
         <?php }?>
             </div>     
@@ -208,15 +208,18 @@
                             echo "<hr>"; 
                             
                             getComments($conn, $row['postsID'],'user.php');
-
-                            // Voeg andere velden toe zoals nodig
-                            echo"<form method='POST' action='".setComment($conn,$row['postsID'],'user.php')."'>
-                            <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
-                            <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
-                            <input type='hidden' name='postId' value='".$row['postsID']."'>
-                            <textarea name='message'></textarea><br>
-                            <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
-                            </form><br><br>";
+                            
+                            if (isset($_SESSION['useruid'])){
+                            // Voeg comment veld toe
+                                echo"<form method='POST' action='".setComment($conn,$row['postsID'],'user.php')."'>
+                                <input type='hidden' name='usersId' value='".$_SESSION['usersId']."'>
+                                <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
+                                <input type='hidden' name='postId' value='".$row['postsID']."'>
+                                <textarea name='message'></textarea><br>
+                                <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
+                                </form>";
+                            }
+                            echo "<br><br>";
                             echo "</div>";
                             echo "<br><br>";
                         }

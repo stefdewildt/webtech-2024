@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["userImg"])) {
         echo "Sorry, your file was not uploaded.";
     } else {
         // Move the uploaded file to the designated folder
-        if (move_uploaded_file($_FILES["userImg"]["tmp_name"], $target_file)) {
+        if (move_uploaded_file($_FILES["userImg"]["tmp_name"], $target_dir)) {
             // Update the database with the file path
 
             $user_id = $_SESSION['usersId'];  // Assuming you have a user_id stored in the session

@@ -132,7 +132,7 @@
                             }
                             else {
         
-                                echo 'Could not find following';
+                                echo 'Could not find followers';
                                     } ?> 
                 </span>
             </nav> 

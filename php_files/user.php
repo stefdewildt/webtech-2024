@@ -140,7 +140,7 @@
 
 
     <?php
-    isset($_SESSION['useruid']){
+    if (isset($_SESSION['useruid'])){
         if ((isset($_GET['id']))) {
             $knownUsersUid = $_GET['id'];
             $other_user_id_query = "SELECT usersId FROM users WHERE usersUid = '$knownUsersUid'";

@@ -72,24 +72,7 @@
 
 
     <div class="pd-row">
-        <?php
-        if ( $image == null) {
-            echo '<img src="img/profile.png">';
-            echo '<form action="/includes/uploadImgInc.php" method="post" enctype="multipart/form-data">
-            <label for="userImg">Upload Profile Picture:</label>
-            <input type="file" name="userImg" id="userImg" accept="image/*">
-            <input type="submit" value="Upload">';
-        } elseif ($image != null) {
-            echo '<img src="'.$image.'">';
-        }
-
-
-        ?>
-        <!-- <img src="img/profile.png">
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-        <label for="profile_picture">Upload Profile Picture:</label>
-        <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
-        <input type="submit" value="Upload"> -->
+        
 </form>
 
         <div class='personal_info'>
@@ -211,6 +194,7 @@
                     <button type="Submit" name="submit">Submit Hot Take</button>
                 </form>
             </li> -->
+
             <section class="posts">
                     <?php if (isset($username)){
                         // if (isset($_GET['id']) ){
@@ -230,6 +214,7 @@
                             $user_row = mysqli_fetch_assoc($result_user);
                             $username = $user_row['usersUid'];
 
+                            echo "<div class='bigpost'>";
                             // Output  username boven de embed
                             echo "<div class=comment></div>";
                             echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
@@ -250,8 +235,9 @@
                             <input type='hidden' name='postId' value='".$row['postsID']."'>
                             <textarea name='message'></textarea><br>
                             <button type='submit' name='commentSubmit".$row['postsID']."'>Comment</button>
-                            </form>";
-                            echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                            </form><br><br>";
+                            echo "</div>";
+                            echo "<br><br>";
                         }
                     }
                     ?>

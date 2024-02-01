@@ -151,11 +151,10 @@ button[type="submit"] {
 
 .posts {
   margin-top: 200px;
-  padding: 100px;
 }
 
 textarea{
-  width:4.0em;
+  width:15.0em;
   height:1.0em;
   resize:none;
 }

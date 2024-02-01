@@ -102,10 +102,38 @@
             </nav> 
         </div>
 
+
+    <?php
+    
+    if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) {
+        $knownUsersUid = $_GET['id'];
+        $other_user_id_query = "SELECT usersId FROM users WHERE usersUid = '$knownUsersUid'";
+        $result_other_user_id = $conn->query($other_user_id_query);
+
+    if ($result_other_user_id && $result_other_user_id->num_rows > 0) {
+        $row_other_user_id = $result_other_user_id->fetch_assoc();
+        $other_user_id = $row_other_user_id['usersId'];
+
+        $huidige_gebruiker_id = $_SESSION['usersId'];
+
+        // Check of de gebruikers elkaar al volgen
+        $query_follow_check = "SELECT * FROM friends WHERE user_ID_1 = $huidige_gebruiker_id AND user_ID_2 = $other_user_id";
+        $result_follow_check = $conn->query($query_follow_check);
+
+        $following = $result_follow_check->num_rows > 0;
+    } else {
+        // Gebruiker niet gevonden met de opgegeven gebruikersnaam
+        echo "Gebruiker niet gevonden.";
+    }
+    }
+
+    ?>
+
+
         <div>
 
         <?php if (isset($_GET['id']) && isset($username) && $_GET['id'] != $_SESSION['useruid']) { ?>
-                <button onclick="toggleFollowUser(<?php echo $row['usersId']; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
+                <button onclick="toggleFollowUser(<?php echo $other_user_id; ?>, this)"> <?php echo $following ? 'Following' : 'Follow'; ?></button> 
         <?php }?>
             </div>     
     </div>
@@ -140,12 +168,10 @@
 
     // Voer de juiste actie uit op basis van de status
     if (isFollowing) {
-        alert('1')
 
         // Gebruiker is al aan het volgen, voer de unfollow-functie uit
         unfollowUser(userId, buttonElement);
     } else {
-        alert('2')
         // Gebruiker volgt nog niet, voer de follow-functie uit
         followUser(userId, buttonElement);
     }

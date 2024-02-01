@@ -204,9 +204,9 @@ textarea{
   padding-top:0.3em;
   padding-bottom:0.3em;
   font-family: 'Satoshi', sans-serif;
-  display: inline-block;
 }
 
 .message, .delete-form{
   display: inline-block;
+  margin-right: 10px;
 }

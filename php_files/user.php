@@ -107,7 +107,7 @@
         if (isset($_GET['id']) && $_GET['id'] != $_SESSION['useruid']) {
         
             $knownUsersUid = $_GET['id'];
-            $other_user_id = "SELECT usersId FROM users WHERE userUid = '$knownUsersUid'"
+            $other_user_id = "SELECT usersId FROM users WHERE userUid = '$knownUsersUid'";
             $huidige_gebruiker_id = $_SESSION['usersId'];
 
         // Check of de gebruikers elkaar al volgen

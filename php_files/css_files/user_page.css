@@ -10,13 +10,13 @@ a{
     text-decoration: none;
 }
 
-/* .pd-row {
+.pd-row {
     display: flex;
     margin-top: 80px;
     margin-left: 180px;
-    text-align: center;
+    text-align: left;
 
-} */
+}
 
 .pd-row img{
     border-radius: 50%;
@@ -108,8 +108,9 @@ button[type="submit"] {
     font-size: 16px;
   }
 
-.personal-info{
+/* .personal-info{
     margin-left: 10em;
     text-align: left;
-}
+
+} */
 

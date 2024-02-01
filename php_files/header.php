@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://webtech-bg2.webtech-uva.nl/~stefw/webtech-2024/php_files/css_files/cookies_styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/musicalnote.png">
     <div id="cookie-consent">
         <div id="cookie-consent-content">
             <p>"When you visit our website, we store small text files called cookies on your device. 

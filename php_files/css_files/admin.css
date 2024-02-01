@@ -4,10 +4,11 @@
 
 .adminlinks nav a {
     font-weight: bold;
+    font-size: large;
     text-decoration: none;
     padding: 0.2em;
     margin: 0 0.2em;
-    color: #9bffaa; 
+    color: #166f23; 
 }
 
 .adminlinks nav a:hover {

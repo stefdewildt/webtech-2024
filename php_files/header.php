@@ -25,6 +25,7 @@
                 We value your privacy and we want to be transparent about our use of cookies.
                 By using our website, you consent to our use of cookies as described above."</p>
             <button id="cookie-consent-agree">Agree</button>
+            <button id="cookie-consent-disagree">Disagree</button>
         </div>
     </div>
     <style>
@@ -42,6 +43,10 @@
         $("#cookie-consent-agree").on("click", function() {
             document.cookie = "cookieConsent=accepted; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
             $("#cookie-consent").hide();
+        });
+        $("#cookie-consent-disagree").on("click", function() {
+            // Omleiden naar andere link
+            window.location.href = "https://youtu.be/dQw4w9WgXcQ?si=f55KtMJvlKZe68M-";
         });
     });
     </script>

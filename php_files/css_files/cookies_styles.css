@@ -18,6 +18,9 @@
 #cookie-consent-agree{
     cursor: pointer;
 }
+#cookie-consent-disagree{
+    cursor: pointer;
+}
 #overlay {
     position: fixed;
     opacity: 0;

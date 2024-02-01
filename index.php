@@ -77,7 +77,8 @@
                     <?php
                     $sql = "SELECT * FROM big_posts ORDER BY postsTIMESTAMP DESC";
                     $result = mysqli_query($conn, $sql);
-                    while ($row = mysqli_fetch_assoc($result)) {
+                    $counter = 0;
+                    while ($counter < 11 && $row = mysqli_fetch_assoc($result)) {
                         $user_id = $row['user_id'];
 
                         // check following
@@ -101,7 +102,7 @@
                         echo "<div class='bigpost'>";
                         // Output  username boven de embed
                         echo "<div class=comment></div>";
-                        echo '@'.$username ."<br>";
+                        echo '<a href="https://webtech-bg2.webtech-uva.nl/php_files/user.php?id='.$username.'">@'.$username.'</a><br>';
                         echo '<h3>'.$row['postsURL'] . "</h3><br>";
                         // echo $row['username'] . ": " . $row['postsPOST'] . "<br>";
                         
@@ -125,6 +126,7 @@
                         echo "</div>";
                          echo "<br><br>";
                         }
+                        $counter++;
                     }
                     ?>
                 </section>

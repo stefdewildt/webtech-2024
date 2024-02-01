@@ -26,8 +26,8 @@
                 <?php
                 $sql = "SELECT * FROM music_posts ORDER BY postsTIMESTAMP DESC";
                 $result = mysqli_query($conn, $sql);
-                
-                while ($row = mysqli_fetch_assoc($result)) {
+                $counter = 0;
+                while ($counter < 11 && $row = mysqli_fetch_assoc($result)) {
                     $user_id = $row['user_id'];
                     $sql = "SELECT usersUid FROM users WHERE usersId = $user_id";
                     $result_user = mysqli_query($conn, $sql);
@@ -55,6 +55,8 @@
                     echo htmlspecialchars($row['postsPOST'], ENT_QUOTES, 'UTF-8');
                     // Voeg andere velden toe zoals nodig
                     echo "<hr>"; // Voeg een scheidingsteken toe tussen records
+                    $counter++;
+
                 }
                 ?>
             </section>
@@ -78,7 +80,7 @@
                     $sql = "SELECT * FROM big_posts ORDER BY postsTIMESTAMP DESC";
                     $result = mysqli_query($conn, $sql);
                     $counter = 0;
-                    while ($counter < 11 && $row = mysqli_fetch_assoc($result)) {
+                    while ($row = mysqli_fetch_assoc($result)) {
                         $user_id = $row['user_id'];
 
                         // check following
@@ -126,8 +128,6 @@
                         echo "</div>";
                          echo "<br><br>";
                         }
-                        echo $counter;
-                        $counter++;
                     }
                     ?>
                 </section>

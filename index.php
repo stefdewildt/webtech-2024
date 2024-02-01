@@ -126,6 +126,7 @@
                         echo "</div>";
                          echo "<br><br>";
                         }
+                        echo $counter;
                         $counter++;
                     }
                     ?>

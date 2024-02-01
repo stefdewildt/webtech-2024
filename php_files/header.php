@@ -48,7 +48,7 @@
 </head>
 
 <body>
-    <a href="#" id="to-top">
+    <!-- <a href="#" id="to-top">
         <i" class="fas fa-chevron-up"></i>
     </a>
     <script>
@@ -60,7 +60,7 @@
                 toTop.classList.remove("active");
             }
         });        
-    </script>
+    </script> -->
     <header>
         <div class="upper-bar">
             <div class="header-left">

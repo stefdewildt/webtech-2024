@@ -123,7 +123,7 @@
         $following = $result_follow_check->num_rows > 0;
     } else {
         // Gebruiker niet gevonden met de opgegeven gebruikersnaam
-        echo "Gebruiker niet gevonden.";
+        //echo "Gebruiker niet gevonden.";
     }
     }
 
